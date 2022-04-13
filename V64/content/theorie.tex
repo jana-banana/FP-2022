@@ -100,6 +100,7 @@ Die Anzahl der Maxima oder der Minima $M$ steht durch
 im Zusammenhang mit der Phasenverschiebung, sodass bei gegebener Anzahl der Maxima oder Minima der Brechungsindex wie folgt gerechnet werden kann:
 \begin{equation}
     n = \frac{\lambda_0\cdot M}{L} + 1
+    \label{eqn:n_Luft}
 \end{equation}
 \noindent Über das Lorentz-Lorenz-Gesetz ist der Brechungsindex abhängig von dem Druck $p$ und der Temperatur $T$ des Gases. Durch eine Taylorentwicklung um $n \approx 1$ kann auf eine 
 lineare Abhängigkeit genähert werden:
@@ -110,5 +111,26 @@ lineare Abhängigkeit genähert werden:
 Der Brechungsindex kann somit über 
 \begin{equation}
     n \approx \frac{3}{2} \frac{A \cdot p}{R \cdot T} + 1
+    \label{eqn:Lorentz_Lorenz}
 \end{equation}
-bestimmt werden. $A$ bezeichnet hier die Refraktivität unf $R$ die allgemeine Gaskonstante.
+bestimmt werden. $A$ bezeichnet hier die Refraktivität und $R$ die allgemeine Gaskonstante.
+
+
+\subsection{Brechungsindexbestimmung von Glas}
+
+\noindent Beim Durchlaufen einer planparallelen Platte wird ein Lichtstrahl an beiden Grenzflächen mit dem gleichen Winkel entgegengesetzt gebrochen, sodass die Bewegungsrichtung nicht
+verändert ist, aber der Strahl leicht versetzt ist. Da die Brechung vom Drehwinkel $\Theta$ abhängig ist, ergibt sich ein Ausdruck $\delta(\Theta)$ für den Fall, dass ein Strahl durch 
+eine Glasplatte der Dicke $D$ läuft:
+\begin{equation*}
+    \delta = \frac{2 \pi D}{\lambda_0} \left[ \frac{n-1}{2n} \Theta^2 + \symcal{O}(\Theta ^4)\right]
+\end{equation*}
+In diesem Versuch wird mit zwei Glasplatten gearbeitet, die um $ \pm \Theta_0$ mit $\Theta_0 = \SI{10}{\degree}$ gegeneinander verschoben sind. Daher ergibt 
+sich für die Phasenverschiebung 
+\begin{equation*}
+    \delta(\Theta) = \frac{2 \pi}{\lambda_0} D \frac{n-1}{2n} \left[ (\Theta + \Theta_0)^2 - (\Theta - \Theta_0)^2 \right]. 
+\end{equation*}
+Mit $ M = \frac{\delta}{2 \pi} $ ergibt sich für den Brechungsindex:
+\begin{equation}
+    n(\Theta) = \frac{1}{1 - \frac{M \lambda_0}{2 D \Theta \Theta_0}}
+    \label{eqn:n_Glas}
+\end{equation}
