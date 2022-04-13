@@ -11,7 +11,7 @@ transmittiert und läuft entgegen des Uhrzeigersinnes durch das Interferometer. 
 Außerdem soll dieser feststellen, dass in den PBSC der s- und p-polarisierten Anteil des Lichtstrahls gleichermaßen vertreten ist, sodass ein Winkel von $\phi = \SI{45}{\degree}$
 zur Justage eingestellt wird.  
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{bilder/Interferometer.png}
     \caption{Der schematische Aufbau des Sagnac-Interferometers. \cite{anleitung}}
@@ -39,7 +39,7 @@ zur Justage eingestellt wird.
 anfällig auf äußeren Einflüsse wie Luftdruckschwankungen. Damit eine Messung durchgeführt werden kann, müssen die beiden Lichtstrahlen getrennt werden. Dies passiert durch Bewegen 
 des Spiegels $M_2$ parallel zur ersten Oberfläche des PBSC. Die Lichtstrahlen treffen nun an verschiedenen Punkten an den Spiegeln auf, treffen jedoch im PBSC wieder zusammen. 
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{bilder/interfer_foto.png}
     \caption{Der Aufbau des Interferometers im Versuch. Es ist die Gaskammer im Strahlengang des zuerst vom PBSC transmittierten Strahl zu sehen und der Doppelglashalter im Strahlengang 
@@ -55,7 +55,7 @@ $\SI{45}{\degree}$ gekippter PBSC benutzt, wobei der im PBSC reflektierte Strahl
 und Minima wird mit der Differenzmethode gearbeitet, also die Signal der beiden Dioden werden auf ihre Differenz untersucht. Damit werden konstante Störungen wie anderes einfallendes 
 Licht aus dem Signal genommen. In der \autoref{fig:Messgeraete} sind die Messgeräte zu sehen, mit denen gearbeitet wurde.
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{bilder/Messgeräte.png}
     \caption{Die im Versuch benutzten Messgeräte. Im Vordergrund ist links in 
@@ -81,6 +81,7 @@ so gut wie möglich entfernt.
 
 
 \subsection{Kontrastbestimmung}
+\label{subsec:Kontrastbestimmmung}
 
 \noindent Der Polarisationsfilter und der Schirm werden hinter dem PBSC entfernt, der Outputbeam wird auf einen um $\SI{45}{\degree}$ gekippten weiteren PBSC geleitet, welcher seine beiden
 Outputbeam auf zwei Photodioden reflektiert und transmittiert. Eine der Dioden wird an ein Multimeter angeschlossen. Nun wird für verschiedene Werte des Polarisationswinkel $\phi$ des 
@@ -91,6 +92,7 @@ Es wird der Winkel $\phi$ eingestellt, bei dem der größte Kontrast gemessen wu
 
 
 \subsection{Bestimmung des Brechungsindex von Glas}
+\label{subsec:n_glas_Durchführung}
 
 \noindent Beide Photodioden werden an den Modern Interferometry Controller angeschlossen, dessen Output wird auf einem Oszilloskop angezeigt. Der Doppelglashalter wird im Bereich von 
 $\Theta \in \left[ \SI{0}{\degree}, \SI{10}{\degree}\right]$ bewegt. Der Modern  Interferometry Controller zählt die Nulldurchgänge der Differenz der Diodenspannungen, also die Anzahl 
@@ -98,6 +100,7 @@ der Interferenzminima. Diese Anzahl wird für eine ganze Drehung von $\Theta$ um
 
 
 \subsection{Bestimmung des Brechungsindex von Gas}
+\label{subsec:Durchführung_n_Luft}
 
 \noindent Der Doppelglashalter wird aus dem Strahlengang gebaut und eine Gaszelle wird eingebaut. Diese wird mithilfe einer Pumpe leergepumpt. Dann wird kontrolliert Luft in die Gaszelle 
 gefüllt und in Schritten von $\SI{50}{\milli\bar}$ die Anzahl der durchlaufenden Interferenzminima notiert. Die Messung wird $\num{4}$ mal wiederholt. Um äußere Einflüsse wie 
