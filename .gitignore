@@ -3,3 +3,8 @@
 *.log
 *.fls
 *.fdb_latexmk
+*.bcf
+*.toc
+*.xml
+*.blg
+*.bbl

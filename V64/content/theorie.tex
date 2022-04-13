@@ -1,4 +1,113 @@
+\section{Zielsetzung}
+\label{sec:Ziel} 
+\noindent
+In diesem Versuch wird das Sagnac-Interferometer als moderne Apparatur der Interferometrie vorgestellt. Die grundlegende Funktionsweise soll durch die Justage des Interferometers 
+und die Konstrastmessung vermittelt werden. Anschließend wird mithilfe des Interferometers der Brechungindex von Glas sowie des Gasgemisches Luft bestimmt. 
+
 \section{Theorie}
 \label{sec:Theorie}
 
-\cite{sample}
+
+\subsection{Kohärenz}
+
+\noindent Interferenz kann bei der Überlagerung von elektromagnetischen Wellen auftreten in Form der konstruktiven und destruktiven Interferenz. Konstruktive Interferenz bezeichnet dabei das
+Addieren der Wellenmaxima, destruktive Interferenz das Aufheben der Wellen, sodass keine Intensität mehr gemessen wird. Damit zwei elektromagnetische Wellen miteinander interferieren können, 
+müssen sie kohärent sein, sie müssen also eine feste Phasendifferenz und die gleiche Wellenlänge haben. Dies ist häufig nur über eine gewisse Zeitdauer der Fall, diese Zeit wird als 
+Kohärenzzeit bezeichnet. Desweiteren wird in räumliche und zeitliche Kohärenz unterschieden, räumliche Kohärenz beschreibt eine feste Phasendifferenz bezüglich der Raumachse, zeitliche 
+dementsprechend eine feste Phasendifferenz bezüglich der Zeitachse. 
+
+
+\subsection{Polarisation}
+
+\noindent Die Polarisation beschreibt die Auslenkungsrichtungs der Lichtwelle im Bezug zur Ausbreitungsrichtung. Es gibt unpolarisiertes Licht, linear polarisiertes und ellipstisch/
+zirkular polarisiertes Licht. Beim letzteren dreht sich die Auslenkungsrichtung um die Bewegungsrichtung. Lineare Polarisation bedeutet, dass die Auslenkung der Welle senkrecht zur 
+Bewegungsrichtung in einer Ebene stattfindet. Lichtwellen müssen gleich polarisiert sein, damit sie interferieren können. 
+
+
+\subsection{Kontrast}
+
+\noindent Die Qualität eines Interferometers kann mit dem Kontrast $K$ beschrieben werden:
+\begin{equation}
+        K = \frac{I_{\text{max}} - I_{\text{min}}}{I_{\text{max}} + I_{\text{min}}}
+        \label{eqn:kontrast}
+\end{equation}
+Die Intensität $I$ ergibt sich durch zeitliche Mittelung des elektrischen Feldes über eine Periode, $I_{\text{max/min}}$  bezeichnet die Intensität der Interferenzmaxima/-minima.
+Der Kontrast $K(\phi)$ ist im allgemeinen von dem Polarisationswinkel $\phi$ des ersten Polarisators abhängig. 
+
+\noindent Die sich überlagernden Lichtwellen können definiert werden als 
+\begin{align}
+    \vec{E}_1 &= \vec{E}_0 \cos(\phi)\cos(\omega t) & \vec{E}_2 &= \vec{E}_0 \sin(\phi)\cos(\omega t + \delta),
+\end{align} 
+wobei $\omega$ die Kreisfrequenz der Welle und $\delta$ die Phasenverschiebung bezeichnet. Die Intensität berechnet sich dann mit der zeitlichen Mittelung über eine Periode:
+\begin{equation*}
+    I  \propto \langle \left( \vec{E}_1 + \vec{E}_2 \right)^2 \rangle = \langle E_1^2 + 2 E_1 E_2 + E_2^2 \rangle, 
+\end{equation*} 
+hierbei bezeichnet $\langle ... \rangle = \frac{1}{T} \int_t^{t+T} ... \, \text{d}t$. 
+Die einzelnen Terme ergeben sich somit zu:
+\begin{align*}
+    \langle E_1^2 \rangle &= E_0^2 \cos^2(\phi) \langle \cos^2(\omega t) \rangle = \frac{1}{2} E_0^2 \cos^2(\phi) \\
+    \langle E_2^2 \rangle &= E_0^2 \sin^2(\phi) \langle \cos^2(\omega t + \delta) \rangle = \frac{1}{2} E_0^2 \sin^2(\phi) \\
+    \langle 2 E_1 E_2 \rangle &= 2 E_0^2 \sin(\phi)\cos(\phi) \langle \cos(\omega t) \cos(\omega t + \delta) \rangle = E_0^2 \sin(\phi) \cos(\phi) \cos(\delta) 
+\end{align*}
+Für die Intensität folgt dann:
+\begin{align*}
+    I &\propto  \frac{1}{2} E_0^2 \cos^2(\phi) + \frac{1}{2} E_0^2 \sin^2(\phi) + E_0^2 \sin(\phi) \cos(\phi) \cos(\delta)\\
+    & \propto \frac{1}{2} E_0^2 \left( 1 + 2 \sin(\phi) \cos(\phi) \cos(\delta) \right)
+\end{align*}
+Für Interferenzmaxima $\left( \delta = 2n\pi, n \in \mathbb{N} \right)$ und -minima $\left(\delta = (2n+1)\pi, n \in \mathbb{N} \right)$ ergibt sich schließlich der Zusammenhang 
+\begin{equation*}
+    I_{\text{max/min}} \propto I_{\text{ges}} \left( 1 \pm 2 \cos(\phi)\sin(\phi)\right) . 
+\end{equation*}
+
+\noindent Der Kontrast hat somit die folgende Abhängigkeit vom Polarisationswinkel $\phi$ :
+\begin{equation}
+    V \propto 2 I_{\text{ges}} \sin(\phi)\cos(\phi) \label{eqn:kontrastphi}
+\end{equation}
+
+
+\subsection{Brechungsindexbestimmung von Gas}
+
+\noindent Eine typische Anwendung der Interferometrie ist das Bestimmen von Brechungsindices verschiedener Materialien. Da die Lichtgeschwindigkeit in Materialien gegeben ist durch
+$ v = \frac{c}{n}$ verändert sich der Wellenvektor gemäß $ k = \frac{2 \pi}{\lambda_0} \cdot n$, wobei $\lambda_0$ die Vakuumwellenlänge ist. 
+Durchläuft der Lichtstrahl nun ein Kammer der Länge $L$, welche mit einem Gas des Brechungsindex $n$ gefüllt ist, so erfährt er eine Phasenverschiebung von 
+\begin{equation*}
+    \delta = \frac{2 \pi}{\lambda_0} \left(n-1\right) \cdot L.
+\end{equation*}
+Die Anzahl der Maxima oder der Minima $M$ steht durch 
+\begin{equation*}
+    M = \frac{\delta}{2 \pi}
+\end{equation*}
+im Zusammenhang mit der Phasenverschiebung, sodass bei gegebener Anzahl der Maxima oder Minima der Brechungsindex wie folgt gerechnet werden kann:
+\begin{equation}
+    n = \frac{\lambda_0\cdot M}{L} + 1
+\end{equation}
+\noindent Über das Lorentz-Lorenz-Gesetz ist der Brechungsindex abhängig von dem Druck $p$ und der Temperatur $T$ des Gases. Durch eine Taylorentwicklung um $n \approx 1$ kann auf eine 
+lineare Abhängigkeit genähert werden:
+\begin{align*}
+    \frac{A \cdot p}{R \cdot T} &= \frac{n^2 - 1}{n^2 + 2} \\
+    &\approx \frac{2}{3}\left( n - 1 \right) 
+\end{align*}
+Der Brechungsindex kann somit über 
+\begin{equation}
+    n \approx \frac{3}{2} \frac{A \cdot p}{R \cdot T} + 1
+\end{equation}
+bestimmt werden. $A$ bezeichnet hier die Refraktivität unf $R$ die allgemeine Gaskonstante.
+
+
+\subsection{Brechungsindexbestimmung von Glas}
+
+\noindent Beim Durchlaufen einer planparallelen Platte wird ein Lichtstrahl an beiden Grenzflächen mit dem gleichen Winkel entgegengesetzt gebrochen, sodass die Bewegungsrichtung nicht
+verändert ist, aber der Strahl leicht versetzt ist. Da die Brechung vom Drehwinkel $\Theta$ abhängig ist, ergibt sich ein Ausdruck $\delta(\Theta)$ für den Fall, dass ein Strahl durch 
+eine Glasplatte der Dicke $D$ läuft:
+\begin{equation*}
+    \delta = \frac{2 \pi D}{\lambda_0} \left[ \frac{n-1}{2n} \Theta^2 + \symcal{O}(\Theta ^4)\right]
+\end{equation*}
+In diesem Versuch wird mit zwei Glasplatten gearbeitet, die um $ \pm \Theta_0$ mit $\Theta_0 = \SI{10}{\degree}$ gegeneinander verschoben sind. Daher ergibt 
+sich für die Phasenverschiebung 
+\begin{equation*}
+    \delta(\Theta) = \frac{2 \pi}{\lambda_0} D \frac{n-1}{2n} \left[ (\Theta + \Theta_0)^2 - (\Theta - \Theta_0)^2 \right]. 
+\end{equation*}
+Mit $ M = \frac{\delta}{2 \pi} $ ergibt sich für den Brechungsindex:
+\begin{equation}
+    n(\Theta) = \frac{1}{1 - \frac{M \lambda_0}{2 D \Theta \Theta_0}}
+\end{equation}
