@@ -35,14 +35,14 @@ Die Intensität $I$ ergibt sich durch zeitliche Mittelung des elektrischen Felde
 Der Kontrast $K(\phi)$ ist im Allgemeinen von dem Polarisationswinkel $\phi$ des ersten Polarisators abhängig. 
 
 \noindent Die sich überlagernden Lichtwellen können definiert werden als 
-\begin{align}
+\begin{align*}
     \vec{E}_1 &= \vec{E}_0 \cos(\phi)\cos(\omega t) & \vec{E}_2 &= \vec{E}_0 \sin(\phi)\cos(\omega t + \delta),
-\end{align} 
-wobei $\omega$ die Kreisfrequenz der Welle und $\delta$ die Phasenverschiebung bezeichnet. Die Intensität berechnet sich dann mit der zeitlichen Mittelung über eine Periode:
+\end{align*} 
+wobei $\omega$ die Kreisfrequenz der Welle und $\delta$ die Phasenverschiebung bezeichnet. Die Intensität berechnet sich dann mit der zeitlichen Mittelung über eine Periode 
+$\langle ... \rangle = \frac{1}{T} \int_t^{t+T} ... \, \text{d}t$:
 \begin{equation*}
-    I  \propto \langle \left( \vec{E}_1 + \vec{E}_2 \right)^2 \rangle = \langle E_1^2 + 2 E_1 E_2 + E_2^2 \rangle, 
+    I  \propto \langle \left( \vec{E}_1 + \vec{E}_2 \right)^2 \rangle = \langle E_1^2 + 2 E_1 E_2 + E_2^2 \rangle
 \end{equation*} 
-hierbei bezeichnet $\langle ... \rangle = \frac{1}{T} \int_t^{t+T} ... \, \text{d}t$. 
 Die einzelnen Terme ergeben sich somit zu:
 \begin{align*}
     \langle E_1^2 \rangle &= E_0^2 \cos^2(\phi) \langle \cos^2(\omega t) \rangle = \frac{1}{2} E_0^2 \cos^2(\phi) \\
@@ -65,11 +65,31 @@ Für Interferenzmaxima $\left( \delta = 2n\pi, n \in \mathbb{N} \right)$ und -mi
 \end{equation}
 
 
-\subsection{Brechungsindexbestimmung von Gas}
+\subsection{Brechungsindexbestimmung von Glas}
 
 \noindent Eine typische Anwendung der Interferometrie ist das Bestimmen von Brechungsindices verschiedener Materialien. Da die Lichtgeschwindigkeit in Materialien gegeben ist durch
-$ v = \frac{c}{n}$ verändert sich der Wellenvektor gemäß $ k = \frac{2 \pi}{\lambda_0} \cdot n$, wobei $\lambda_0$ die Vakuumwellenlänge ist. 
-Durchläuft der Lichtstrahl nun eine Kammer der Länge $L$, welche mit einem Gas des Brechungsindex $n$ gefüllt ist, so erfährt er eine Phasenverschiebung von 
+$ v = \frac{c}{n}$ verändert sich der Wellenvektor gemäß $ k = \frac{2 \pi}{\lambda_0} \cdot n$, wobei $\lambda_0$ die Vakuumwellenlänge ist. \\
+Beim Durchlaufen einer planparallelen Platte wird ein Lichtstrahl an beiden Grenzflächen mit dem gleichen Winkel entgegengesetzt gebrochen, sodass die Bewegungsrichtung nicht
+verändert ist, aber der Strahl leicht versetzt ist. Da die Brechung vom Drehwinkel $\Theta$ abhängig ist, ergibt sich ein Ausdruck $\delta(\Theta)$ für den Fall, dass ein Strahl durch 
+eine Glasplatte der Dicke $D$ läuft:
+\begin{equation*}
+    \delta = \frac{2 \pi D}{\lambda_0} \left[ \frac{n-1}{2n} \Theta^2 + \symcal{O}(\Theta ^4)\right]
+\end{equation*}
+In diesem Versuch wird mit zwei Glasplatten gearbeitet, die um $ \pm \Theta_0$ mit $\Theta_0 = \SI{10}{\degree}$ gegeneinander verschoben sind. Daher ergibt 
+sich für die Phasenverschiebung 
+\begin{equation*}
+    \delta(\Theta) = \frac{2 \pi}{\lambda_0} D \frac{n-1}{2n} \left[ (\Theta + \Theta_0)^2 - (\Theta - \Theta_0)^2 \right]. 
+\end{equation*}
+Mit $ M = \frac{\delta}{2 \pi} $ ergibt sich für den Brechungsindex:
+\begin{equation}
+    n(\Theta) = \frac{1}{1 - \frac{M \lambda_0}{2 D \Theta \Theta_0}}
+    \label{eqn:n_Glas}
+\end{equation}
+
+\subsection{Brechungsindexbestimmung von Gas}
+
+\noindent Durchläuft der Lichtstrahl nun eine Kammer der Länge $L$, welche mit einem Gas des Brechungsindex $n$ gefüllt ist, so erfährt er eine 
+Phasenverschiebung von 
 \begin{equation*}
     \delta = \frac{2 \pi}{\lambda_0} \left(n-1\right) \cdot L.
 \end{equation*}
@@ -94,23 +114,3 @@ Der Brechungsindex kann somit über
     \label{eqn:Lorentz_Lorenz}
 \end{equation}
 bestimmt werden. $A$ bezeichnet hier die Refraktivität und $R$ die allgemeine Gaskonstante.
-
-
-\subsection{Brechungsindexbestimmung von Glas}
-
-\noindent Beim Durchlaufen einer planparallelen Platte wird ein Lichtstrahl an beiden Grenzflächen mit dem gleichen Winkel entgegengesetzt gebrochen, sodass die Bewegungsrichtung nicht
-verändert ist, aber der Strahl leicht versetzt ist. Da die Brechung vom Drehwinkel $\Theta$ abhängig ist, ergibt sich ein Ausdruck $\delta(\Theta)$ für den Fall, dass ein Strahl durch 
-eine Glasplatte der Dicke $D$ läuft:
-\begin{equation*}
-    \delta = \frac{2 \pi D}{\lambda_0} \left[ \frac{n-1}{2n} \Theta^2 + \symcal{O}(\Theta ^4)\right]
-\end{equation*}
-In diesem Versuch wird mit zwei Glasplatten gearbeitet, die um $ \pm \Theta_0$ mit $\Theta_0 = \SI{10}{\degree}$ gegeneinander verschoben sind. Daher ergibt 
-sich für die Phasenverschiebung 
-\begin{equation*}
-    \delta(\Theta) = \frac{2 \pi}{\lambda_0} D \frac{n-1}{2n} \left[ (\Theta + \Theta_0)^2 - (\Theta - \Theta_0)^2 \right]. 
-\end{equation*}
-Mit $ M = \frac{\delta}{2 \pi} $ ergibt sich für den Brechungsindex:
-\begin{equation}
-    n(\Theta) = \frac{1}{1 - \frac{M \lambda_0}{2 D \Theta \Theta_0}}
-    \label{eqn:n_Glas}
-\end{equation}
