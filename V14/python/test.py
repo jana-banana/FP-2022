@@ -33,7 +33,7 @@ d_i12 = 3*a #cm
 t_0 = 300 #sec
 
 # ---------------------------------Nullmessung/Spektrum----------------------------------------------------------------------------------
-pulses = np.genfromtxt('data/spektrum.txt', unpack=True)
+pulses = np.genfromtxt('../data/spektrum.txt', unpack=True)
 x_axis = np.arange(len(pulses))
 
 r_0 = np.sum(pulses)/t_0 #/per/sec
@@ -48,35 +48,38 @@ plt.xlabel("Channel")
 plt.ylabel("Anzahl der Ereignisse")
 plt.grid()
 plt.tight_layout()
-plt.savefig('build/spektrum.pdf')
+plt.savefig('../build/spektrum.pdf')
 
 #--------------------------------Würfel 1/ Aluminiumgehäuse-------------------------------------------------------------------------------
 
-w1_hauptdiag = np.genfromtxt('data/w1_hauptdiag.txt', unpack=True)
+w1_hauptdiag = np.genfromtxt('../data/w1_hauptdiag.txt', unpack=True)
 
-N_1h = np.sum(w1_hauptdiag)
+# N_1h = np.sum(w1_hauptdiag)
+N_1h = np.amax(w1_hauptdiag, axis=0)
 sigN_1h = np.sqrt(N_1h)
 
-r_1h = np.sum(w1_hauptdiag)/t_0
-sig_1h = np.sqrt(np.sum(w1_hauptdiag))/t_0
+r_1h = N_1h/t_0
+sig_1h = np.sqrt(N_1h)/t_0
 
 
-w1_nebendiag = np.genfromtxt('data/w1_nebendiag.txt', unpack=True)
+w1_nebendiag = np.genfromtxt('../data/w1_nebendiag.txt', unpack=True)
 
-N_1n = np.sum(w1_nebendiag)
+# N_1n = np.sum(w1_nebendiag)
+N_1n = np.amax(w1_nebendiag, axis=0)
 sigN_1n = np.sqrt(N_1n)
 
-r_1n = np.sum(w1_nebendiag)/t_0
-sig_1n = np.sqrt(np.sum(w1_nebendiag))/t_0
+r_1n = N_1n/t_0
+sig_1n = np.sqrt(N_1n)/t_0
 
 
-w1_durch = np.genfromtxt('data/w1_durch.txt', unpack=True)
+w1_durch = np.genfromtxt('../data/w1_durch.txt', unpack=True)
 
-N_1d = np.sum(w1_durch)
+# N_1d = np.sum(w1_durch)
+N_1d = np.amax(w1_durch, axis=0)
 sigN_1d = np.sqrt(N_1d)
 
-r_1d = np.sum(w1_durch)/t_0
-sig_1d = np.sqrt(np.sum(w1_durch))/t_0
+r_1d = N_1d/t_0
+sig_1d = np.sqrt(N_1d)/t_0
 
 
 print(f'Würfel 1 - Aluminiumhülle zählraten \n Hauptdiagonale :{r_1h:.6f} \\pm {sig_1h:.6f} \n Nebendiagonale: {r_1n:.6f} \\pm {sig_1n:.6f} \n Gerade durch:{r_1d:.6f} \\pm {sig_1d:.6f} \n')
@@ -103,9 +106,10 @@ sig_w2 = np.zeros(len(names))
 
 for x, n, d in zip(names, numbers, dicke_w2):
 
-    w2_ix = np.genfromtxt('data/w2_i'+x+'.txt', unpack=True)
+    w2_ix = np.genfromtxt('../data/w2_i'+x+'.txt', unpack=True)
 
-    N_ix = np.sum(w2_ix)
+    # N_ix = np.sum(w2_ix)
+    N_ix = np.amax(w2_ix, axis=0)
     sigN_ix = np.sqrt(N_ix)
 
     r_w2_ix = N_ix/t_0
@@ -146,8 +150,14 @@ for n in range(6):
 
 mu_w2_mean = np.mean(unp.nominal_values(mu_w2))
 sig_w2_mean = np.std(unp.nominal_values(mu_w2))/len(names)
+mu_w2_m = unp.uarray(mu_w2_mean, sig_w2_mean)
+
+abw = 1 - mu_w2_m/0.121
 
 print(f'\n Würfel 2 \n mu mean = {mu_w2_mean:.6f} \\pm {sig_w2_mean:.6f} \n')
+print(f'Abweichung zu Delrin: {abw}')
+
+
 
 #--------------------------------Würfel 3--------------------------------------------------------------------------------------------------
 print(f'_____________________Würfel 3 - Gleiches Mu für alle_______________________')
@@ -165,10 +175,11 @@ sig_w3 = np.zeros(len(names))
 
 for x, n, d in zip(names, numbers, dicke_w3):
 
-    w3_ix_1 = np.genfromtxt('data/w3_i'+x+'_1.txt', unpack=True)
-    w3_ix_2 = np.genfromtxt('data/w3_i'+x+'_2.txt', unpack=True)
+    w3_ix_1 = np.genfromtxt('../data/w3_i'+x+'_1.txt', unpack=True)
+    w3_ix_2 = np.genfromtxt('../data/w3_i'+x+'_2.txt', unpack=True)
 
-    N_ix = np.sum(w3_ix_1) + np.sum(w3_ix_2)
+    # N_ix = np.sum(w3_ix_1) + np.sum(w3_ix_2)
+    N_ix = np.amax(w3_ix_1, axis=0) + np.amax(w3_ix_2, axis=0)
     sigN_ix = np.sqrt(N_ix)
 
     r_w3_ix = N_ix/t_w3
@@ -208,8 +219,12 @@ for n in range(3):
 
 mu_w3_mean = np.mean(unp.nominal_values(mu_w3))
 sig_w3_mean = np.std(unp.nominal_values(mu_w3))/len(names)
+mu_w3_m = unp.uarray(mu_w3_mean, sig_w3_mean)
+
+abw = 1 - mu_w3_m/1.415
 
 print(f'\n Würfel 3 \n mu mean = {mu_w3_mean:.6f} \\pm {sig_w3_mean:.6f} \n')
+print(f'Abweichung zu Blei: {abw}')
 
 
 #--------------------------------Würfel 4--------------------------------------------------------------------------------------------------
@@ -233,9 +248,10 @@ sigN_w4 = np.zeros(len(names))
 
 for x, n in zip(names, numbers):
 
-    w4_ix = np.genfromtxt('data/w4_i'+x+'.txt', unpack=True)
+    w4_ix = np.genfromtxt('../data/w4_i'+x+'.txt', unpack=True)
 
-    N_ix = np.sum(w4_ix)
+    # N_ix = np.sum(w4_ix)
+    N_ix = np.amax(w4_ix, axis=0)
     sigN_ix = np.sqrt(N_ix)
 
     r_w4_ix = N_ix/t_0
@@ -279,3 +295,11 @@ sig_mu_w4 = np.sqrt(np.diag(V_mu))
 print("mu mit fehler")
 for n in range(9):
     print(f'{n+1}: {mu_w4[n]:.6f} \\pm {sig_mu_w4[n]:.6f}')
+
+## Abweichung von Literaturwert
+mu_4_a = unp.uarray(mu_w4, sig_mu_w4)
+lit = np.array([0.211, 1.415, 0.211, 0.121, 1.415, 0.121, 0.121, 1.415, 0.121])
+abw = 1 - mu_4_a/lit
+
+for n in range(9):
+    print(f'{n+1}: {abw[n]*100}')
