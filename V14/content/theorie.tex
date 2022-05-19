@@ -20,7 +20,7 @@ Sind Eingangs- und Ausgangszählrate bekannt, kann durch Logarithmieren ein Ausd
     \label{eqn:SUMME}
 \end{equation}
 Durch die 12 verschiedenen Projektionen in der Messung und die unbekannte Zusammensetzung des zu messenden Würfels 
-entsteht ein lineares Gleichungssystem, sodass \eqref{SUMME} in Matrixschreibweise dargestellt werden kann:
+entsteht ein lineares Gleichungssystem, sodass \eqref{eqn:SUMME} in Matrixschreibweise dargestellt werden kann:
 \begin{equation}
     A \vec{\mu} = \vec{I} \, ,
     \label{eqn:matrix}
@@ -41,7 +41,7 @@ Insgesamt gibt es 12 Projektionsrichtungen.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{bilder/projektionen.png}
-    \caption{Schematischer Aufbau der verwendeten Projektionen.}
+    \caption{Schematischer Aufbau der verwendeten Projektionen.Die Benennung der kleineren Würfel erfolgt auch nach dieser Abbildung, wobei die Zahl auf dem Würfel aufrecht zu lesen ist}
     \label{fig:Projektionen}
 \end{figure}
 
@@ -87,8 +87,10 @@ Die dafür benötigte Energie muss bei $2 \cdot \SI{511}{\kilo\electronvolt}$ li
 
 \subsection{Gammaspektrum von $\ce{^{137}Cs}$}
 In \autoref{fig:LEIFI_CS_Spektrum} ist das Spektrum von $\ce{^{137}Cs}$ zu sehen.
-Der Photopeak bzw. der Full Energy Peak ist deutlich bei einer Energie von $\SI{662}{\kilo\electronvolt}$ zu erkennen.
-Die Comptonkante befindet sich bei einer Energie von ungefähr $\SI{460}{\kilo\electronvolt}$.
+Der Photopeak bzw. der Full Energy Peak ist deutlich bei einer Energie von $\SI{662}{\kilo\electronvolt}$ zu erkennen. 
+Die Comptonkante befindet sich bei einer Energie von ungefähr $\SI{460}{\kilo\electronvolt}$. Dies 
+entspricht einem Streuwinkel von $\theta = \SI{180}{\degree}$. Der Rückstreupeak, der auch gekennzeichnet ist, 
+entspricht Comptonphotonen, die nach Comptonstreuung mit z.B. der Rückwand der Präparathalterung, in den Szintillationsdetektor kommen.  
 
 \begin{figure}[H]
     \centering
