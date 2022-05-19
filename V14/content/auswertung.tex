@@ -111,15 +111,12 @@
 \subsection{Würfel 4}
 
   \noindent Der Würfel 4 besteht aus 27 kleineren Würfel unterschiedlicher Materialien. Es wird eine Ebene des Würfels aus 9 kleineren Würfeln mit 
-  allen 12 Projektionen ausgemessen. Damit ist das Gleichungssystem überbestimmt, sodass ein Least-Squares Fit durchgeführt wird. Die Gleichung  
-  \begin{equation*}
-    \vec{I} = A \vec{\mu}\, ,
-  \end{equation*}
-  wobei $\vec{I}$ ein Vektor mit den zwölf Einträgen $\vec{I}_i = \ln\left(\frac{R_0}{R_i}\right)$ ist, wird von 
+  allen 12 Projektionen ausgemessen. Damit ist das Gleichungssystem überbestimmt, sodass ein Least-Squares Fit durchgeführt wird. Für die 
+  Absorptionskoeffizienten gilt die Gleichung \eqref{eqn:matrix} und es ergibt sich folgender Lösungsansatz:
   \begin{equation*}
     \vec{\mu} = \left( A^\top \cdot A \right)^{-1} \cdot A^\top \vec{I}
   \end{equation*}
-  gelöst. Die Fehler der $\mu_i$ stehen quadriert auf der Hauptdiagonale der Kovarianzmatrix $V[\vec{\mu}]$, welche sich wie folgt berechnet:
+  Die Fehler der $\mu_i$ stehen quadriert auf der Hauptdiagonale der Kovarianzmatrix $V[\vec{\mu}]$, welche sich wie folgt berechnet:
   \begin{equation*}
     V[\vec{\mu}] = \left( A^\top \cdot A \right)^{-1} \cdot A^\top V[\vec{I}] A \cdot \left( \left(A^\top \cdot A\right)^{-1} \right)^\top
   \end{equation*}
