@@ -188,13 +188,13 @@ for x, n, d in zip(names, numbers, dicke_w3):
     R_w3_ix = unp.uarray([r_w3_ix],[sig_w3_ix])
 
     if d == 3*np.sqrt(2)*a:
-        mu_w3_ix = unp.log(R_1h/R_w3_ix)/ d
+        mu_w3_ix = unp.log(2*R_1h/R_w3_ix)/ d
     
     elif d == 2*np.sqrt(2)*a:
-        mu_w3_ix = unp.log(R_1n/R_w3_ix)/ d
+        mu_w3_ix = unp.log(2*R_1n/R_w3_ix)/ d
 
     elif d == 3*a:
-        mu_w3_ix = unp.log(R_1d/R_w3_ix)/ d
+        mu_w3_ix = unp.log(2*R_1d/R_w3_ix)/ d
 
     N_w3[n] = N_ix
     sigN_w3[n] = sigN_ix 

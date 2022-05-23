@@ -96,27 +96,27 @@
       \toprule
       {Projektion} & \multicolumn{2}{c}{$N$} & \multicolumn{2}{c}{$R \mathbin{/} \left(\si{\per\second}\right)$} & \multicolumn{2}{c}{$\mu \mathbin{/} \left(\si{\per\centi\metre}\right)$} \\
       \midrule
-      $I_5$& 202.0 & 14.2 & 0.34 & 0.02 & 1.229461 & 0.024033 \\
-      $I_7$& 203.0 & 14.2 & 0.34 & 0.02 & 1.307510 & 0.025422 \\
-      $I_8$& 184.0 & 13.6 & 0.31 & 0.02 & 0.897694 & 0.017757 \\
+      $I_5$& 202.0 & 14.2 & 0.34 & 0.02 & 1.460510 & 0.024033 \\
+      $I_7$& 203.0 & 14.2 & 0.34 & 0.02 & 1.552574 & 0.025422 \\
+      $I_8$& 184.0 & 13.6 & 0.31 & 0.02 & 1.061070 & 0.017757 \\
       \bottomrule  
     \end{tabular}
   \end{table}
 
   \noindent Der gemittelte Wert des Absorptionskoeffizienten ergibt sich dann zu:
   \begin{equation*}
-    \mu_{\text{Würfel 3}} = \SI{1.144888(59224)}{\per\centi\meter}
+    \mu_{\text{Würfel 3}} = \SI{1.358052(71111)}{\per\centi\meter}
   \end{equation*}
 
 \subsection{Würfel 4}
 
   \noindent Der Würfel 4 besteht aus 27 kleineren Würfel unterschiedlicher Materialien. Es wird eine Ebene des Würfels aus 9 kleineren Würfeln mit 
-  allen 12 Projektionen ausgemessen. Damit ist das Gleichungssystem überbestimmt, sodass ein Least-Squares Fit durchgeführt wird. Für die 
+  allen 12 Projektionen ausgemessen. Damit ist das Gleichungssystem überbestimmt, sodass ein Kleinste-Quadrate Fit durchgeführt wird. Für die 
   Absorptionskoeffizienten gilt die Gleichung \eqref{eqn:matrix} und es ergibt sich folgender Lösungsansatz:
   \begin{equation*}
     \vec{\mu} = \left( A^\top \cdot A \right)^{-1} \cdot A^\top \vec{I}
   \end{equation*}
-  Die Fehler der $\mu_i$ stehen quadriert auf der Hauptdiagonale der Kovarianzmatrix $V[\vec{\mu}]$, welche sich wie folgt berechnet:
+  Die Fehler der Absorptionskoeffizienten $\mu_i$ stehen quadriert auf der Hauptdiagonale der Kovarianzmatrix $V[\vec{\mu}]$, welche sich wie folgt berechnet:
   \begin{equation*}
     V[\vec{\mu}] = \left( A^\top \cdot A \right)^{-1} \cdot A^\top V[\vec{I}] A \cdot \left( \left(A^\top \cdot A\right)^{-1} \right)^\top
   \end{equation*}
@@ -176,7 +176,7 @@
     % \end{tabular}
   % \end{table}
 
-  \noindent Die mithilfe des Least-Squares-Fittes bestimmten Absorptionskoeffizienten $\vec{\mu}_i$ sind in der \autoref{tab:mu4} zu finden. 
+  \noindent Die mithilfe des Kleinste-Quadrate Fittes bestimmten Absorptionskoeffizienten $\vec{\mu}_i$ sind in der \autoref{tab:mu4} zu finden. 
   Dabei stehen die Absorptionskoeffizienten der Stoffe, die am nächsten an den ermittelten Werte liegen. 
   % Für die Identifizierung werden nur die Ergebnisse 
   % benutzt, bei denen die Anzahl der Ereignisse unter des Photopeaks benutzt werden. Die andere Berechnung steht zum Vergleich noch daneben. 
