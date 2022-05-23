@@ -12,20 +12,20 @@ if os.path.exists("../build") == False:
 
 
 
-x = np.linspace(0, 10, 1000)
-y = x ** np.sin(x)
+t_1, T_1, I_1 = np.genfromtxt('../data/m1.txt', unpack=True)
 
-plt.subplot(1, 2, 1)
-plt.plot(x, y, label='Kurve')
-plt.xlabel(r'$\alpha \:/\: \si{\ohm}$')
-plt.ylabel(r'$y \:/\: \si{\micro\joule}$')
-plt.legend(loc='best')
+T_1 += 273.15 # in kelvin
+I_1 *= 10 #pico ampere
 
-plt.subplot(1, 2, 2)
-plt.plot(x, y, label='Kurve')
-plt.xlabel(r'$\alpha \:/\: \si{\ohm}$')
-plt.ylabel(r'$y \:/\: \si{\micro\joule}$')
-plt.legend(loc='best')
+t_2, T_2, I_2 = np.genfromtxt('../data/m2.txt', unpack=True)
+
+T_2 += 273.15 # in kelvin
+I_2 *= 10 #pico ampere
+
+
+plt.figure()
+plt.plot(T_1, I_1, '.k', label='Messung 1')
+plt.plot(T_2, I_2, '.r', label='Messung 2')
 
 # in matplotlibrc leider (noch) nicht möglich
 plt.tight_layout(pad=0, h_pad=1.08, w_pad=1.08)
