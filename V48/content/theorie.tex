@@ -167,11 +167,11 @@
         Der Ausdruck für die Relaxationszeit kann umgeformt werden, wenn eingesetzt wird, dass die zeitliche Änderung der Polarisation dem Strom entspricht \eqref{eqn:polansa1} 
         und die Polarisation $P$ als $\int \, \text{d}P$ geschrieben werden kann. 
         \begin{equation*}
-            \tau(T) = \frac{\int \frac{\text{d}P}{\text{d}t} \text{d}T}{I(T) \cdot b} = \frac{\int_0^\infty I(T') \, \text{d}T'}{I(T) \cdot b}
+            \tau(T) = \frac{\int \frac{\text{d}P}{\text{d}t} \text{d}T}{I(T) \cdot b} = \frac{\int_T^\infty I(T') \, \text{d}T'}{I(T) \cdot b}
         \end{equation*}
         Nun wird für die Relaxationszeit eingesetzt und die Gleichung zur Aktivierungsenergie $W$ umgestellt, sodass sich
         \begin{equation}
-            W = k_\text{B} T \cdot \ln\left( \frac{\int_0^\infty I(T') \, \text{d}T'}{b \tau_0 \cdot I(T)}\right)
+            W = k_\text{B} T \cdot \ln\left( \frac{\int_T^\infty I(T') \, \text{d}T'}{b \tau_0 \cdot I(T)}\right)
         \end{equation}
         ergibt. Die obere Grenze wird auf $T^*$ gesetzt, wobei $I(T^*) \approx 0$ ist. 
 
