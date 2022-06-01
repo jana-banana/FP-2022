@@ -375,7 +375,7 @@ print('\n')
 plt.plot(fit_2_durch_T_1, line( fit_2_durch_T_1, popt[0], popt[1] ), label = 'Ausgleichsgerade')
 
 plt.legend()
-plt.savefig('../build_j/log(?)_2durchT_1.pdf')
+plt.savefig('../build_j/log(int)_2durchT_1.pdf')
 plt.clf()
 
 #aktivierungsenergie berechnen
@@ -427,7 +427,7 @@ print('\n')
 plt.plot(fit_2_durch_T_2, line( fit_2_durch_T_2, popt[0], popt[1] ), label = 'Ausgleichsgerade')
 
 plt.legend()
-plt.savefig('../build_j/log(?)_2durchT_2.pdf')
+plt.savefig('../build_j/log(int)_2durchT_2.pdf')
 plt.clf()
 
 #aktivierungsenergie berechnen

@@ -8,17 +8,17 @@ from scipy import integrate
 
 import os
 
-if os.path.exists("../build") == False:
-  os.mkdir("../build")
+if os.path.exists("build") == False:
+  os.mkdir("build")
 
 
 #Werte auslesen
-t_1, T_1, I_1 = np.genfromtxt('../data/m1.txt', unpack=True)
+t_1, T_1, I_1 = np.genfromtxt('data/m1.txt', unpack=True)
 
 T_1 += 273.15 # in kelvin
 I_1 *= 10 #pico ampere
 
-t_2, T_2, I_2 = np.genfromtxt('../data/m2.txt', unpack=True)
+t_2, T_2, I_2 = np.genfromtxt('data/m2.txt', unpack=True)
 
 T_2 += 273.15 # in kelvin
 I_2 *= 10 #pico ampere
@@ -38,7 +38,7 @@ plt.ylabel('I / pA')
 #plt.tight_layout(pad=0, h_pad=1.08, w_pad=1.08)
 plt.tight_layout()
 plt.legend()
-plt.savefig('../build/plot.pdf')
+plt.savefig('build/plot.pdf')
 plt.clf()
 
 # Untergrund rausnehmen mit e-Fkt mit Messwerten vom Anstieg des zweiten Maximums
@@ -78,7 +78,7 @@ plt.plot(T_1, I_1, '.k', label='Messung 1')
 plt.legend()
 plt.grid()
 
-plt.savefig('../build/untergrund_1.pdf')
+plt.savefig('build/untergrund_1.pdf')
 plt.clf()
 
 
@@ -116,7 +116,7 @@ plt.plot(T_2, I_2, '.k', label='Messung 2')
 plt.legend()
 plt.grid()
 
-plt.savefig('../build/untergrund_2.pdf')
+plt.savefig('build/untergrund_2.pdf')
 plt.clf()
 
 unter_a_2 = popt[0]
@@ -136,7 +136,7 @@ plt.legend()
 plt.xlabel('t / min')
 plt.ylabel('T / K')
 
-plt.savefig('../build/zeit_temp.pdf')
+plt.savefig('build/zeit_temp.pdf')
 plt.clf()
 
 # Ausgleichsrechnung Messung 1
@@ -157,7 +157,7 @@ plt.legend()
 plt.xlabel('t / min')
 plt.ylabel('T / K')
 
-plt.savefig('../build/zeit_temp_fit_1.pdf')
+plt.savefig('build/zeit_temp_fit_1.pdf')
 plt.clf()
 
 # Ausgleichsrechnung Messung 2
@@ -176,7 +176,7 @@ plt.legend()
 plt.xlabel('t / min')
 plt.ylabel('T / K')
 
-plt.savefig('../build/zeit_temp_fit_2.pdf')
+plt.savefig('build/zeit_temp_fit_2.pdf')
 plt.clf()
 
 # Logarithmus von I und Kehrwert von T plotten
@@ -197,7 +197,7 @@ plt.xlabel('T / K')
 plt.ylabel('I / pA')
 plt.grid()
 plt.legend()
-plt.savefig('../build/korrigierte_werte_1.pdf')
+plt.savefig('build/korrigierte_werte_1.pdf')
 plt.clf()
 
 # print('werte für log: ', np.log(log_I_1) )
@@ -239,7 +239,7 @@ plt.plot(fit_1_durch_T_1, line( fit_1_durch_T_1, popt[0], popt[1] ), label = 'Au
 # ok geht klar, idk soll die drei punkte wieder rein?
 
 plt.legend()
-plt.savefig('../build/log(I)_1durchT_1.pdf')
+plt.savefig('build/log(I)_1durchT_1.pdf')
 plt.clf()
 
 #Messung 2
@@ -258,13 +258,13 @@ plt.xlabel('T / K')
 plt.ylabel('I / pA')
 plt.grid()
 plt.legend()
-plt.savefig('../build/korrigierte_werte_2.pdf')
+plt.savefig('build/korrigierte_werte_2.pdf')
 plt.clf()
 
 # plt.plot(log_T_2, log_I_2, '+k')
 plt.plot(1/log_T_2, np.log(log_I_2), '+k')
 plt.grid()
-plt.savefig('../build/werte_log_2.pdf')
+plt.savefig('build/werte_log_2.pdf')
 plt.clf()
 
 
@@ -294,7 +294,7 @@ print("y fehler =",errors[1])
 plt.plot(fit_1_durch_T_2, line( fit_1_durch_T_2, popt[0], popt[1] ), label = 'Ausgleichsgerade')
 
 plt.legend()
-plt.savefig('../build/log(I)_1durchT_2.pdf')
+plt.savefig('build/log(I)_1durchT_2.pdf')
 plt.clf()
 
 
@@ -316,7 +316,7 @@ plt.xlabel('T / K')
 plt.ylabel('I / pA')
 plt.grid()
 plt.legend()
-plt.savefig('../build/korrigierte_werte_1.pdf')
+plt.savefig('build/korrigierte_werte_1.pdf')
 plt.clf()
 
 
@@ -329,7 +329,7 @@ plt.xlabel('T / K')
 plt.ylabel('I / pA')
 plt.grid()
 plt.legend()
-plt.savefig('../build/korrigierte_werte_2.pdf')
+plt.savefig('build/korrigierte_werte_2.pdf')
 plt.clf()
 
 #Integral zu Messung 1
@@ -338,7 +338,7 @@ integral_1 = integrate.cumtrapz(I_1_korr, T_1_korr)
 plt.plot(T_1_korr[1:], integral_1,'+k', label = 'Integral 1')
 plt.legend()
 plt.grid()
-plt.savefig('../build/integral_1.pdf')
+plt.savefig('build/integral_1.pdf')
 plt.clf()
 
 integral_1 /= (I_1_korr[1:]*heizrate_1)
@@ -347,5 +347,5 @@ print(integral_1)
 plt.plot(T_1_korr[1:], integral_1, '+k', label = 'Ln(integral/(I*b))')
 plt.legend()
 plt.grid
-plt.savefig('../build/integral_ln_1.pdf')
+plt.savefig('build/integral_ln_1.pdf')
 plt.clf()
