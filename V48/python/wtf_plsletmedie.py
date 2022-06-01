@@ -263,8 +263,9 @@ print(f'W_11 = {W_11} Joule = {W_11_ev} eV')
 
 #Relaxationszeit
 T_max_1 = 38.3 + 273.15 #für I_max_1 = 2.35 * 10^-11 A
-tau_11 = (k*(T_max_1**2))/(b*W_11)
-print('Realaxationszeit tau_11 = ', tau_11)
+tau_max11 = (k*(T_max_1**2))/(b1*W_11)
+tau_11 = tau_max11 * unp.exp(- W_11/(k*T_max_1))
+print(f'Realaxationszeit tau_11 = {tau_11} min')
 
 #Messung 2
 
@@ -327,8 +328,11 @@ W_12_ev = - k_ev*b
 print(f'W_12 = {W_12} Joule = {W_11_ev} eV \n')
 
 #Relaxationszeit
-tau_12 = (k*(T_max_1**2))/(b*W_12)
-print('Realaxationszeit tau_12 = ', tau_12)
+T_max_2 = 42.5 + 273.15 #für I_max_2 = 3.5 * 10^-11 A
+tau_max12 = (k*(T_max_2**2))/(b2*W_12)
+tau_12 = tau_max12 * unp.exp(- W_12/(k*T_max_2))
+print(f'Realaxationszeit tau_12 = {tau_12} min')
+
 
 ##ok cooler fit, W muss noch errechnet werden
 
@@ -385,9 +389,9 @@ W_21_ev = k_ev*b
 print(f'W_21 = {W_21} Joule = {W_21_ev} eV')
 
 #Relaxationszeit
-T_max_2 = 42.5 + 273.15 #für I_max_2 = 3.5 * 10^-11 A
-tau_21 = (k*(T_max_1**2))/(b*W_21)
-print('Relaxationszeit tau_21 = ', tau_21)
+tau_max21 = (k*(T_max_1**2))/(b1*W_21)
+tau_21 = tau_max21 * unp.exp(- W_21/(k*T_max_1))
+print(f'Realaxationszeit tau_21 = {tau_21} min')
 
 
 #Messung 2
@@ -438,5 +442,6 @@ print(f'W_22 = {W_22} Joule = {W_22_ev} eV')
 
 
 #Relaxationszeit
-tau_22 = (k*(T_max_1**2))/(b*W_22)
-print('Relaxationszeit tau_22 = ', tau_22)
+tau_max22 = (k*(T_max_2**2))/(b2*W_22)
+tau_22 = tau_max22 * unp.exp(- W_22/(k*T_max_2))
+print(f'Realaxationszeit tau_22 = {tau_22} min')
