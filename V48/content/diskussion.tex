@@ -1,2 +1,47 @@
 \section{Diskussion}
 \label{sec:Diskussion}
+
+Bei der Versuchsdurchführung gab es kleinere Probleme, die die Messwerte beeinflusst haben können.
+Zum einen hat der Plattenkondensator sich nicht voll aufgeladen. Keine AHnung wie man das sagt.
+Zwar wurde eine Spannung von $\SI{900}{\volt}$ eingestellt, diese wurde aber vom Messgerät nicht so angezeigt. ka.
+Auch das Ablesen des Depolarisationsstromes gestaltete sich schwierig, da das Picoamperemeter von allen Bewegungen beeinflusst wurde.
+Es konnte teilweise nur schwer ein Messwert abgelesen werden.
+Für kurze Zeit wurde auch nur negativer Strom gemessen.
+Sonst lief die Durchführung gut.
+Beim Kühlen musste etwas Stickstoff nachgekippt werden, da die Temperatur ab $\SI{-40}{\celsius}$ nicht mehr abnahm.
+
+\noindent
+Die ermittelten Werte sind in \autoref{tab:ergebnisse} einmal zusammengefasst.
+Für die Heizrate wurde für $b_1 = (1.46\pm 0.0037) \si{\kelvin\per\minute}$ und für $b_2 = (1.87 \pm 0.0049) \si{\kelvin\per\minute}$.
+Der Theoriewert der Aktivierungsenergie liegt bei $\SI{0.66}{\electronvolt}$, der Wert für die Relaxationszeit bei $\SI{e-18}{\second}$ bis $\SI{e-22}{\second}$ .
+Somit liegt eine Abweichung für die Aktivierungsenergie von 1\% (Methode 1) bzw. von ungefähr 20\% (Methode 2) vor.
+Bei der Relaxationszeit beträgt die Abweichung ungefähr $10^{-16}$???
+
+\noindent
+Ein möglicher Grund für die größere Abweichung der Aktivierungsenergie bei der zweiten Methode wäre die Rechnung.
+Der Logarithmus wurde angewendet, sowie eine numerische Integration und Kehrwerte wurden gebildet.
+Dies führt zu einer ungenaueren Rechnung.
+Die Relaxationszeit hat hingegen bei beiden Methoden Abweichungen in derselben Größenordnung.
+
+\begin{table}[h]
+    \centering
+    \caption{Die ermittelten Werte für die Aktivierungsenergie $W$, sowie die Relaxationszeit $\tau$ sortiert nach Methode 1 und 2.}
+    \label{tab:ergebnisse}
+    \begin{tabular}{c c c c c}
+      \toprule
+      &\multicolumn{2}{c}{Methode 1} &\multicolumn{2}{c}{Methode 2}\\
+      \cmidrule(lr){2-3}\cmidrule(lr){4-5}
+                   &$W \, / \, \si{\electronvolt}$  &$\tau \, / \, \si{\minute}$& $W \, / \, \si{\electronvolt}$    & $\tau \, / \, \si{\minute}$   \\
+      \midrule
+      Messung 1    & $0,657 \pm 0,013$              & $-0,00167 \pm 0,00007$    & $0,822 \pm 0,012$                 & $0,001066 \pm 0,000030$       \\   
+      Messung 2    & $0,657 \pm 0,013$              & $-0,0034 \pm 0,0006 $     & $0,885 \pm 0,011$                 & $0,000920 \pm 0,000024$       \\   
+      \bottomrule
+    \end{tabular}
+  \end{table}
+
+%tau in seconds:
+%tau_11 = 0.100188
+%tau_12 = 0.204012
+%tau_21 = 0.063972
+%tau_22 = 0.055188
+%also so ungefähr bei 10^-2

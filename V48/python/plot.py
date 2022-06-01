@@ -9,7 +9,7 @@ from scipy import integrate
 import os
 
 if os.path.exists("../build") == False:
-   os.mkdir("../build")
+  os.mkdir("../build")
 
 
 #Werte auslesen
@@ -46,8 +46,8 @@ plt.clf()
 
 #Untergrund Fit für Messung 1
 
-unter_I_1 = I_1[45:66]
-unter_T_1 = T_1[45:66]
+unter_I_1 = I_1[45:69]
+unter_T_1 = T_1[45:69]
 
 #print(unter_I_1) 
 #print(unter_T_1)
@@ -149,6 +149,8 @@ print("b fehler =",errors[0])
 print("y =", popt[1])
 print("y fehler =",errors[1])
 
+heizrate_1 = popt[0]
+
 plt.plot(t_1, T_1, '.k', label='Messung 1')
 plt.plot(t_1, line( t_1, popt[0], popt[1] ), label = 'Ausgleichsgerade')
 plt.legend()
@@ -189,7 +191,7 @@ log_I_1 -= untergrund(log_T_1, unter_a_1, unter_b_1)
 T_1_korr = log_T_1
 I_1_korr = log_I_1
 
-plt.plot(log_T_1, log_I_1, '+k', label = 'korrigierte Messwerte')
+plt.plot(T_1_korr, I_1_korr, '+k', label = 'korrigierte Messwerte')
 #plt.plot(1/log_T_1, np.log(log_I_1), '+k')
 plt.xlabel('T / K')
 plt.ylabel('I / pA')
@@ -204,7 +206,7 @@ plt.clf()
 #log_I_1 -= untergrund(log_T_1, unter_a, unter_b)
 #print(log_I_1)
 
-plt.plot((1/log_T_1), np.log(log_I_1), '.k', label='Messung 1')
+#plt.plot((1/log_T_1), np.log(log_I_1), '.k', label='Messung 1')
 plt.xlabel('1/T / K^-1')
 plt.ylabel('log(I) / pA')
 plt.grid()
@@ -213,13 +215,13 @@ print(1/log_T_1)
 # fit_1_durch_T_1 = 1/log_T_1[:26]
 # fit_log_I_1 = log_I_1[:26]
 
-fit_1_durch_T_1 = 1/np.append(log_T_1[1:6], log_T_1[9:26])
-fit_log_I_1 = np.log(np.append(log_I_1[1:6], log_I_1[9:26]))
+fit_1_durch_T_1 = 1/log_T_1[9:26]
+fit_log_I_1 = np.log(log_I_1[9:26])
 
 #fit_1_durch_T_1 = 1/durch_T_1
 
 
-plt.plot(fit_1_durch_T_1, fit_log_I_1, '+k', label='verwendete Werte')
+plt.plot(fit_1_durch_T_1, fit_log_I_1, '+k', label=' Werte')
 
 popt, pcov = curve_fit(line, fit_1_durch_T_1, fit_log_I_1)
 errors = np.sqrt(np.diag(pcov))
@@ -250,7 +252,7 @@ log_I_2 -= untergrund(log_T_2, unter_a_2, unter_b_2)
 T_2_korr = log_T_2
 I_2_korr = log_I_2
 
-plt.plot(log_T_2, log_I_2, '+k', label = 'korrigierte Messwerte')
+plt.plot(T_2_korr, I_2_korr, '+k', label = 'korrigierte Messwerte')
 #plt.plot(1/log_T_2, np.log(log_I_2), '+k')
 plt.xlabel('T / K')
 plt.ylabel('I / pA')
@@ -266,17 +268,19 @@ plt.savefig('../build/werte_log_2.pdf')
 plt.clf()
 
 
-plt.plot((1/log_T_2), np.log(log_I_2), '.k', label='Messung 2')
+#plt.plot((1/log_T_2), np.log(log_I_2), '.k', label='Messung 2')
 plt.xlabel('1/T / K^-1')
 plt.ylabel('log(I) / pA')
+
+
 plt.grid()
 
 
-fit_1_durch_T_2 = 1/log_T_2[5:23]
-fit_log_I_2 = np.log(log_I_2[5:23])
+fit_1_durch_T_2 = 1/log_T_2[11:23]
+fit_log_I_2 = np.log(log_I_2[11:23])
 
 
-plt.plot(fit_1_durch_T_2, fit_log_I_2, '+k', label='verwendete Werte')
+plt.plot(fit_1_durch_T_2, fit_log_I_2, '+k', label=' Werte')
 
 popt, pcov = curve_fit(line, fit_1_durch_T_2, fit_log_I_2)
 errors = np.sqrt(np.diag(pcov))
@@ -291,6 +295,7 @@ plt.plot(fit_1_durch_T_2, line( fit_1_durch_T_2, popt[0], popt[1] ), label = 'Au
 
 plt.legend()
 plt.savefig('../build/log(I)_1durchT_2.pdf')
+plt.clf()
 
 
 # Methode 2
@@ -300,10 +305,47 @@ plt.savefig('../build/log(I)_1durchT_2.pdf')
 
 #mit korrigierten Werten rechnen? i think yes
 #np.trapz(I_1_korr, T_2_korr)
+
+
+T_1_korr = log_T_1[1:50]
+I_1_korr = log_I_1[1:50]
+
+plt.plot(T_1_korr, I_1_korr, '+k', label = 'korrigierte Messwerte')
+#plt.plot(1/log_T_1, np.log(log_I_1), '+k')
+plt.xlabel('T / K')
+plt.ylabel('I / pA')
+plt.grid()
+plt.legend()
+plt.savefig('../build/korrigierte_werte_1.pdf')
+plt.clf()
+
+
+T_2_korr = log_T_2[1:44]
+I_2_korr = log_I_2[1:44]
+
+plt.plot(T_2_korr, I_2_korr, '+k', label = 'korrigierte Messwerte')
+#plt.plot(1/log_T_2, np.log(log_I_2), '+k')
+plt.xlabel('T / K')
+plt.ylabel('I / pA')
+plt.grid()
+plt.legend()
+plt.savefig('../build/korrigierte_werte_2.pdf')
+plt.clf()
+
+#Integral zu Messung 1
+
 integral_1 = integrate.cumtrapz(I_1_korr, T_1_korr)
 plt.plot(T_1_korr[1:], integral_1,'+k', label = 'Integral 1')
 plt.legend()
 plt.grid()
 plt.savefig('../build/integral_1.pdf')
 plt.clf()
-#ey gar keine ahnung ja
+
+integral_1 /= (I_1_korr[1:]*heizrate_1)
+print(integral_1)
+
+plt.plot(T_1_korr[1:], integral_1, '+k', label = 'Ln(integral/(I*b))')
+plt.legend()
+plt.grid
+plt.savefig('../build/integral_ln_1.pdf')
+plt.clf()
