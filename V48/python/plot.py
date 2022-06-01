@@ -13,12 +13,12 @@ if os.path.exists("../build") == False:
 
 
 #Werte auslesen
-t_1, T_1, I_1 = np.genfromtxt('data/m1.txt', unpack=True)
+t_1, T_1, I_1 = np.genfromtxt('../data/m1.txt', unpack=True)
 
 T_1 += 273.15 # in kelvin
 I_1 *= 10 #pico ampere
 
-t_2, T_2, I_2 = np.genfromtxt('data/m2.txt', unpack=True)
+t_2, T_2, I_2 = np.genfromtxt('../data/m2.txt', unpack=True)
 
 T_2 += 273.15 # in kelvin
 I_2 *= 10 #pico ampere
