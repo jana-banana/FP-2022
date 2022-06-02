@@ -203,7 +203,7 @@ log_I_1 -= untergrund(log_T_1, unter_a_1, unter_b_1)
 T_1_korr = log_T_1[0:50] #hier kann man bestimmt noch was abschneiden an werten, die man betrachtet
 I_1_korr = log_I_1[0:50]
 
-plt.plot(T_1_korr, I_1_korr, '+k', label = 'korrigierte Messwerte')
+plt.plot(T_1_korr, I_1_korr, '+k', label = 'korrigierte Messung 2')
 #plt.plot(1/log_T_1, np.log(log_I_1), '+k')
 plt.xlabel('T / K')
 plt.ylabel('I / pA')
@@ -218,7 +218,7 @@ plt.clf()
 #log_I_1 -= untergrund(log_T_1, unter_a, unter_b)
 #print(log_I_1)
 
-plt.plot((1/T_1_korr), np.log(I_1_korr), '.k', label='Messung 1')
+#plt.plot((1/T_1_korr), np.log(I_1_korr), '.k', label='Messung 1')
 plt.xlabel(r'$\frac{1}{T} \, / \, \frac{1}{k}$') #\text{K}}$')
 plt.ylabel(r'$\ln(I) \, / \, \ln(pA)$') #\text{pA})$')
 plt.grid()
@@ -233,7 +233,7 @@ fit_log_I_1 = np.log(I_1_korr[9:26])
 #fit_1_durch_T_1 = 1/durch_T_1
 
 
-plt.plot(fit_1_durch_T_1, fit_log_I_1, '+k', label='verwendete Werte')
+plt.plot(fit_1_durch_T_1, fit_log_I_1, '+k', label='Werte')
 
 popt, pcov = curve_fit(line, fit_1_durch_T_1, fit_log_I_1)
 errors = np.sqrt(np.diag(pcov))
@@ -277,7 +277,7 @@ log_I_2 -= untergrund(log_T_2, unter_a_2, unter_b_2)
 T_2_korr = log_T_2[0:50]
 I_2_korr = log_I_2[0:50]
 
-plt.plot(T_2_korr, I_2_korr, '+k', label = 'korrigierte Messwerte')
+plt.plot(T_2_korr, I_2_korr, '+k', label = 'korrigierte Messung 2')
 #plt.plot(1/log_T_2, np.log(log_I_2), '+k')
 plt.xlabel('T / K')
 plt.ylabel('I / pA')
@@ -293,7 +293,7 @@ plt.savefig('build/werte_log_2.pdf')
 plt.clf()
 
 
-plt.plot((1/T_2_korr), np.log(I_2_korr), '.k', label='Messung 2')
+#plt.plot((1/T_2_korr), np.log(I_2_korr), '.k', label='Messung 2')
 plt.xlabel(r'$\frac{1}{T} \, / \, \frac{1}{K}$')#\text{K}}$')
 plt.ylabel(r'$\ln(I) \, / \, \ln(pA)$')#\text{pA})$')
 plt.grid()
@@ -303,7 +303,7 @@ fit_1_durch_T_2 = 1/T_2_korr[5:23]
 fit_log_I_2 = np.log(I_2_korr[5:23])
 
 
-plt.plot(fit_1_durch_T_2, fit_log_I_2, '+k', label='verwendete Werte')
+plt.plot(fit_1_durch_T_2, fit_log_I_2, '+k', label='Werte')
 
 popt, pcov = curve_fit(line, fit_1_durch_T_2, fit_log_I_2)
 errors = np.sqrt(np.diag(pcov))
@@ -359,9 +359,9 @@ print(ln_bumms_1)
 # plt.plot((1/T_1_korr), np.log(I_2_korr), '.k', label='Messung 2')
 plt.figure()
 plt.xlabel('1/T / K^-1')
-plt.ylabel('log() / pA')
+plt.ylabel('log(x) / pA')
 plt.grid()
-plt.plot(fit_2_durch_T_1, ln_bumms_1, '+k', label='verwendete Werte')
+plt.plot(fit_2_durch_T_1, ln_bumms_1, '+k', label='Integrierte Messwert')
 
 popt, pcov = curve_fit(line, fit_2_durch_T_1, ln_bumms_1)
 errors = np.sqrt(np.diag(pcov))
@@ -411,9 +411,9 @@ print(ln_bumms_2)
 # plt.plot((1/T_1_korr), np.log(I_2_korr), '.k', label='Messung 2')
 plt.figure()
 plt.xlabel('1/T / K^-1')
-plt.ylabel('log() / pA')
+plt.ylabel('log(x) / pA')
 plt.grid()
-plt.plot(fit_2_durch_T_2, ln_bumms_2, '+k', label='verwendete Werte')
+plt.plot(fit_2_durch_T_2, ln_bumms_2, '+k', label='integrierte Messwete')
 
 popt, pcov = curve_fit(line, fit_2_durch_T_2, ln_bumms_2)
 errors = np.sqrt(np.diag(pcov))
