@@ -29,9 +29,10 @@
         $\SI{500}{\celsius}$ kann der Dipol nur unter Leerstellendiffusion seine Richtung ändern. Die dafür benötigte Energie $W$ ist die materialspezifische Aktivierungsenergie.  
         Durch die Boltzmann-Statistik ist der Anteil der Dipole beschrieben, die diese Energie $W$ durch thermische Bewegung aufbringen können, also es gilt $\exp\left(- \frac{W}{k_\text{B}T}\right)$.
         Die Zeit, in welcher sich der Dipol seinem Ausgangszustand nähert, wird Relaxationszeit genannt. Es gilt der Zusammenhang
-        \begin{equation*}
+        \begin{equation}
             \tau(T) = \tau_0 \cdot \exp \left(\frac{W}{k_\text{B}T}\right)\, ,
-        \end{equation*}
+            \label{eqn:Relaxationszeit}
+        \end{equation}
         wobei $\tau_0 = \tau(\infty)$ die charakteristische Relaxationszeit eines spezifischen Stoffes ist. 
 
 
@@ -146,9 +147,10 @@
             \label{eqn:geradengleichung}
         \end{equation}
         Die Aktivierungsenergie $W$ errechnet sich also zu 
-        \begin{equation*}
+        \begin{equation}
             W = m \cdot k_\text{B} \, ,
-        \end{equation*}
+            \label{eqn:Aktivierungsenergie}
+        \end{equation}
         wobei $m$ die Steigung der Gerade ist. \\
 
         \noindent Bei dem zweiten Verfahren wird der gesamte Kurvenverlauf genutzt. Für die Gesamtpolarisation gilt 
@@ -172,6 +174,7 @@
         Nun wird für die Relaxationszeit eingesetzt und die Gleichung zur Aktivierungsenergie $W$ umgestellt, sodass sich
         \begin{equation}
             W = k_\text{B} T \cdot \ln\left( \frac{\int_T^\infty I(T') \, \text{d}T'}{b \tau_0 \cdot I(T)}\right)
+            \label{eqn:fur_Integral}
         \end{equation}
         ergibt. Die obere Grenze wird auf $T^*$ gesetzt, wobei $I(T^*) \approx 0$ ist. 
 
