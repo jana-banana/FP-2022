@@ -325,7 +325,7 @@ plt.clf()
 b = ufloat(popt[0], errors[0])
 W_12 = - k*b 
 W_12_ev = - k_ev*b
-print(f'W_12 = {W_12} Joule = {W_11_ev} eV \n')
+print(f'W_12 = {W_12} Joule = {W_12_ev} eV \n')
 
 #Relaxationszeit
 T_max_2 = 42.5 + 273.15 #für I_max_2 = 3.5 * 10^-11 A

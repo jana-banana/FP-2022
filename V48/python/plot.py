@@ -219,7 +219,8 @@ plt.clf()
 #print(log_I_1)
 
 #plt.plot((1/T_1_korr), np.log(I_1_korr), '.k', label='Messung 1')
-plt.xlabel(r'$\frac{1}{T} \, / \, \frac{1}{k}$') #\text{K}}$')
+plt.xlabel('1/T / (1/K)')
+# plt.xlabel(r'$\frac{1}{T} \, / \, \frac{1}{k}$') #\text{K}}$')
 plt.ylabel(r'$\ln(I) \, / \, \ln(pA)$') #\text{pA})$')
 plt.grid()
 
@@ -294,7 +295,8 @@ plt.clf()
 
 
 #plt.plot((1/T_2_korr), np.log(I_2_korr), '.k', label='Messung 2')
-plt.xlabel(r'$\frac{1}{T} \, / \, \frac{1}{K}$')#\text{K}}$')
+plt.xlabel('1/T / (1/K)')
+# plt.xlabel(r'$\frac{1}{T} \, / \, \frac{1}{K}$')#\text{K}}$')
 plt.ylabel(r'$\ln(I) \, / \, \ln(pA)$')#\text{pA})$')
 plt.grid()
 
@@ -358,8 +360,8 @@ fit_2_durch_T_1 = 1/T_1_korr[10:31]
 print(ln_bumms_1)
 # plt.plot((1/T_1_korr), np.log(I_2_korr), '.k', label='Messung 2')
 plt.figure()
-plt.xlabel('1/T / K^-1')
-plt.ylabel('log(x) / pA')
+plt.xlabel('1/T / (1/K)')
+plt.ylabel('log(x)')
 plt.grid()
 plt.plot(fit_2_durch_T_1, ln_bumms_1, '+k', label='Integrierte Messwert')
 
@@ -411,7 +413,7 @@ print(ln_bumms_2)
 # plt.plot((1/T_1_korr), np.log(I_2_korr), '.k', label='Messung 2')
 plt.figure()
 plt.xlabel('1/T / K^-1')
-plt.ylabel('log(x) / pA')
+plt.ylabel('log(x)')
 plt.grid()
 plt.plot(fit_2_durch_T_2, ln_bumms_2, '+k', label='integrierte Messwete')
 

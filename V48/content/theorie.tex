@@ -139,11 +139,12 @@
         \end{equation*}
         Damit lässt sich der Strom wie folgt schreiben
         \begin{equation*}
-            I(T) \approx \frac{p^2E}{3 k_\text{B} T} \frac{N_0}{ \tau_0} \cdot  \exp\left(- \frac{W}{k_\text{B} T}\right) \,.
+            I(T) \approx A\frac{p^2E}{3 k_\text{B} T} \frac{N_0}{ \tau_0} \cdot  \exp\left(- \frac{W}{k_\text{B} T}\right) \,,
         \end{equation*}
+        wobei $A$ die Fläche ist, durch die der Strom fließt. 
         Durch die Anwendung des natürlichen Logarithmus ergibt sich eine Geradengleichung für $\ln\left(I(T)\right)$ gegen $\frac{1}{T}$:
         \begin{equation}
-            \ln\left(I(T)\right) = \underbrace{\left(\frac{p^2E}{3 k_\text{B} T} \frac{N_0}{\tau_0}\right)}_{\text{const.}} - \underbrace{\frac{W}{k_\text{B}}}_{\text{Steigung}} \frac{1}{T}
+            \ln\left(I(T)\right) = \underbrace{\ln\left(A \frac{p^2E}{3 k_\text{B} T} \frac{N_0}{\tau_0}\right)}_{\text{const.}} - \underbrace{\frac{W}{k_\text{B}}}_{\text{Steigung}} \frac{1}{T}
             \label{eqn:geradengleichung}
         \end{equation}
         Die Aktivierungsenergie $W$ errechnet sich also zu 
@@ -191,8 +192,9 @@
         \begin{equation}
             \tau_{\text{max}} (T_{\text{max}}) = \frac{k_\text{B} T^2_{\text{max}}}{b W}\, ,
         \end{equation}
-        woraus die charakteristische Relaxationszeit $\tau_0$ berechnent werden kann, wenn $\tau_{\text{max}} (T_{\text{max}})$ und $T_{\text{max}}$ in Gleichung \eqref{eqn:relaxationszeit} eingesetzt wird.
+        woraus die charakteristische Relaxationszeit $\tau_0$ berechnent werden kann, wenn $\tau_{\text{max}} (T_{\text{max}})$ und $T_{\text{max}}$ in Gleichung \eqref{eqn:Relaxationszeit} eingesetzt wird.
         Dann ergibt sich für die charakteristische Relaxationszeit der folgende Ausdruck:
         \begin{equation}
             \tau_0 = \tau_{\text{max}} (T_{\text{max}}) \exp \left(- \frac{W}{k_{\text{B}} \cdot T_\text{max}}\right) = \frac{k_\text{B} T^2_{\text{max}}}{b W} \cdot\exp \left(- \frac{W}{k_{\text{B}} \cdot T_\text{max}}\right)
+            \label{eqn:auswertungrelax}
         \end{equation}
