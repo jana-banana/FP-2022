@@ -219,8 +219,8 @@ plt.clf()
 #print(log_I_1)
 
 plt.plot((1/T_1_korr), np.log(I_1_korr), '.k', label='Messung 1')
-plt.xlabel(r'$\frac{1}{T} \, \mathbin{/} \, \si{\per\kelvin}$')
-plt.ylabel(r'$\ln(I) \, \mathbin{/} \, \ln(\si{\pico\ampere})$')
+plt.xlabel(r'$\frac{1}{T} \, / \, \frac{1}{k}$') #\text{K}}$')
+plt.ylabel(r'$\ln(I) \, / \, \ln(pA)$') #\text{pA})$')
 plt.grid()
 
 # print(1/log_T_1)
@@ -294,8 +294,8 @@ plt.clf()
 
 
 plt.plot((1/T_2_korr), np.log(I_2_korr), '.k', label='Messung 2')
-plt.xlabel(r'$\frac{1}{T} \, \mathbin{/} \, \si{\per\kelvin}$')
-plt.ylabel(r'$\ln(I) \, \mathbin{/} \, \ln(\si{\pico\ampere})$')
+plt.xlabel(r'$\frac{1}{T} \, / \, \frac{1}{K}$')#\text{K}}$')
+plt.ylabel(r'$\ln(I) \, / \, \ln(pA)$')#\text{pA})$')
 plt.grid()
 
 
