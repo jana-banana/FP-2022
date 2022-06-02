@@ -29,9 +29,10 @@
         $\SI{500}{\celsius}$ kann der Dipol nur unter Leerstellendiffusion seine Richtung ändern. Die dafür benötigte Energie $W$ ist die materialspezifische Aktivierungsenergie.  
         Durch die Boltzmann-Statistik ist der Anteil der Dipole beschrieben, die diese Energie $W$ durch thermische Bewegung aufbringen können, also es gilt $\exp\left(- \frac{W}{k_\text{B}T}\right)$.
         Die Zeit, in welcher sich der Dipol seinem Ausgangszustand nähert, wird Relaxationszeit genannt. Es gilt der Zusammenhang
-        \begin{equation*}
+        \begin{equation}
             \tau(T) = \tau_0 \cdot \exp \left(\frac{W}{k_\text{B}T}\right)\, ,
-        \end{equation*}
+            \label{eqn:relaxationszeit}
+        \end{equation}
         wobei $\tau_0 = \tau(\infty)$ die charakteristische Relaxationszeit eines spezifischen Stoffes ist. 
 
 
@@ -188,4 +189,8 @@
         \begin{equation}
             \tau_{\text{max}} (T_{\text{max}}) = \frac{k_\text{B} T^2_{\text{max}}}{b W}\, ,
         \end{equation}
-        woraus die charakteristische Relaxationszeit $\tau_0$ berechnent werden kann, wenn $\tau_{\text{max}} (T_{\text{max}})$ und $T_{\text{max}}$ in Gleichung \eqref{eqn:relaxa} eingesetzt wird.
+        woraus die charakteristische Relaxationszeit $\tau_0$ berechnent werden kann, wenn $\tau_{\text{max}} (T_{\text{max}})$ und $T_{\text{max}}$ in Gleichung \eqref{eqn:relaxationszeit} eingesetzt wird.
+        Dann ergibt sich für die charakteristische Relaxationszeit der folgende Ausdruck:
+        \begin{equation}
+            \tau_0 = \tau_{\text{max}} (T_{\text{max}}) \exp \left(- \frac{W}{k_{\text{B}} \cdot T_\text{max}}\right) = \frac{k_\text{B} T^2_{\text{max}}}{b W} \cdot\exp \left(- \frac{W}{k_{\text{B}} \cdot T_\text{max}}\right)
+        \end{equation}
