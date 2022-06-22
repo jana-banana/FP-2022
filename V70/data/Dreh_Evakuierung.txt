@@ -1,5 +1,6 @@
 #Drehschieberpumpe Evakuierung
 #t[s]       p_1 [mbar]      p_2 [mbar]      p_3 [mbar]
+0          1000            1000             1000
 10          798             800             1000
 20          442             450             1000
 30          278             282             624

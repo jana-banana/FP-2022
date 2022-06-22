@@ -1,12 +1,694 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-\begin{figure}
-  \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
-\end{figure}
+\noindent Bei der Versuchsvorbereitung und wird der Tank zuerst mit der Drehschieberpumpe evakuiert. Dabei wird der Druck $p_\text{E}$ ermittelt, welcher der kleinst erreichbare Druck 
+der Vakuumpumpe ist. Der Wert beträgt $p_\text{E} = \SI{3.85(115)e-3}{\milli\bar}$. Anschließend wird die Turbopumpe eingeschalten und auch von ihr der Enddruck bestimmt, welcher hier 
+$p_\text{E} = \SI{10.9 \pm 3.27}{\milli\bar}$ beträgt. 
 
+\subsection{Turbopumpe}
 
-Siehe \autoref{fig:plot}!
+  \noindent Zuerst wurden die Messungen mit der Turbomolekularpumpe durchgeführt, mit der Leckratenmessung wurde begonnen. Das Volumen des benutzten Tankes beträgt $V = \SI{33 \pm 3.3}{\litre}$. 
+  
+  \subsubsection{Leckratenmessung}
+
+    \noindent Es wurde, wie in der \autoref{sec:Durchführung} beschrieben mithilfe des Ventils V4 ?? ein Gleichgewichtsdruck von $p_\text{G} = \SI{50}{\nano\bar}, \, \SI{70}{\nano\bar}, \,  \SI{100}{\nano\bar},\, \SI{200}{\nano\bar}$ eingestellt 
+    und bei $t = \SI{0}{\second}$ die Pumpe abgeschiebert und in Schritten von $\increment t = \SI{10}{\second}$ der Druck an dem Messgerät diwirf?? abgelesen. Dies wurde 3 mal für jeden 
+    Gleichgewichtsdruck gemacht. Anschließend wurden die drei Messungen gemittelt. Die Messwerte der einzelnen Messungen und der gemittelte Druck sind für $p_\text{G} = \SI{100}{\nano\bar}\, \SI{200}{\nano\bar}$
+    in der \autoref{tab:turbo_leck_1_2} und für $p_\text{G} = \SI{50}{\nano\bar}\, \SI{70}{\nano\bar}$ in der \autoref{tab:turbo_leck_5_7} zu finden. 
+
+    \begin{table}[h]
+      \centering
+      \caption{Die Messwerte der einzelnen Messungen und der daraus gemittelte Druckwert für die Leckratenmessung der Turbopumpe mit den Gleichgewichtsdruck $P_\text{G} = \SI{100}{\nano\bar}$.}
+      \label{tab:turbo_leck_1}
+      \sisetup{table-format=4.0}
+      \begin{tabular}{S[table-format=3.0] S @{${}\pm{}$} S S @{${}\pm{}$} S S @{${}\pm{}$} S S[table-format=4.2] @{${}\pm{}$} S[table-format=2.2]}
+      \toprule
+      {$t \mathbin{/} \si{\second} $} & \multicolumn{2}{c}{$p_\text{M1} \mathbin{/} \si{\nano\bar}$} & \multicolumn{2}{c}{$p_\text{M2} \mathbin{/} \si{\nano\bar}$} & \multicolumn{2}{c}{$p_\text{M3} \mathbin{/} \si{\nano\bar}$} & \multicolumn{2}{c}{$p_\text{Mittel} \mathbin{/} \si{\nano\bar}$} \\
+      \midrule
+      0   &  100 &   30 &  100 &   30 &  100 &   30 &  100.00 &  0.00 \\
+      10  &  360 &  108 &  358 &  107 &  388 &  116 &  368.67 &  7.91 \\
+      20  &  592 &  177 &  655 &  196 &  618 &  185 &  621.67 & 14.92 \\
+      30  & 1010 &  303 & 1020 &  306 & 1010 &  303 & 1013.33 &  2.72 \\
+      40  & 1420 &  426 & 1430 &  429 & 1480 &  444 & 1443.33 & 15.15 \\
+      50  & 1880 &  564 & 1890 &  567 & 1900 &  570 & 1890.00 &  4.71 \\
+      60  & 2530 &  759 & 2500 &  750 & 2560 &  768 & 2530.00 & 14.14 \\
+      70  & 3190 &  957 & 3170 &  951 & 3170 &  951 & 3176.67 &  5.44 \\
+      80  & 3800 & 1140 & 3740 & 1122 & 3760 & 1128 & 3766.67 & 14.40 \\
+      90  & 4620 & 1386 & 4490 & 1347 & 4620 & 1386 & 4576.67 & 35.38 \\
+      100 & 5180 & 1554 & 5140 & 1542 & 5160 & 1548 & 5160.00 &  9.43 \\
+      110 & 5710 & 1713 & 5600 & 1680 & 5580 & 1674 & 5630.00 & 33.00 \\
+      120 & 6400 & 1920 & 6240 & 1872 & 6200 & 1860 & 6280.00 & 49.89 \\
+      \bottomrule
+      \end{tabular}
+    \end{table}
+
+    \begin{table}[h]
+      \centering
+      \caption{Die Messwerte der einzelnen Messungen und der daraus gemittelte Druckwert für die Leckratenmessung der Turbopumpe mit den Gleichgewichtsdruck
+                $p_\text{G} = \SI{200}{\nano\bar}$.}
+      \label{tab:turbo_leck_2}
+      \sisetup{table-format=5.0}
+      \begin{tabular}{S[table-format=3.0] S @{${}\pm{}$} S S @{${}\pm{}$} S S @{${}\pm{}$} S S[table-format=5.2] @{${}\pm{}$} S[table-format=4.2]}
+      \toprule
+      {$t \mathbin{/} \si{\second} $} & \multicolumn{2}{c}{$p_\text{M1} \mathbin{/} \si{\nano\bar}$} & \multicolumn{2}{c}{$p_\text{M2} \mathbin{/} \si{\nano\bar}$} & \multicolumn{2}{c}{$p_\text{M3} \mathbin{/} \si{\nano\bar}$} & \multicolumn{2}{c}{$p_\text{Mittel} \mathbin{/} \si{\nano\bar}$} \\
+      \midrule
+      0   &   200 &   60 &   200 &   60 &   200 &   60 &   200.00 &   0.00 \\
+      10  &  1130 &  339 &  1270 &  381 &  1480 &  444 &  1293.33 &  83.04 \\
+      20  &  2780 &  834 &  3180 &  954 &  3180 &  954 &  3046.67 & 108.87 \\
+      30  &  4830 & 1449 &  5430 & 1629 &  5180 & 1554 &  5146.67 & 142.07 \\
+      40  &  6440 & 1932 &  7980 & 2394 &  7500 & 2250 &  7306.67 & 371.46 \\
+      50  &  8920 & 2676 & 10400 & 3120 & 10100 & 3030 &  9806.67 & 368.82 \\
+      60  & 10700 & 3210 & 11900 & 3570 & 11400 & 3420 & 11333.33 & 284.15 \\
+      70  & 12200 & 3660 & 13700 & 4110 & 13300 & 3990 & 13066.67 & 366.16 \\
+      80  & 13700 & 4110 & 15600 & 4680 & 15200 & 4560 & 14833.33 & 472.19 \\
+      90  & 15500 & 4650 & 18000 & 5400 & 17000 & 5100 & 16833.33 & 593.17 \\
+      100 & 17500 & 5250 & 20000 & 6000 & 18900 & 5670 & 18800.00 & 590.67 \\
+      110 & 19700 & 5910 & 21800 & 6540 & 21400 & 6420 & 20966.67 & 525.64 \\
+      120 & 21500 & 6450 & 23600 & 7080 & 22800 & 6840 & 22633.33 & 499.63 \\
+      \bottomrule
+      \end{tabular}
+    \end{table}
+
+    \begin{table}[h]
+      \centering
+      \caption{Die Messwerte der einzelnen Messungen und der daraus gemittelte Druckwert für die Leckratenmessung der Turbopumpe mit den Gleichgewichtsdruck $P_\text{G} = \SI{50}{\nano\bar}$.}
+      \label{tab:turbo_leck_5}
+      \sisetup{table-format=4.1}
+      \begin{tabular}{S[table-format=3.0] S @{${}\pm{}$} S S @{${}\pm{}$} S S @{${}\pm{}$} S S[table-format=4.2] @{${}\pm{}$} S[table-format=2.2]}
+      \toprule
+      {$t \mathbin{/} \si{\second} $} & \multicolumn{2}{c}{$p_\text{M1} \mathbin{/} \si{\nano\bar}$} & \multicolumn{2}{c}{$p_\text{M2} \mathbin{/} \si{\nano\bar}$} & \multicolumn{2}{c}{$p_\text{M3} \mathbin{/} \si{\nano\bar}$} & \multicolumn{2}{c}{$p_\text{Mittel} \mathbin{/} \si{\nano\bar}$} \\
+      \midrule
+        0.0 &    50.0 &  15.0 &   50.0 &  15.0 &    50.0 &  15.0 &   50.00 & 0.00 \\
+       10.0 &   178.0 &  53.4 &  165.0 &  49.5 &   164.0 &  49.2 &  169.00 & 3.68 \\
+       20.0 &   250.0 &  75.0 &  246.0 &  73.8 &   252.0 &  75.6 &  249.33 & 1.44 \\
+       30.0 &   332.0 &  99.6 &  326.0 &  97.8 &   332.0 &  99.6 &  330.00 & 1.63 \\
+       40.0 &   419.0 & 125.7 &  412.0 & 123.6 &   416.0 & 124.8 &  415.67 & 1.66 \\
+       50.0 &   497.0 & 149.1 &  497.0 & 149.1 &   496.0 & 148.8 &  496.67 & 0.27 \\
+       60.0 &   590.0 & 177.0 &  582.0 & 174.6 &   583.0 & 174.9 &  585.00 & 2.05 \\
+       70.0 &   689.0 & 206.7 &  686.0 & 205.8 &   693.0 & 207.9 &  689.33 & 1.66 \\
+       80.0 &   835.0 & 250.5 &  823.0 & 246.9 &   829.0 & 248.7 &  829.00 & 2.83 \\
+       90.0 &   983.0 & 294.9 &  973.0 & 291.9 &   963.0 & 288.9 &  973.00 & 4.71 \\
+      100.0 &  1150.0 & 345.0 & 1140.0 & 342.0 &  1140.0 & 342.0 & 1143.33 & 2.72 \\
+      110.0 &  1280.0 & 384.0 & 1270.0 & 381.0 &  1280.0 & 384.0 & 1276.67 & 2.72 \\
+      120.0 &  1450.0 & 435.0 & 1440.0 & 432.0 &  1440.0 & 432.0 & 1443.33 & 2.72 \\
+      \bottomrule
+      \end{tabular}
+    \end{table}
+
+    \begin{table}[h]
+      \centering
+      \caption{Die Messwerte der einzelnen Messungen und der daraus gemittelte Druckwert für die Leckratenmessung der Turbopumpe mit den Gleichgewichtsdruck $p_\text{G} = \SI{70}{\nano\bar}$.}
+      \label{tab:turbo_leck_5_7}
+      \sisetup{table-format=4.1}
+      \begin{tabular}{S[table-format=3.0] S @{${}\pm{}$} S S @{${}\pm{}$} S S @{${}\pm{}$} S S[table-format=4.2] @{${}\pm{}$} S[table-format=2.2]}
+      \toprule
+      {$t \mathbin{/} \si{\second} $} & \multicolumn{2}{c}{$p_\text{M1} \mathbin{/} \si{\nano\bar}$} & \multicolumn{2}{c}{$p_\text{M2} \mathbin{/} \si{\nano\bar}$} & \multicolumn{2}{c}{$p_\text{M3} \mathbin{/} \si{\nano\bar}$} & \multicolumn{2}{c}{$p_\text{Mittel} \mathbin{/} \si{\nano\bar}$} \\
+      \midrule
+        0.0 &   70.0 &  21.0 &   70.0 &  21.0 &   70.0 &   21.0 &    70.00 &  0.00 \\
+       10.0 &  209.0 &  62.7 &  220.0 &  66.0 &  232.0 &   69.6 &   220.33 &  5.42 \\
+       20.0 &  323.0 &  96.9 &  328.0 &  98.4 &  347.0 &  104.1 &   332.66 &  5.97 \\
+       30.0 &  442.0 & 132.6 &  453.0 & 135.9 &  468.0 &  140.4 &   454.33 &  6.15 \\
+       40.0 &  551.0 & 165.3 &  567.0 & 170.1 &  602.0 &  180.6 &   573.33 & 12.30 \\
+       50.0 &  591.0 & 177.3 &  745.0 & 223.5 &  797.0 &  239.1 &   711.00 & 50.50 \\
+       60.0 &  881.0 & 264.3 &  934.0 & 280.2 & 1010.0 &  303.0 &   941.66 & 30.57 \\
+       70.0 & 1120.0 & 336.0 & 1170.0 & 351.0 & 1260.0 &  378.0 &  1183.33 & 33.44 \\
+       80.0 & 1310.0 & 393.0 & 1390.0 & 417.0 & 1460.0 &  438.0 &  1386.66 & 35.38 \\
+       90.0 & 1500.0 & 450.0 & 1620.0 & 486.0 & 1700.0 &  510.0 &  1606.66 & 47.45 \\
+      100.0 & 1760.0 & 528.0 & 1840.0 & 552.0 & 1950.0 &  585.0 &  1850.00 & 44.97 \\
+      110.0 & 1970.0 & 591.0 & 2080.0 & 624.0 & 2240.0 &  672.0 &  2096.66 & 64.00 \\
+      120.0 & 2260.0 & 678.0 & 2430.0 & 729.0 & 2560.0 &  768.0 &  2416.66 & 70.92 \\
+      \bottomrule
+      \end{tabular}
+    \end{table}
+
+    \noindent Die gemittelten Drücke werden gegen die Zeit in einem $t-p$ Diagramm dargestellt. Diese sind für die verschiedenen Gleichgewichtsdrücke in der \autoref{fig:turbo_leck} dargestellt. 
+    Es werden keine Messdaten exkludiert.  
+    Zusätzlich ist jeweils ein Fit der Form $p(t) = m \cdot t + n $ eingezeichnet. Dieser wird mithilfe von \cite{scipy} gemacht. Die Fitparameter ergeben sich zu den folgenden Werten. 
+    \begin{align*}
+      \text{Für} \,  p_\text{G} &= \SI{50}{\nano\bar} & \text{Für} \,  p_\text{G} &= \SI{70}{\nano\bar}\\
+      m &= \SI{11.22 \pm 0.48}{\nano\bar\per\second} & m &= \SI{19.28 \pm 0.86}{\nano\bar\per\second} \\
+      n &= \SI{-7.86 \pm 33.73}{\nano\bar} & n &= \SI{-91.84 \pm 61.03}{\nano\bar} \\
+      \\
+      \text{Für} \,  p_\text{G} &= \SI{100}{\nano\bar} & \text{Für} \,  p_\text{G} &= \SI{200}{\nano\bar}\\
+      m &= \SI{53.94(207)}{\nano\bar\per\second} & m &= \SI{191.95 \pm 2.31}{\nano\bar\per\second} \\
+      n &= \SI{-424.08 (14611)}{\nano\bar} & n &= \SI{-342.78 \pm 163.26}{\nano\bar} 
+    \end{align*} 
+
+    \begin{figure}[h]
+      \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{build/leck_turbo_50nbar.pdf}
+        \caption{Gleichgewichtsdruck $p_\text{G} = \SI{50}{\nano\bar}$.}
+        \label{fig:turbo_leck_50}
+      \end{subfigure}
+      \hfill
+      \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{build/leck_turbo_70nbar.pdf}
+        \caption{Gleichgewichtsdruck $p_\text{G} = \SI{70}{\nano\bar}$.}
+        \label{fig:turbo_leck_70}
+      \end{subfigure}
+      \hfill
+      \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{build/leck_turbo_100nbar.pdf}
+        \caption{Gleichgewichtsdruck $p_\text{G} = \SI{100}{\nano\bar}$.}
+        \label{fig:turbo_leck_100}
+      \end{subfigure}
+      \hfill
+      \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{build/leck_turbo_200nbar.pdf}
+        \caption{}Gleichgewichtsdruck $p_\text{G} = \SI{200}{\nano\bar}$.
+        \label{fig:turbo_leck_200}
+      \end{subfigure}
+      \caption{Die gemittelten Drücke der Messungen zu den verschiedenen Gleichgewichtsdrücken mit der jeweiligen linearen Ausgleichsrechnung.}
+      \label{fig:turbo_leck}
+    \end{figure}
+
+    \noindent Durch Vergleich mit der Gleichung \eqref(??) folgt, dass das Saugvermögen $S$ sich hier durch
+    \begin{equation*}
+      S = \frac{m \cdot V}{p_\text{G}}
+    \end{equation*}
+    aus der Steigung der linearen Ausgleichsrechnung berechnet. Es werden folgenden Werte berechnet:
+    \begin{align*}
+      \text{für} \, p_\text{G} &= \SI{50}{\nano\bar} & \text{für} \, p_\text{G} &= \SI{70}{\nano\bar} \\
+      S &= \SI{7.4060 \pm 2.3631}{\litre\per\second}  & S &= \SI{9.0885 \pm 2.903}{\litre\per\second}  \\
+      \\
+      \text{für} \, p_\text{G} &= \SI{100}{\nano\bar} & \text{für} \, p_\text{G} &= \SI{200}{\nano\bar} \\
+      S &= \SI{17.7988 \pm 5.6696}{\litre\per\second}  & S &= \SI{31.6721 \pm 10.0229}{\litre\per\second}  
+    \end{align*}
+
+  \subsubsection{Evakuierungskurve}
+
+    \noindent Bei der Messung der Evakuierungskurve der Turbomolekularpumpe wird der Tank mit Luft befüllt bis zu einem Druck von $p_0 = \SI{5e-3}{\milli\bar}$. Dann wird der Rezipient 
+    abgedichtet und in Abständen von $\increment t = \SI{10}{\second}$ wird der Druck abgelesen, bis $ t = \SI{120}{\second}$ erreicht ist. Die Messung wurde drei mal ausgeführt.
+    In der weiteren Auswertung wird eine lineare Ausgleichsrechnung gemacht, wobei ein linearer Zusammenhang zwischen dem Logarithmusausdruck 
+    \begin{equation*}
+      \ln(F) = \ln \left( \frac{p(t) = p_\text{E}}{p_0 - p_\text{E}}\right) = m \cdot t + n \, 
+    \end{equation*} 
+    und der Zeit, wie es in \eqref{} hergeleitet wird. Die Messdaten der einzelnen Messungen sind neben dem jeweiligen Logarithmusausdruck in der \autoref{tab:turbo_eva} aufgelistet. 
+    Der Enddruck der Pumpe wurde zu $p_\text{E} = \SI{10.9 \pm 3.27}{\nano\bar}$ bestimmt. 
+
+    \begin{table}
+      \centering
+      \caption{Die einzelnen Messdaten der Evakuierungsmessung mit der Turbopumpe. Zusätlich ist jeweils noch der Ausdruck $\ln(F)$ aufgelistet, wobei $F$ der Quotient $F = \frac{p(t) - p_\text{E}}{p_0 - p_\text{E}}$ ist. }
+      \label{tab:turbo_eva}
+      \sisetup{table-format=4.2}
+      \begin{center}
+        \addtolength{\leftskip} {-4.5cm} % increase (absolute) value if needed
+        \addtolength{\rightskip}{-4.5cm}
+      \begin{tabular*}{1.4\textwidth}{@{\extracolsep{\fill}} S[table-format=3.0] S @{${}\pm{}$} S S[table-format=2.2] @{${}\pm{}$} S[table-format=1.2]
+                                          S @{${}\pm{}$} S S[table-format=2.2] @{${}\pm{}$} S[table-format=1.2]
+                                          S @{${}\pm{}$} S S[table-format=2.2] @{${}\pm{}$} S[table-format=1.2]}
+        \toprule
+        & \multicolumn{4}{c}{Messung 1} & \multicolumn{4}{c}{Messung 2} & \multicolumn{4}{c}{Messung 3} \\
+        \cmidrule(lr){2-5} \cmidrule(lr){6-9} \cmidrule(lr){10-13}
+        {$t \mathbin{/} \si{\second}$} & \multicolumn{2}{c}{$p \mathbin{/} \si{\nano\bar}$} & \multicolumn{2}{c}{$\ln(F)$} & \multicolumn{2}{c}{$p \mathbin{/} \si{\nano\bar}$} & \multicolumn{2}{c}{$\ln(F)$} & \multicolumn{2}{c}{$p \mathbin{/} \si{\nano\bar}$} & \multicolumn{2}{c}{$\ln(F)$} \\
+          0 & 5000.00 &1500.00 &  0.00 & 0.42 &5000.00 & 1500.00 &  0.00 & 0.42 & 5000.00 & 1500.00 &  0.00 & 0.42 \\
+         10 &  194.00 &  58.20 & -3.31 & 0.43 & 176.00 &   52.80 & -3.40 & 0.43 &  202.00 &   60.60 & -3.26 & 0.43 \\
+         20 &   44.60 &  13.38 & -4.99 & 0.50 &  35.30 &   10.59 & -5.32 & 0.54 &   42.40 &   12.72 & -5.06 & 0.51 \\
+         30 &   25.20 &   7.56 & -5.85 & 0.64 &  22.00 &    6.60 & -6.10 & 0.72 &   23.30 &    6.99 & -5.99 & 0.69 \\
+         40 &   21.20 &   6.36 & -6.18 & 0.75 &  19.20 &    5.76 & -6.39 & 0.85 &   20.00 &    6.00 & -6.30 & 0.80 \\
+         50 &   18.90 &   5.67 & -6.43 & 0.87 &  17.40 &    5.22 & -6.64 & 0.99 &   18.20 &    5.46 & -6.52 & 0.92 \\
+         60 &   17.50 &   5.25 & -6.62 & 0.98 &  16.80 &    5.04 & -6.74 & 1.06 &   17.50 &    5.25 & -6.62 & 0.98 \\
+         70 &   16.80 &   5.04 & -6.74 & 1.06 &  15.80 &    4.74 & -6.92 & 1.21 &   16.30 &    4.89 & -6.82 & 1.12 \\
+         80 &   15.90 &   4.77 & -6.90 & 1.19 &  15.10 &    4.53 & -7.07 & 1.36 &   15.50 &    4.65 & -6.98 & 1.27 \\
+         90 &   15.20 &   4.56 & -7.05 & 1.33 &  14.50 &    4.35 & -7.23 & 1.54 &   14.90 &    4.47 & -7.12 & 1.41 \\
+        100 &   14.70 &   4.41 & -7.18 & 1.47 &  14.10 &    4.23 & -7.35 & 1.69 &   14.40 &    4.32 & -7.26 & 1.57 \\
+        110 &   14.20 &   4.26 & -7.32 & 1.65 &  13.70 &    4.11 & -7.48 & 1.89 &   14.00 &    4.20 & -7.38 & 1.74 \\
+        120 &   13.80 &   4.14 & -7.45 & 1.84 &  13.50 &    4.05 & -7.55 & 2.02 &   13.70 &    4.11 & -7.48 & 1.89 \\
+        \bottomrule
+      \end{tabular*}
+    \end{center}
+    \end{table}
+  
+
+    \noindent Es wird der Logarithmusausdruck $\ln(F)$ gegen die Zeit geplottet für jede einzelne Messung. In den Daten werden lineare Abhängigkeiten gesucht und dann in diesen Bereichen
+    eine lineare Ausgleichsrechung der Form 
+    \begin{equation*}
+      y = m \cdot t + n
+    \end{equation*}
+    mit Hilfe von \cite{scipy} durchgeführt. Es werden drei Bereiche pro Messung gesucht. \\
+    Dieses Vorgehen ist für die erste Messung in der \autoref{fig:evaku_turbo_1} zu sehen, hier werden keine Datenpunkte exkludiert. Das gleiche Vorgehen wird für
+    die beiden anderen Messreihen gemacht, dies ist in der \autoref{fig:evaku_turbo_2} für die zweite Messreihe zu sehen und für die Dritte in der \autoref{fig:evaku_turbo_3}. 
+    Es wird kein Datenpunkt exkludiert. 
+    Die Parameterdaten für die lineare Ausgleichsrechung sind in der \autoref{tab:fitpara_turbo} aufgelistet. \\ 
+    
+
+    \begin{figure}
+      \centering
+      \includegraphics[width=\textwidth]{build/evakuturbo_1.pdf}
+      \caption{Die Messdaten der ersten Evakuierungsmessung aufgetragen in einem Logarithmusausdruck gegen die Zeit. Zusätzlich werden lineare Ausgleichsrechungen in linear wirkende Bereiche gelegt.}
+      \label{fig:evaku_turbo_1}
+    \end{figure}
+
+    \begin{figure}
+      \centering
+      \includegraphics[width=\textwidth]{build/evakuturbo_2.pdf}
+      \caption{Die Messdaten der zweiten Evakuierungsmessung aufgetragen in einem Logarithmusausdruck gegen die Zeit. Zusätzlich werden lineare Ausgleichsrechungen in linear wirkende Bereiche gelegt.}
+      \label{fig:evaku_turbo_2}
+    \end{figure}
+
+    \begin{figure}
+      \centering
+      \includegraphics[width=\textwidth]{build/evakuturbo_3.pdf}
+      \caption{Die Messdaten der dritten Evakuierungsmessung aufgetragen in einem Logarithmusausdruck gegen die Zeit. Zusätzlich werden lineare Ausgleichsrechungen in linear wirkende Bereiche gelegt.}
+      \label{fig:evaku_turbo_3}
+    \end{figure}
+
+    % \begin{table}
+      % \centering
+      % \caption{Die Fitparameter und die daraus errechneten Saugvermögen für die einzelnen Bereiche der Messung.}
+      % \label{tab:fitpara_turbo}
+      % \sisetup{table-format=1.4}
+      % \begin{tabular}{c S[table-format=2.4] @{${}\pm{}$} S S[table-format=2.4] @{${}\pm{}$} S S @{${}\pm{}$} S
+                        % S[table-format=2.4] @{${}\pm{}$} S S[table-format=2.4] @{${}\pm{}$} S S @{${}\pm{}$} S
+                        % S[table-format=2.4] @{${}\pm{}$} S S[table-format=2.4] @{${}\pm{}$} S S @{${}\pm{}$} S}
+        % \toprule
+        % & \multicolumn{6}{c}{Messung 1} & \multicolumn{2}{c}{Messung 2} & \multicolumn{2}{c}{Meesung 3}\\
+        % \cmidrule(lr){2-7} \cmidrule(lr){8-13} \cmidrule(lr){14-19}
+        % {Druckbereich} & \multicolumn{2}{c}{$m \mathbin{/} \si{1\per\second}$} & \multicolumn{2}{c}{$n$} & \multicolumn{2}{c}{$S \mathbin{/} \si{\litre\per\second}$}
+                      %  & \multicolumn{2}{c}{$m \mathbin{/} \si{1\per\second}$} & \multicolumn{2}{c}{$n$} & \multicolumn{2}{c}{$S \mathbin{/} \si{\litre\per\second}$}
+                      %  & \multicolumn{2}{c}{$m \mathbin{/} \si{1\per\second}$} & \multicolumn{2}{c}{$n$} & \multicolumn{2}{c}{$S \mathbin{/} \si{\litre\per\second}$} \\
+        % \midrule
+        % $\SI{30}{\nano\bar} \leq p \leq \SI{5000}{\nano\bar}$   & -0.2499 & 0.0465 & -0.2687 & 0.6009 & 8.2459 & 1.7434 & -0.2660 & 0.0432 & -0.2494 & 0.5577 & 8.7787 & 1.6742 & -0.2533 & 0.0421 & -0.2432 & 0.5439 & 8.3573 & 1.6221 \\
+        % $\SI{29.9}{\nano\bar} \leq p \leq \SI{17.5}{\nano\bar}$ & -0.0290 & 0.0022 & -4.9961 & 0.0889 & 0.9583 & 0.1198 & -0.0268 & 0.0013 & -5.3131 & 0.0545 & 0.8830 & 0.0987 & -0.0265 & 0.0026 & -5.2174 & 0.1049 & 0.8742 & 0.1218 \\
+        % $\SI{17.4}{\nano\bar} \leq p \leq \SI{13.5}{\nano\bar}$ & -0.0139 & 0.0002 & -5.7855 & 0.0227 & 0.4601 & 0.0467 & -0.0137 & 0.0007 & -5.9593 & 0.0641 & 0.4537 & 0.0508 & -0.0141 & 0.0007 & -5.8293 & 0.0609 & 0.4662 & 0.0515 \\
+        % \bottomrule
+      % \end{tabular}
+    % \end{table}
+
+    \begin{table}[h]
+      \centering
+      \caption{Die Fitparameter und die daraus errechneten Saugvermögen für die einzelnen Bereiche der Messung.}
+      \label{tab:fitpara_turbo_alt}
+      \sisetup{table-format=1.4}
+      \begin{tabular}{c S[table-format=2.4] @{${}\pm{}$} S S[table-format=2.4] @{${}\pm{}$} S S[table-format=2.4] @{${}\pm{}$} S}
+        \toprule
+        {Bereiche:} & \multicolumn{2}{c}{$\SI{30}{\nano\bar} \leq p \leq \SI{5000}{\nano\bar}$} & \multicolumn{2}{c}{$\SI{29.9}{\nano\bar} \leq p \leq \SI{17.5}{\nano\bar}$} & \multicolumn{2}{c}{$\SI{17.4}{\nano\bar} \leq p \leq \SI{13.5}{\nano\bar}$}\\
+        \midrule
+        Messung 1 \\ 
+        \cmidrule(lr){1-1}
+        $m \mathbin{/} \left(\si{1\per\second}\right)$ & -0.2499 & 0.0465 & -0.0290 & 0.0022 & -0.0139 & 0.0002 \\
+        $n$                                            & -0.2687 & 0.6009 & -4.9961 & 0.0889 & -5.7855 & 0.0227 \\
+        $S \mathbin{/} \left(\si{L\per\second}\right)$ &  8.2459 & 1.7434 &  0.9583 & 0.1198 &  0.4601 & 0.0467 \\
+        \midrule
+        Messung 2 \\ 
+        \cmidrule(lr){1-1}
+        $m \mathbin{/} \left(\si{1\per\second}\right)$ & -0.2660 & 0.0432 & -0.0268 & 0.0013 & -0.0137 & 0.0007 \\
+        $n$                                            & -0.2494 & 0.5577 & -5.3131 & 0.0545 & -5.9593 & 0.0641 \\
+        $S \mathbin{/} \left(\si{L\per\second}\right)$ &  8.7787 & 1.6742 &  0.8830 & 0.0987 &  0.4537 & 0.0508 \\
+        \midrule
+        Messung 3 \\ 
+        \cmidrule(lr){1-1}
+        $m \mathbin{/} \left(\si{1\per\second}\right)$ & -0.2533 & 0.0421 & -0.0265 & 0.0026 & -0.0141 & 0.0007 \\
+        $n$                                            & -0.2432 & 0.5439 & -5.2174 & 0.1049 & -5.8293 & 0.0609 \\
+        $S \mathbin{/} \left(\si{L\per\second}\right)$ &  8.3573 & 1.6221 &  0.8742 & 0.1218 &  0.4662 & 0.0515 \\      
+        \bottomrule
+      \end{tabular}
+    \end{table}
+
+    \noindent Aus der Steigung der Ausgleichsgeraden kann das Saugvermögen berechnet werden, es gilt der Zusammenhang
+    \begin{equation*}
+      S = - m \cdot V\, .
+    \end{equation*}
+    Dies folgt aus der \autoref{sec:Theorie} oder soo. Die entsprechenden Saugvermögen sind auch in der \autoref{tab:fitpara_turbo_alt} aufgelistet. 
+    Die Fehler der Werte werden mit der Gleichung \eqref{eqn:err_saug_eva} berechnet.\\ 
+    Abschließend werden noch die Mittelwerte berechnet, die wie folgt lauten:
+    \begin{align*}
+      \SI{30}{\nano\bar} \leq &p \leq \SI{5000}{\nano\bar} & S &= \SI{8.4606 \pm 0.1325}{L\per\second} \\
+      \SI{29.9}{\nano\bar} \leq &p \leq \SI{17.5}{\nano\bar}& S &= \SI{0.9052 \pm 0.0218}{L\per\second} \\
+      \SI{17.4}{\nano\bar} \leq &p \leq \SI{13.5}{\nano\bar} & S &= \SI{0.4560 \pm 0.0029}{L\per\second}
+    \end{align*}
+    Hier entspricht der Fehler dem Fehler des Mittelwertes.
+
+\subsection{Drehschieberpumpe}
+
+    \noindent Nun werden die gleichen Auswertungsschritte bei den Messwerten der Drehschieberpumpe angewendet. Das Volumen des Rezipienten beträgt nun $V = \SI{34 \pm 3.4}{\litre}$, da die 
+    Drehschieberpumpe hinter die dann ausgeschaltete Turbomolekularpumpe geschalten, die Schläuche und die Pumpe, welche nun zusätzlich evakuierten werden müssen, haben also ein Volumen von $V_\text{Zusatz} = \SI{1.0}{\litre}$. 
+
+    \subsubsection{Leckratenmessung}
+
+    \noindent Analog zum Vorgehen bei der Turbomolekularpumpe wird bei laufender Pumpe durch geregeltes Öffnen des Ventils V4 ?? ein Gleichgewichtsdruck eingestellt. Hier werden die
+    Gleichgewichtsdrücke $p_\text{G} = \SI{0.5}{\milli\bar}, \, \SI{10}{\milli\bar}, \, \SI{50}{\milli\bar}, \, \SI{100}{\milli\bar}$ benutzt. Für jeden Gleichgewichtsdruck werden 
+    drei Messungen durchgeführt. Der Messzeitraum beträgt $\SI{200}{\second}$, es werden in Schritten von $\increment t = \SI{10}{\second}$ Daten aufgenommen. Über die drei aufgenommenen
+    Messungen des Drucks wird das arithmetische Mittel genommen. 
+    Die Daten befinden sich für den Gleichgewichtsdruck $p_\text{G} = \SI{0.5}{\milli\bar}$ in der \autoref{tab:dreh_leck_05}, und für $p_\text{G} = \SI{10}{\milli\bar}$ in der 
+    \autoref{tab:dreh_leck_10}. Für den Gleichgewichtsdruck $p_\text{G} = \SI{50}{\milli\bar}$ sind die Messdaten in der \autoref{tab:dreh_leck_50} und für $p_\text{G} = \SI{100}{\milli\bar}$
+    in der \autoref{tab:dreh_leck_100}.
+
+    \begin{table}[h]
+      \centering
+      \caption{Die Messwerte der einzelnen Messungen und der daraus gemittelte Druckwert für die Leckratenmessung der Drehschieberpumpe mit den 
+      Gleichgewichtsdruck $p_\text{G} = \SI{0.5}{\milli\bar}$.}
+      \label{tab:dreh_leck_05}
+      \sisetup{table-format=4.1}
+      \begin{tabular}{S[table-format=3.0] S @{${}\pm{}$} S S @{${}\pm{}$} S S @{${}\pm{}$} S S[table-format=1.4] @{${}\pm{}$} S[table-format=1.4]}
+      \toprule
+      {$t \mathbin{/} \si{\second} $} & \multicolumn{2}{c}{$p_\text{M1} \mathbin{/} \si{\micro\bar}$} & \multicolumn{2}{c}{$p_\text{M2} \mathbin{/} \si{\micro\bar}$} & \multicolumn{2}{c}{$p_\text{M3} \mathbin{/} \si{\micro\bar}$} & \multicolumn{2}{c}{$p_\text{Mittel} \mathbin{/} \si{\milli\bar}$} \\
+      \midrule
+        0 &  500.0 & 150.0 & 500.0 & 150.0 & 500.0 & 150.0 & 0.5000 & 0.0000 \\  
+       10 &  513.0 & 153.9 & 506.0 & 151.8 & 517.0 & 155.1 & 0.5120 & 0.0026 \\
+       20 &  532.0 & 159.6 & 522.0 & 156.6 & 538.0 & 161.4 & 0.5307 & 0.0038 \\
+       30 &  552.0 & 165.6 & 539.0 & 161.7 & 563.0 & 168.9 & 0.5513 & 0.0057 \\
+       40 &  571.0 & 171.3 & 558.0 & 167.4 & 585.0 & 175.5 & 0.5713 & 0.0064 \\
+       50 &  591.0 & 177.3 & 575.0 & 172.5 & 605.0 & 181.5 & 0.5903 & 0.0071 \\
+       60 &  608.0 & 182.4 & 592.0 & 177.6 & 627.0 & 188.1 & 0.6090 & 0.0083 \\
+       70 &  627.0 & 188.1 & 608.0 & 182.4 & 648.0 & 194.4 & 0.6277 & 0.0094 \\
+       80 &  645.0 & 193.5 & 624.0 & 187.2 & 669.0 & 200.7 & 0.6460 & 0.0106 \\
+       90 &  664.0 & 199.2 & 640.0 & 192.0 & 691.0 & 207.3 & 0.6650 & 0.0120 \\
+      100 &  682.0 & 204.6 & 657.0 & 197.1 & 712.0 & 213.6 & 0.6837 & 0.0130 \\
+      110 &  701.0 & 210.3 & 673.0 & 201.9 & 734.0 & 220.2 & 0.7027 & 0.0144 \\
+      120 &  719.0 & 215.7 & 689.0 & 206.7 & 758.0 & 227.4 & 0.7220 & 0.0163 \\
+      130 &  738.0 & 221.4 & 706.0 & 211.8 & 779.0 & 233.7 & 0.7410 & 0.0172 \\
+      140 &  757.0 & 227.1 & 722.0 & 216.6 & 801.0 & 240.3 & 0.7600 & 0.0187 \\
+      150 &  776.0 & 232.8 & 739.0 & 221.7 & 822.0 & 246.6 & 0.7790 & 0.0196 \\
+      160 &  795.0 & 238.5 & 756.0 & 226.8 & 844.0 & 253.2 & 0.7983 & 0.0208 \\
+      170 &  814.0 & 244.2 & 773.0 & 231.9 & 866.0 & 259.8 & 0.8177 & 0.0220 \\
+      180 &  833.0 & 249.9 & 790.0 & 237.0 & 889.0 & 266.7 & 0.8373 & 0.0234 \\
+      190 &  850.0 & 255.0 & 806.0 & 241.8 & 910.0 & 273.0 & 0.8553 & 0.0246 \\
+      200 &  870.0 & 261.0 & 823.0 & 246.9 & 934.0 & 280.2 & 0.8757 & 0.0263 \\
+      \bottomrule
+      \end{tabular}
+    \end{table}
+
+    \begin{table}[h]
+      \centering
+      \caption{Die Messwerte der einzelnen Messungen und der daraus gemittelte Druckwert für die Leckratenmessung der Drehschieberpumpe mit den 
+      Gleichgewichtsdruck $p_\text{G} = \SI{10}{\milli\bar}$.}
+      \label{tab:dreh_leck_10}
+      \sisetup{table-format=2.1}
+      \begin{tabular}{S[table-format=3.0] S @{${}\pm{}$} S[table-format=2.2] S @{${}\pm{}$} S[table-format=2.2] S @{${}\pm{}$} S[table-format=2.2] S[table-format=2.2] @{${}\pm{}$} S[table-format=1.2]}
+      \toprule
+      {$t \mathbin{/} \si{\second} $} & \multicolumn{2}{c}{$p_\text{M1} \mathbin{/} \si{\milli\bar}$} & \multicolumn{2}{c}{$p_\text{M2} \mathbin{/} \si{\milli\bar}$} & \multicolumn{2}{c}{$p_\text{M3} \mathbin{/} \si{\milli\bar}$} & \multicolumn{2}{c}{$p_\text{Mittel} \mathbin{/} \si{\milli\bar}$} \\
+      \midrule
+        0 & 10.0 &  3.00 & 10.0 &  3.00 & 10.0 &  3.00 & 10.00 & 0.00 \\  
+       10 & 12.7 &  3.81 & 12.6 &  3.78 & 12.9 &  3.87 & 12.73 & 0.07 \\
+       20 & 14.9 &  4.47 & 14.8 &  4.44 & 15.0 &  4.50 & 14.90 & 0.05 \\
+       30 & 17.0 &  5.10 & 17.0 &  5.10 & 17.2 &  5.16 & 17.07 & 0.05 \\
+       40 & 19.1 &  5.73 & 19.1 &  5.73 & 19.2 &  5.76 & 19.13 & 0.03 \\
+       50 & 21.3 &  6.39 & 21.5 &  6.45 & 21.6 &  6.48 & 21.47 & 0.07 \\
+       60 & 24.0 &  7.20 & 24.1 &  7.23 & 24.3 &  7.29 & 24.13 & 0.07 \\
+       70 & 26.6 &  7.98 & 26.7 &  8.01 & 26.8 &  8.04 & 26.70 & 0.04 \\
+       80 & 29.1 &  8.73 & 29.1 &  8.73 & 29.2 &  8.76 & 29.13 & 0.03 \\
+       90 & 31.3 &  9.39 & 31.3 &  9.39 & 31.4 &  9.42 & 31.33 & 0.03 \\
+      100 & 33.5 & 10.05 & 33.9 & 10.17 & 33.5 & 10.05 & 33.63 & 0.11 \\
+      110 & 35.3 & 10.59 & 35.3 & 10.59 & 35.4 & 10.62 & 35.33 & 0.03 \\
+      120 & 37.2 & 11.16 & 37.4 & 11.22 & 37.4 & 11.22 & 37.33 & 0.05 \\
+      130 & 39.1 & 11.73 & 39.0 & 11.70 & 39.2 & 11.76 & 39.10 & 0.05 \\
+      140 & 41.4 & 12.42 & 41.4 & 12.42 & 41.5 & 12.45 & 41.43 & 0.03 \\
+      150 & 44.4 & 13.32 & 44.4 & 13.32 & 44.4 & 13.32 & 44.40 & 0.00 \\
+      160 & 47.0 & 14.10 & 47.3 & 14.19 & 47.2 & 14.16 & 47.17 & 0.07 \\
+      170 & 49.6 & 14.88 & 49.8 & 14.94 & 49.8 & 14.94 & 49.73 & 0.05 \\
+      180 & 52.1 & 15.63 & 51.9 & 15.57 & 52.2 & 15.66 & 52.06 & 0.07 \\
+      190 & 54.6 & 16.38 & 54.5 & 16.35 & 54.7 & 16.41 & 54.60 & 0.05 \\
+      200 & 56.9 & 17.07 & 56.8 & 17.04 & 56.9 & 17.07 & 56.87 & 0.03 \\
+      \bottomrule
+      \end{tabular}
+    \end{table}
+
+    \begin{table}[h]
+      \centering
+      \caption{Die Messwerte der einzelnen Messungen und der daraus gemittelte Druckwert für die Leckratenmessung der Drehschieberpumpe mit den 
+      Gleichgewichtsdruck $p_\text{G} = \SI{50}{\milli\bar}$.}
+      \label{tab:dreh_leck_50}
+      \sisetup{table-format=4.1}
+      \begin{tabular}{S[table-format=3.0] S @{${}\pm{}$} S[table-format=3.2] S @{${}\pm{}$} S[table-format=3.2] S @{${}\pm{}$} S[table-format=3.2] S[table-format=3.2] @{${}\pm{}$} S[table-format=2.2]}
+      \toprule
+      {$t \mathbin{/} \si{\second} $} & \multicolumn{2}{c}{$p_\text{M1} \mathbin{/} \si{\milli\bar}$} & \multicolumn{2}{c}{$p_\text{M2} \mathbin{/} \si{\milli\bar}$} & \multicolumn{2}{c}{$p_\text{M3} \mathbin{/} \si{\milli\bar}$} & \multicolumn{2}{c}{$p_\text{Mittel} \mathbin{/} \si{\milli\bar}$} \\
+      \midrule
+        0 &   50.0 &  15.00 &   50.0 &  15.00 &  50.0 &  15.00 &  50.00 &  0.00 \\  
+       10 &   68.9 &  20.67 &   69.5 &  20.85 &  66.8 &  20.04 &  68.40 &  0.67 \\
+       20 &   87.5 &  26.25 &   86.8 &  26.04 &  84.5 &  25.35 &  86.27 &  0.74 \\
+       30 &  109.0 &  54.50 &  108.0 &  54.00 & 102.0 &  51.00 & 106.33 &  1.78 \\
+       40 &  135.0 &  67.50 &  137.0 &  68.50 & 130.0 &  65.00 & 134.00 &  1.70 \\
+       50 &  161.0 &  80.50 &  163.0 &  81.50 & 155.0 &  77.50 & 159.67 &  1.96 \\
+       60 &  190.0 &  95.00 &  189.0 &  94.50 & 181.0 &  90.50 & 186.67 &  2.33 \\
+       70 &  221.0 & 110.50 &  218.0 & 109.00 & 208.0 & 104.00 & 215.67 &  3.29 \\
+       80 &  264.0 & 132.00 &  266.0 & 133.00 & 246.0 & 123.00 & 258.67 &  5.19 \\
+       90 &  297.0 & 148.50 &  302.0 & 151.00 & 284.0 & 142.00 & 294.33 &  4.38 \\
+      100 &  342.0 & 171.00 &  338.0 & 169.00 & 325.0 & 162.50 & 335.00 &  4.19 \\
+      110 &  374.0 & 187.00 &  379.0 & 189.50 & 369.0 & 184.50 & 374.00 &  2.36 \\
+      120 &  431.0 & 215.50 &  435.0 & 217.50 & 395.0 & 197.50 & 420.33 & 10.36 \\
+      130 &  502.0 & 251.00 &  498.0 & 249.00 & 455.0 & 227.50 & 485.00 & 12.28 \\
+      140 &  560.0 & 280.00 &  569.0 & 284.50 & 526.0 & 263.00 & 551.67 & 10.69 \\
+      150 &  642.0 & 321.00 &  649.0 & 324.50 & 582.0 & 291.00 & 624.33 & 17.36 \\
+      160 &  710.0 & 355.00 &  704.0 & 352.00 & 688.0 & 344.00 & 700.67 &  5.36 \\
+      170 &  795.0 & 397.50 &  808.0 & 404.00 & 740.0 & 370.00 & 781.00 & 17.02 \\
+      180 &  874.0 & 437.00 &  880.0 & 440.00 & 820.0 & 410.00 & 858.00 & 15.58 \\
+      190 &  945.0 & 472.50 & 1000.0 & 500.00 & 895.0 & 447.50 & 946.67 & 24.76 \\
+      200 & 1000.0 & 500.00 & 1000.0 & 500.00 & 965.0 & 482.50 & 988.33 &  9.53 \\
+      \bottomrule
+      \end{tabular}
+    \end{table}
+
+    \begin{table}[h]
+      \centering
+      \caption{Die Messwerte der einzelnen Messungen und der daraus gemittelte Druckwert für die Leckratenmessung der Drehschieberpumpe mit den 
+      Gleichgewichtsdruck $p_\text{G} = \SI{100}{\milli\bar}$.}
+      \label{tab:dreh_leck_100}
+      \sisetup{table-format=4.1}
+      \begin{tabular}{S[table-format=3.0] S @{${}\pm{}$} S[table-format=3.2] S @{${}\pm{}$} S[table-format=3.2] S @{${}\pm{}$} S[table-format=3.2] S[table-format=4.2] @{${}\pm{}$} S[table-format=2.2]}
+      \toprule
+      {$t \mathbin{/} \si{\second} $} & \multicolumn{2}{c}{$p_\text{M1} \mathbin{/} \si{\milli\bar}$} & \multicolumn{2}{c}{$p_\text{M2} \mathbin{/} \si{\milli\bar}$} & \multicolumn{2}{c}{$p_\text{M3} \mathbin{/} \si{\milli\bar}$} & \multicolumn{2}{c}{$p_\text{Mittel} \mathbin{/} \si{\milli\bar}$} \\
+      \midrule
+        0 &  100.0 &  30.0 &  100.0 &  30.0 &  100.0 &  30.0 &  100.00 &  0.00 \\  
+       10 &  138.0 &  69.0 &  156.0 &  78.0 &  158.0 &  79.0 &  150.67 &  5.19 \\
+       20 &  186.0 &  93.0 &  206.0 & 103.0 &  208.0 & 104.0 &  200.00 &  5.73 \\
+       30 &  253.0 & 126.5 &  281.0 & 140.5 &  291.0 & 145.5 &  275.00 &  9.29 \\
+       40 &  323.0 & 161.5 &  349.0 & 174.5 &  356.0 & 178.0 &  342.67 &  8.20 \\
+       50 &  397.0 & 198.5 &  439.0 & 219.5 &  448.0 & 224.0 &  428.00 & 12.83 \\
+       60 &  512.0 & 256.0 &  556.0 & 278.0 &  577.0 & 288.5 &  548.33 & 15.64 \\
+       70 &  655.0 & 327.5 &  683.0 & 341.5 &  694.0 & 347.0 &  677.33 &  9.48 \\
+       80 &  788.0 & 394.0 &  882.0 & 441.0 &  876.0 & 438.0 &  848.67 & 24.81 \\
+       90 &  979.0 & 489.5 & 1000.0 & 500.0 & 1000.0 & 500.0 &  993.00 &  5.72 \\
+      100 & 1000.0 & 500.0 & 1000.0 & 500.0 & 1000.0 & 500.0 & 1000.00 &  0.00 \\
+      110 & 1000.0 & 500.0 & 1000.0 & 500.0 & 1000.0 & 500.0 & 1000.00 &  0.00 \\
+      120 & 1000.0 & 500.0 & 1000.0 & 500.0 & 1000.0 & 500.0 & 1000.00 &  0.00 \\
+      130 & 1000.0 & 500.0 & 1000.0 & 500.0 & 1000.0 & 500.0 & 1000.00 &  0.00 \\
+      140 & 1000.0 & 500.0 & 1000.0 & 500.0 & 1000.0 & 500.0 & 1000.00 &  0.00 \\
+      150 & 1000.0 & 500.0 & 1000.0 & 500.0 & 1000.0 & 500.0 & 1000.00 &  0.00 \\
+      160 & 1000.0 & 500.0 & 1000.0 & 500.0 & 1000.0 & 500.0 & 1000.00 &  0.00 \\
+      170 & 1000.0 & 500.0 & 1000.0 & 500.0 & 1000.0 & 500.0 & 1000.00 &  0.00 \\
+      180 & 1000.0 & 500.0 & 1000.0 & 500.0 & 1000.0 & 500.0 & 1000.00 &  0.00 \\
+      190 & 1000.0 & 500.0 & 1000.0 & 500.0 & 1000.0 & 500.0 & 1000.00 &  0.00 \\
+      200 & 1000.0 & 500.0 & 1000.0 & 500.0 & 1000.0 & 500.0 & 1000.00 &  0.00 \\
+      \bottomrule
+      \end{tabular}
+    \end{table}
+
+    \noindent Die gemittelten Drücke werden gegen die Zeit aufgetragen. Dies ist in den Abbildungen in der \autoref{fig:dreh_leck} zu sehen. Dazu sind in lineare Ausgleichsrechnungen 
+    mit \cite{scipy} durchgeführt worden. Die Fitparameter ergeben sich zu:
+    \begin{align*}
+      \text{Für} \,  p_\text{G} &= \SI{0.5}{\milli\bar} & \text{Für} \,  p_\text{G} &= \SI{10}{\milli\bar}\\
+      m &= \SI{1.8965(5)e-3}{\milli\bar\per\second} & m &= \SI{0.2313 \pm 0.0018}{\milli\bar\per\second} \\
+      n &= \SI{0.4949 \pm 0.0006}{\milli\bar} & n &= \SI{10.1192 \pm 0.2055}{\milli\bar} \\
+      \\
+      \text{Für} \,  p_\text{G} &= \SI{50}{\milli\bar} & \text{Für} \,  p_\text{G} &= \SI{100}{\milli\bar}\\
+      m &= \SI{4.7505 \pm 0.2513}{\milli\bar\per\second} & m &= \SI{4.9360 \pm 0.5869}{\milli\bar\per\second} \\
+      n &= \SI{-64.3325 \pm 29.3767}{\milli\bar} & n &= \SI{247.5253 \pm 68.6133}{\milli\bar} 
+    \end{align*}
+    Es werden keine Datenpunkte exkludiert. \\
+    Aus dem Steigungen der linearen Ausgleichsrechnung werden die Saugvermögen berechnet:
+    \begin{align*}
+      \text{für} \, p_\text{G} &= \SI{0.5}{\milli\bar} & \text{für} \, p_\text{G} &= \SI{10}{\milli\bar} \\
+      S &= \SI{0.1290 \pm 0.0408}{\litre\per\second}  & S &= \SI{0.7865 \pm 0.2488}{\litre\per\second}  \\
+      \\
+      \text{für} \, p_\text{G} &= \SI{50}{\milli\bar} & \text{für} \, p_\text{G} &= \SI{100}{\milli\bar} \\
+      S &= \SI{3.2303 \pm 1.0357}{\litre\per\second}  & S &= \SI{1.6782 \pm 0.5670}{\litre\per\second}  
+    \end{align*}
+
+    \begin{figure}[h]
+      \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{build/leck_dreh_05mbar.pdf}
+        \caption{Gleichgewichtsdruck $p_\text{G} = \SI{0.5}{\milli\bar}$.}
+        \label{fig:dreh_leck_05}
+      \end{subfigure}
+      \hfill
+      \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{build/leck_dreh_10mbar.pdf}
+        \caption{Gleichgewichtsdruck $p_\text{G} = \SI{10}{\milli\bar}$.}
+        \label{fig:dreh_leck_10}
+      \end{subfigure}
+      \hfill
+      \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{build/leck_dreh_50mbar.pdf}
+        \caption{Gleichgewichtsdruck $p_\text{G} = \SI{50}{\milli\bar}$.}
+        \label{fig:dreh_leck_50}
+      \end{subfigure}
+      \hfill
+      \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{build/leck_dreh_100mbar.pdf}
+        \caption{}Gleichgewichtsdruck $p_\text{G} = \SI{100}{\milli\bar}$.
+        \label{fig:dreh_leck_100}
+      \end{subfigure}
+      \caption{Die gemittelten Drücke der Messungen zu den verschiedenen Gleichgewichtsdrücken mit der jeweiligen linearen Ausgleichsrechnung.}
+      \label{fig:dreh_leck}
+    \end{figure}
+
+  \subsubsection{Evakuierungskurve}
+
+    \noindent Die Drehschieberpumpe hat einen Enddruck von $p_\text{E} = \SI{3.85(115)e-3}{\milli\bar}$. Der Rezipient wird für die Aufnahme der Evakuierungskurve mit der Drehschieberpumpe 
+    bis zu einem Druck von $p_0 = \SI{1000}{\milli\bar}$ belüftet. Dann wird die Luftzufuhr abgeschiebert und der Druck in Abhängigkeit der Zeit in 
+    Schritten von $\increment t = \SI{10}{\second}$ aufgenommen bist $t = \SI{600}{\second}$ erreicht. Die aufgenommenen Messdaten sind in der \autoref{tab:dreh_eva} zu finden. 
+    Dort sind außerdem die Ergbnisse der Rechnung 
+    \begin{equation*}
+      \ln(F) = \ln \left( \frac{p(t) = p_\text{E}}{p_0 - p_\text{E}}\right)
+    \end{equation*}
+    eingetragen, da diese für jeden Messung einzeln in ein $t - \ln(F)$ Diagramm eingetragen werden. Die Fehler dieses Ausdruckes werden mit der Gleichung \eqref{eqn:err_ln} berechnet.  
+
+    \begin{table}[h]
+      \centering
+      \caption{Die einzelnen Messdaten der Evakuierungsmessung mit der Drehschieberpumpe. Zusätlich ist jeweils noch der Ausdruck $\ln(F)$ aufgelistet, wobei $F$ der Quotient $F = \frac{p(t) - p_\text{E}}{p_0 - p_\text{E}}$ ist. }
+      \label{tab:dreh_eva}
+      \sisetup{table-format=4.2}
+      \begin{center}
+        \addtolength{\leftskip} {-2.5cm} % increase (absolute) value if needed
+        \addtolength{\rightskip}{-2.5cm}
+      \begin{tabular*}{1.2\textwidth}{@{\extracolsep{\fill}} S[table-format=3.0] S @{${}\pm{}$} S S[table-format=2.2] @{${}\pm{}$} S[table-format=1.2]
+                                                                                 S @{${}\pm{}$} S S[table-format=2.2] @{${}\pm{}$} S[table-format=1.2]
+                                                                                 S @{${}\pm{}$} S S[table-format=2.2] @{${}\pm{}$} S[table-format=1.2]}
+        \toprule
+        & \multicolumn{4}{c}{Messung 1} & \multicolumn{4}{c}{Messung 2} & \multicolumn{4}{c}{Messung 3} \\
+        \cmidrule(lr){2-5} \cmidrule(lr){6-9} \cmidrule(lr){10-13}
+        {$t \mathbin{/} \si{\second}$} & \multicolumn{2}{c}{$p \mathbin{/} \si{\nano\bar}$} & \multicolumn{2}{c}{$\ln(F)$} & \multicolumn{2}{c}{$p \mathbin{/} \si{\nano\bar}$} & \multicolumn{2}{c}{$\ln(F)$} & \multicolumn{2}{c}{$p \mathbin{/} \si{\nano\bar}$} & \multicolumn{2}{c}{$\ln(F)$} \\
+          0 &1000.00 & 500.00 &  0.00 &  0.70 &1000.00 & 500.00 &  0.00 &  0.70 & 1000.00 & 500.00 &  0.00 & 0.70 \\
+         10 & 798.00 & 399.00 & -0.22 &  0.70 & 800.00 & 400.00 & -0.22 &  0.70 & 1000.00 & 500.00 &  0.00 & 0.70 \\
+         20 & 442.00 & 221.00 & -0.81 &  0.70 & 450.00 & 225.00 & -0.79 &  0.70 & 1000.00 & 500.00 &  0.00 & 0.70 \\
+         30 & 278.00 & 139.00 & -1.28 &  0.70 & 282.00 & 141.00 & -1.26 &  0.70 &  624.00 & 312.00 & -0.47 & 0.70 \\
+         40 & 172.00 &  86.00 & -1.76 &  0.70 & 177.00 &  88.50 & -1.73 &  0.70 &  359.00 & 179.50 & -1.02 & 0.70 \\
+         50 & 111.00 &  55.50 & -2.19 &  0.70 & 119.00 &  59.50 & -2.12 &  0.70 &  218.00 & 109.00 & -1.52 & 0.70 \\
+         60 &  77.10 &  23.13 & -2.56 &  0.58 &  79.70 &  23.91 & -2.52 &  0.58 &  142.00 &  71.00 & -1.95 & 0.70 \\
+         70 &  53.20 &  15.96 & -2.93 &  0.58 &  55.80 &  16.74 & -2.88 &  0.58 &   93.80 &  28.14 & -2.36 & 0.58 \\
+         80 &  38.20 &  11.46 & -3.26 &  0.58 &  40.70 &  12.21 & -3.20 &  0.58 &   65.50 &  19.65 & -2.72 & 0.58 \\
+         90 &  29.80 &   8.94 & -3.51 &  0.58 &  31.40 &   9.42 & -3.46 &  0.58 &   45.90 &  13.77 & -3.08 & 0.58 \\
+        100 &  22.10 &   6.63 & -3.81 &  0.58 &  23.40 &   7.02 & -3.75 &  0.58 &   34.80 &  10.44 & -3.35 & 0.58 \\
+        110 &  17.00 &   5.10 & -4.07 &  0.58 &  17.70 &   5.31 & -4.03 &  0.58 &   26.00 &   7.80 & -3.64 & 0.58 \\
+        120 &  13.30 &   3.99 & -4.32 &  0.58 &  14.00 &   4.20 & -4.26 &  0.58 &   19.40 &   5.82 & -3.94 & 0.58 \\
+        130 &  10.30 &   3.09 & -4.57 &  0.58 &  10.80 &   3.24 & -4.52 &  0.58 &   15.60 &   4.68 & -4.16 & 0.58 \\
+        140 &   8.52 &   2.55 & -4.76 &  0.58 &   8.81 &   2.64 & -4.73 &  0.58 &   12.20 &   3.66 & -4.40 & 0.58 \\
+        150 &   7.04 &   2.11 & -4.95 &  0.58 &   7.37 &   2.21 & -4.91 &  0.58 &    9.48 &   2.84 & -4.65 & 0.58 \\
+        160 &   6.02 &   1.80 & -5.11 &  0.58 &   6.17 &   1.85 & -5.08 &  0.58 &    7.88 &   2.36 & -4.84 & 0.58 \\
+        170 &   5.21 &   1.56 & -5.25 &  0.58 &   5.36 &   1.60 & -5.22 &  0.58 &    6.63 &   1.98 & -5.01 & 0.58 \\
+        180 &   4.57 &   1.37 & -5.38 &  0.58 &   4.67 &   1.40 & -5.36 &  0.58 &    5.67 &   1.70 & -5.17 & 0.58 \\
+        190 &   4.03 &   1.20 & -5.51 &  0.58 &   4.12 &   1.23 & -5.49 &  0.58 &    4.91 &   1.47 & -5.31 & 0.58 \\
+        200 &   3.61 &   1.08 & -5.62 &  0.58 &   3.68 &   1.10 & -5.60 &  0.58 &    4.37 &   1.31 & -5.43 & 0.58 \\
+        210 &   3.26 &   0.97 & -5.72 &  0.58 &   3.32 &   0.99 & -5.70 &  0.58 &    3.86 &   1.15 & -5.55 & 0.58 \\
+        220 &   2.95 &   0.88 & -5.82 &  0.58 &   3.01 &   0.90 & -5.80 &  0.58 &    3.46 &   1.03 & -5.66 & 0.58 \\
+        230 &   2.96 &   0.88 & -5.82 &  0.58 &   2.74 &   0.82 & -5.90 &  0.58 &    3.14 &   0.94 & -5.76 & 0.58 \\
+        240 &   2.46 &   0.73 & -6.00 &  0.58 &   2.50 &   0.75 & -5.99 &  0.58 &    2.85 &   0.85 & -5.86 & 0.58 \\
+        250 &   2.26 &   0.67 & -6.09 &  0.58 &   2.31 &   0.69 & -6.07 &  0.58 &    2.59 &   0.77 & -5.95 & 0.58 \\
+        260 &   2.09 &   0.62 & -6.17 &  0.58 &   2.13 &   0.63 & -6.15 &  0.58 &    2.39 &   0.71 & -6.03 & 0.58 \\
+        270 &   1.94 &   0.58 & -6.24 &  0.58 &   1.98 &   0.59 & -6.22 &  0.58 &    2.20 &   0.66 & -6.12 & 0.58 \\
+        280 &   1.80 &   0.54 & -6.32 &  0.58 &   1.83 &   0.54 & -6.30 &  0.58 &    2.04 &   0.61 & -6.19 & 0.58 \\
+        290 &   1.68 &   0.50 & -6.39 &  0.58 &   1.71 &   0.51 & -6.37 &  0.58 &    1.89 &   0.56 & -6.27 & 0.58 \\
+        300 &   1.57 &   0.47 & -6.45 &  0.58 &   1.59 &   0.47 & -6.44 &  0.58 &    1.77 &   0.53 & -6.33 & 0.58 \\
+        310 &   1.47 &   0.44 & -6.52 &  0.58 &   1.49 &   0.44 & -6.51 &  0.58 &    1.65 &   0.49 & -6.40 & 0.58 \\
+        320 &   1.39 &   0.41 & -6.58 &  0.58 &   1.41 &   0.42 & -6.56 &  0.58 &    1.54 &   0.46 & -6.47 & 0.58 \\
+        330 &   1.31 &   0.39 & -6.64 &  0.58 &   1.33 &   0.39 & -6.62 &  0.58 &    1.45 &   0.43 & -6.53 & 0.58 \\
+        340 &   1.24 &   0.37 & -6.69 &  0.58 &   1.25 &   0.37 & -6.68 &  0.58 &    1.36 &   0.40 & -6.60 & 0.58 \\
+        350 &   1.17 &   0.35 & -6.75 &  0.58 &   1.19 &   0.35 & -6.73 &  0.58 &    1.29 &   0.38 & -6.65 & 0.58 \\
+        360 &   1.12 &   0.33 & -6.79 &  0.58 &   1.12 &   0.33 & -6.79 &  0.58 &    1.22 &   0.36 & -6.71 & 0.58 \\
+        370 &   1.06 &   0.31 & -6.85 &  0.58 &   1.07 &   0.32 & -6.84 &  0.58 &    1.15 &   0.34 & -6.77 & 0.58 \\
+        380 &   1.01 &   0.30 & -6.90 &  0.58 &   1.02 &   0.30 & -6.89 &  0.58 &    1.10 &   0.33 & -6.81 & 0.58 \\
+        390 &   0.96 &   0.29 & -6.94 &  0.58 &   0.97 &   0.29 & -6.93 &  0.58 &    1.05 &   0.31 & -6.86 & 0.58 \\
+        400 &   0.91 &   0.27 & -6.99 &  0.58 &   0.92 &   0.27 & -6.98 &  0.58 &    0.99 &   0.29 & -6.91 & 0.58 \\
+        410 &   0.87 &   0.26 & -7.04 &  0.58 &   0.88 &   0.26 & -7.03 &  0.58 &    0.95 &   0.28 & -6.96 & 0.58 \\
+        420 &   0.83 &   0.25 & -7.08 &  0.58 &   0.84 &   0.25 & -7.08 &  0.58 &    0.90 &   0.27 & -7.01 & 0.58 \\
+        430 &   0.80 &   0.24 & -7.13 &  0.58 &   0.80 &   0.24 & -7.12 &  0.58 &    0.86 &   0.25 & -7.05 & 0.58 \\
+        440 &   0.76 &   0.22 & -7.17 &  0.58 &   0.77 &   0.23 & -7.16 &  0.58 &    0.82 &   0.24 & -7.10 & 0.58 \\
+        450 &   0.73 &   0.22 & -7.21 &  0.58 &   0.74 &   0.22 & -7.21 &  0.58 &    0.79 &   0.23 & -7.14 & 0.58 \\
+        460 &   0.70 &   0.21 & -7.26 &  0.58 &   0.71 &   0.21 & -7.25 &  0.58 &    0.75 &   0.22 & -7.19 & 0.58 \\
+        470 &   0.67 &   0.20 & -7.30 &  0.58 &   0.68 &   0.20 & -7.29 &  0.58 &    0.72 &   0.21 & -7.23 & 0.58 \\
+        480 &   0.69 &   0.20 & -7.27 &  0.58 &   0.65 &   0.19 & -7.33 &  0.58 &    0.69 &   0.20 & -7.27 & 0.58 \\
+        490 &   0.62 &   0.18 & -7.38 &  0.58 &   0.63 &   0.18 & -7.37 &  0.58 &    0.67 &   0.20 & -7.31 & 0.58 \\
+        500 &   0.60 &   0.18 & -7.42 &  0.58 &   0.60 &   0.18 & -7.41 &  0.58 &    0.64 &   0.19 & -7.35 & 0.58 \\
+        510 &   0.58 &   0.17 & -7.45 &  0.58 &   0.58 &   0.17 & -7.45 &  0.58 &    0.62 &   0.18 & -7.39 & 0.58 \\
+        520 &   0.55 &   0.16 & -7.49 &  0.58 &   0.56 &   0.16 & -7.48 &  0.58 &    0.59 &   0.17 & -7.42 & 0.58 \\
+        530 &   0.53 &   0.16 & -7.54 &  0.58 &   0.54 &   0.16 & -7.52 &  0.58 &    0.57 &   0.17 & -7.46 & 0.58 \\
+        540 &   0.51 &   0.15 & -7.57 &  0.58 &   0.52 &   0.15 & -7.56 &  0.58 &    0.55 &   0.16 & -7.50 & 0.58 \\
+        550 &   0.49 &   0.14 & -7.61 &  0.58 &   0.50 &   0.15 & -7.60 &  0.58 &    0.53 &   0.15 & -7.54 & 0.58 \\
+        560 &   0.48 &   0.14 & -7.64 &  0.58 &   0.48 &   0.14 & -7.63 &  0.58 &    0.51 &   0.15 & -7.58 & 0.58 \\
+        570 &   0.46 &   0.13 & -7.68 &  0.58 &   0.46 &   0.14 & -7.67 &  0.58 &    0.49 &   0.14 & -7.61 & 0.58 \\
+        580 &   0.44 &   0.13 & -7.72 &  0.58 &   0.45 &   0.13 & -7.70 &  0.58 &    0.47 &   0.14 & -7.65 & 0.58 \\
+        590 &   0.43 &   0.13 & -7.75 &  0.58 &   0.43 &   0.13 & -7.74 &  0.58 &    0.46 &   0.13 & -7.68 & 0.58 \\
+        600 &   0.42 &   0.12 & -7.78 &  0.58 &   0.42 &   0.12 & -7.77 &  0.58 &    0.44 &   0.13 & -7.72 & 0.58 \\
+        \bottomrule
+      \end{tabular*}
+    \end{center}
+    \end{table}
+
+    \begin{figure}[h]
+      \centering
+      \includegraphics[width=\textwidth]{build/evakudreh_1.pdf}
+      \caption{Die Messdaten der ersten Evakuierungsmessung der Drehschieberpumpe aufgetragen in einem Logarithmusausdruck gegen die Zeit. Zusätzlich werden lineare Ausgleichsrechungen in linear wirkende Bereiche gelegt.}
+      \label{fig:evaku_dreh_1}
+    \end{figure}
+
+    \begin{figure}[h]
+      \centering
+      \includegraphics[width=\textwidth]{build/evakudreh_2.pdf}
+      \caption{Die Messdaten der zweiten Evakuierungsmessung der Drehschieberpumpe aufgetragen in einem Logarithmusausdruck gegen die Zeit. Zusätzlich werden lineare Ausgleichsrechungen in linear wirkende Bereiche gelegt.}
+      \label{fig:evaku_dreh_2}
+    \end{figure}
+
+    \begin{figure}[h]
+      \centering
+      \includegraphics[width=\textwidth]{build/evakudreh_3.pdf}
+      \caption{Die Messdaten der dritten Evakuierungsmessung der Drehschieberpumpe aufgetragen in einem Logarithmusausdruck gegen die Zeit. Zusätzlich werden lineare Ausgleichsrechungen in linear wirkende Bereiche gelegt.}
+      \label{fig:evaku_dreh_3}
+    \end{figure}
+
+    \noindent Die Abbildungen werden auf lineares Verhalten untersucht, wobei jeweils drei verschiedene Bereiche mit linearem Verhalten identifiziert werden. 
+    Dies ist für die Messreihe 1 in der \autoref{fig:evaku_dreh_1}, für die Messreihe 2 in der \autoref{fig:evaku_dreh_2} und für die dritte Messreihe in der 
+    \autoref{fig:evaku_dreh_3} zu sehen. Bei der dritten Messreihe werden die ersten beiden Datenpunkte exkludiert, da diese so gut wie gleich dem dritten Punkt sind und sich 
+    daher vermuten lässt, dass die Zeitnahme begonnen hat, bevor der Tank komplett abgedichtet war.\\ 
+    Die Parameterdaten der linearen Ausgleichsrechnungen sind in der Tabelle \autoref{tab:fitpara_dreh_alt} aufgelistet für die verschiedenen Druckbereichen. Das Saugvermögen berechnet sich 
+    aus der Steigung $m$ durch 
+    \begin{equation*}
+      S = m \cdot V\, .
+    \end{equation*}
+    Die Werte für das Saugvermögen sind auch in der \autoref{tab:fitpara_dreh_alt} aufgelistet, der Fehler berechnet sich nach der Formel \eqref{eqn:err_saug_leck}. 
+
+    \begin{table}[h]
+      \centering
+      \caption{Die Fitparameter und die daraus errechneten Saugvermögen für die einzelnen Bereiche der Messungen von der Evakuierungskurve der Drehschieberpumpe.}
+      \label{tab:fitpara_dreh_alt}
+      \sisetup{table-format=1.4}
+      \begin{tabular}{c | S[table-format=2.4] @{${}\pm{}$} S | S[table-format=2.4] @{${}\pm{}$} S | S[table-format=2.4] @{${}\pm{}$} S}
+        \toprule
+        {Bereiche:} & \multicolumn{2}{c}{$\SI{10}{\milli\bar} \leq p \leq \SI{1000}{\milli\bar}$} & \multicolumn{2}{c}{$\SI{1.5}{\milli\bar} \leq p \leq \SI{10}{\milli\bar}$} & \multicolumn{2}{c}{$\SI{0.4}{\milli\bar} \leq p \leq \SI{1.5}{\milli\bar}$}\\
+        \midrule
+        Messung 1 \\ 
+        \cmidrule(lr){1-1}
+        $m \mathbin{/} \left(\si{1\per\second}\right)$ & -0.0371 & 0.0014 & -0.0106 & 0.0004 & -0.0043 & 0.0001 \\
+        $n$                                            & -0.1380 & 0.0956 & -3.3976 & 0.0929 & -5.2577 & 0.0282 \\
+        $S \mathbin{/} \left(\si{L\per\second}\right)$ &  1.2628 & 0.1344 &  0.3612 & 0.0388 &  0.1458 & 0.0147 \\
+        \midrule
+        Messung 2 \\ 
+        \cmidrule(lr){1-1}
+        $m \mathbin{/} \left(\si{1\per\second}\right)$ & -0.0367 & 0.0013 & -0.0108 & 0.0004 & -0.0043 & 0.0001 \\
+        $n$                                            & -0.1281 & 0.0901 & -3.3426 & 0.0992 & -5.2454 & 0.0289 \\
+        $S \mathbin{/} \left(\si{L\per\second}\right)$ &  1.2475 & 0.1321 &  0.3670 & 0.0397 &  0.1462 & 0.0148 \\
+        \midrule
+        Messung 3 \\ 
+        \cmidrule(lr){1-1}
+        $m \mathbin{/} \left(\si{1\per\second}\right)$ & -0.0394 & 0.0015 & -0.0121 & 0.0006 & -0.0044 & 0.0001 \\
+        $n$                                            &  0.5661 & 0.1173 & -2.8796 & 0.1314 & -5.1153 & 0.0320 \\
+        $S \mathbin{/} \left(\si{L\per\second}\right)$ &  1.3389 & 0.1436 &  0.4125 & 0.0459 &  0.1508 & 0.0153 \\      
+        \bottomrule
+      \end{tabular}
+    \end{table}
+
+    \noindent Es werden über die einzelnen Bereiche der Mittelwert der pro Messung berechneten Saugvermögen berechnet. Diese Werte ergeben sich zu:
+    \begin{align*}
+      \SI{10}{\nano\bar} \leq &p \leq \SI{1000}{\nano\bar} & S &= \SI{1.2830 \pm 0.0789}{L\per\second} \\
+      \SI{1.5}{\nano\bar} \leq &p \leq \SI{10}{\nano\bar}& S &= \SI{0.3802 \pm 0.0240}{L\per\second} \\
+      \SI{0.4}{\nano\bar} \leq &p \leq \SI{1.5}{\nano\bar} & S &= \SI{0.1476 \pm 0.0086}{L\per\second}
+    \end{align*}
+    Hier wird der Fahler aus der Fehlerfortpflanzung nach Gauß berechnet. 

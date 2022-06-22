@@ -1,5 +1,6 @@
 #Drehschieberpumpe Leckratenmessung p_G = 10 mbar
 #t[s]	p_1[mbar]	p_2[mbar]	p_3[mbar]
+0       10          10          10
 10      12.7        12.6        12.9
 20      14.9        14.8        15.0
 30      17.0        17.0        17.2

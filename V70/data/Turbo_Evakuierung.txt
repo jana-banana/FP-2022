@@ -1,5 +1,6 @@
 #Turbopumpe Evakuierungskurve p_E = 1.09e-5 mbar Anfangsdruck p = 5e-3mbar Werte in e-5mbar
 #t[s]   p1            p_2       p_3
+0       500         500         500
 10      19.4        17.6        20.2
 20      4.46        3.53        4.24
 30      2.52        2.20        2.33

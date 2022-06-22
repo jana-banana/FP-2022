@@ -1,5 +1,6 @@
 #Turbomolekularpumpe Leckratenmessung p_G = 1*10^-4 mbar
 #t[s]	p_1[10^-3 mbar]	p_2[10^-3 mbar]	p_3[10^-3 mbar]
+0       0.1     0.1     0.1
 10      0.360   0.358   0.388
 20      0.592   0.655   0.618
 30      1.01    1.02    1.01
