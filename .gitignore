@@ -8,3 +8,4 @@
 *.xml
 *.blg
 *.bbl
+build/
