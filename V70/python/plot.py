@@ -207,9 +207,9 @@ ln3 = logausdruck(p3_eva, sig_p3_eva ,p_E, p_0)
 
 #####Auswertungsfunktion anwenden
 
-S_1 = evaku(t_eva, ln1, 0, 12, 30, 'dreh_1')
-S_2 = evaku(t_eva, ln2, 0, 12, 30, 'dreh_2')
-S_3 = evaku(t_eva, ln3, 1, 12, 30, 'dreh_3')
+S_1 = evaku(t_eva, ln1, 0, 13, 31, 'dreh_1')
+S_2 = evaku(t_eva, ln2, 0, 13, 31, 'dreh_2')
+S_3 = evaku(t_eva, ln3, 2, 13, 31, 'dreh_3')
 
 ##Mittelwerte ausrechnen
 print('--------Mittelwerte der einzelnen Abschnitte--------- \n ')
