@@ -79,8 +79,11 @@ def evaku(t, la,g0, g1, g2, name):
     plt.plot(t_plot2, line(t_plot2, m[1], n[1]), '-g')
     plt.errorbar(t_line_3, ln_line_3, yerr=unp.std_devs(la)[g2:], fmt='.', color='yellow')
     plt.plot(t_plot3, line(t_plot3, m[2], n[2]), '-m')
+    plt.rc('axes', labelsize=size_label)
     plt.xlabel(r'$t \mathbin{/} \si{\second}$')
     plt.ylabel(r'$\ln(\frac{p-p_\text{E}}{p_0-p_\text{E}})$')
+    plt.legend(loc='best')
+    plt.tight_layout()
     plt.savefig('build/evaku'+name+'.pdf')
 
     print("--------Saugvermögen--", name, "------- \n ")
@@ -158,6 +161,17 @@ def leckrate(t, p, p_G, drueck, name):
 
 
 #------------------------------------------------------------ Drehschieberpumpe--------------------------------------------------------------
+# firstplot
+t_plot = np.linspace(0, 10, 100)
+plt.figure()
+plt.plot(t_plot, 3*t_plot+4, 'k.', label='tryy')
+plt.rc('axes', labelsize=size_label)
+plt.xlabel(r'$t \mathbin{/} \si{\second}$')
+plt.ylabel(r'$\ln(\frac{p-p_\text{E}}{p_0-p_\text{E}})$')
+plt.legend(loc='best')
+plt.tight_layout()
+plt.savefig('build/firstplot.pdf')
+
 print('_____________________________________Drehschieberpumpe_________________________________________________________________________ \n')
 print('_____________________Evakuierungskurve_______________________________ \n')
 t_eva, p1_eva, p2_eva, p3_eva = np.genfromtxt("data/Dreh_Evakuierung.txt", unpack=True)
@@ -375,7 +389,7 @@ plt.errorbar(35, unp.nominal_values(S_10), yerr=unp.std_devs(S_10), xerr=(10+60)
 plt.errorbar(0.75, unp.nominal_values(S_05), yerr=unp.std_devs(S_05), xerr=(1+0.5)/2, fmt='+',color='brown', label='Leckrate 0.5 mbar' )
 plt.rc('axes', labelsize=size_label)
 plt.xlabel(r'$p \mathbin{/} \si{\milli\bar}$')
-plt.ylabel(r'$S \mathbin{/} \si{L\per\second}$')
+plt.ylabel(r'$S \mathbin{/} \left(\si{L\per\second}\right)$')
 plt.legend()
 plt.tight_layout()
 plt.savefig('build/compare_dreh.pdf')
@@ -531,7 +545,7 @@ plt.errorbar(97.5, unp.nominal_values(S_5_t), yerr=unp.std_devs(S_5_t), xerr=(50
 plt.errorbar(1135, unp.nominal_values(S_7_t), yerr=unp.std_devs(S_7_t), xerr=(70+2200)/2, fmt='+',color='brown', label='Leckrate 70 nbar' )
 plt.rc('axes', labelsize=size_label)
 plt.xlabel(r'$p \mathbin{/} \si{\nano\bar}$')
-plt.ylabel(r'$S \mathbin{/} \si{L\per\second}$')
+plt.ylabel(r'$S \mathbin{/} \left(\si{L\per\second}\right)$')
 plt.legend()
 plt.tight_layout()
 plt.savefig('build/compare_turbo.pdf')
