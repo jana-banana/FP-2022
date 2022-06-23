@@ -14,16 +14,29 @@
         Diese Länge beschreibt den durchschnittlichen Abständen zwischen zwei Teilchenstößen. \\
         \noindent
         Im Grobvakuum ($\SIrange[]{300}{1}{\milli\BAR}$) herrschen vornehmend viskose Strömungen.
-        Diese sind nochmals unterteilbar in laminare und turbolenter Strömung.\\
+        Diese sind nochmals unterteilbar in laminare und turbolenter Strömung.
+        Bei laminarer Strömung sind die mittleren freien Weglängen der Teilchen klein im Vergleich zu den Größen im Strömungskanal, sodass Stöße unter den Teilchen vorherrschen als mit den Wänden des Raumes.
+        Dadurch bewegen sich die Teilchen in Bahnen, parallel zueinander.
         \noindent
         Das Feinvakuum beschreibt danach den Druckbereich von $\SIrange[]{300}{1e-4}{\milli\BAR}$.
         Hier sind Knudsenströmung auffindbar.
+        Diese beschreiben den Übergang von viskoser zu molekularer Strömung.
+        Die mittlere freie Weglänge ist hier in der Größenordnung des Strömungskanals.
         \noindent
         Der Bereich von $\SIrange[]{1e-3}{1e-7}{\milli\BAR}$ beschreibt das Hochvakuum, das Ultravakuum geht dann bis $\SI{1e-12}{\milli\BAR}$.
-        Molekulare Strömung
+        Molekulare Strömung ist hier vertreten.
+        Die mittlere freie Weglänge der Teilchen ist hier größer als die Abmessung des Strömungskanals, die Gasteilchen stoßen vermehrt gegen die Wände des Raumes als untereinander.
         \noindent
-        Alles kleiner als $\SI{1e-12}{\milli\BAR}$ wird extrem hohes Vakuum genannt.
-        vielleicht auch verschiedene Anwendungen?
+        Drücke, die kleiner als $\SI{1e-12}{\milli\BAR}$ sind, liegen im Bereich des extrem hohen Vakuums.
+        \noindent
+        In \autoref{fig:Strömung} ist eine Visualisierung der verschiedenen Strömungsarten und der mittleren freien Weglänge zu sehen.
+
+        \begin{figure}
+            \centering
+            \includegraphics[width=\textwidth]{bilder/Strömung.png}
+            \caption{Verscheidene Strömungsarten der Vakuumbereiche.\cite{Pfeiffer}}
+            \label{fig:Strömung}
+        \end{figure}
 
     \subsection{Ideales Gas und Druck}
         Im vorliegenden Versuch ist es ausreichend vom Modell des idealen Gases auszugehen.
@@ -108,7 +121,7 @@
         Einmal die Drehschieberpumpe und die Turbomolekularpumpe.
 
         \subsubsection{Drehschieberpumpe}
-            In ABBILDUNG ist der schematische Aufbau einer Drehschieberpumpe zu sehen.
+            In \autoref{fig:Drehschieberpumpe} ist der schematische Aufbau einer Drehschieberpumpe zu sehen.
             Diese ist eine ölüberlagerte Rotationsverdrängerpumpe.
             Grob besteht die Pumpe aus zwei Ventilen, Ein- und Auslassventiel.
             Das Einlassventiel ist mit dem Rezipienten verbunden und schließt sich nicht.
@@ -123,20 +136,34 @@
             So kann eine einstufige Pumpe einen Druck von $\SI{6e-2}{\milli\BAR}$ bis $\SI{6e-3}{\milli\BAR}$ im Rezipienten erzeugen.
             Zweistufige Drehschieberpumpen können einen Druck von $\SI{6e-4}{\milli\BAR}$ bis $\SI{6e-5}{\milli\BAR}$ erzeugen.
             In diesem Versuch wird eine einstufige Drehschieberpumpe verwendet.
+      
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=\textwidth]{bilder/Drehschieberpumpe.png}
+            \caption{Schematischer Aufbau einer Drehschieberpumpe.\cite{Pfeiffer}}
+            \label{fig:Drehschieberpumpe}
+        \end{figure}
 
         \subsubsection{Turbomolekularpumpe}
             Anders als die Drehschieberpumpe benötigt die Turbomolekularpumpe ein Vorvakuum um zu funktionieren.
-            In ABBILDUNG ist eine Turbomolekularpumpe zu sehen.
+            In \autoref{fig:Turbomolekularpumpe} ist eine Turbomolekularpumpe zu sehen.
             Im Inneren des Gehäusses sieht sie aus wie eine Turbine bzw. wie ein zusammengesetzte, mehrstufige Turbine.
             Dieser Rotor ist mit schaufelartigen Scheiben besetzt.
             Sie liegen schräg an.
             Ebenfalls sind weitere dieser Schaufeln spiegelverkehrt angebracht worden.
             Bei Drehung des Rotors werden die Gasteilechen durch Stöße mit den Rotorwänden in Pumprichtung beschleunigt.
             Damit das auch passiert, muss sich der Rotor mit einer Geschwindigkeit vergleichbar mit der der Gasteilche bewegen.
-            Dafür dreht sich der Rotor dann mit einigen $\si{\kilo\hertz}$.
+            Dafür dreht sich der Rotor dann mit einigen $\si{\kilo\hertz}$, bei der verwendeten Turbomolekularpumpe sind es $\SI{1350}{\kilo\hertz}$.
             So kann der Druck im Rezipienten schnell auf $\SI{1e-4}{\milli\BAR}$ gebracht werden.
             Weiter ist zu beachten, dass eine Turbomolekularpumpe selbst kein Vakuum erzeugen kann. 
             Sie muss mit einer weiteren Pumpe, z.B. mit einer Drehschieberpumpe zusammen eingesetzt werden.
+
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=\textwidth]{bilder/Turbomolekularpumpe}
+            \caption{Das Modell einer Turbomolekularpumpe.\cite{turboBild}}
+            \label{fig:Turbomolekularpumpe}
+        \end{figure}
 
     \subsection{Vakuummessung}
         \subsubsection{Piezo-Vakuummeter}
