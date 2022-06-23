@@ -10,12 +10,14 @@ berechnet sich der Fehler des arithmetischen Mittelwertes nach
     \sigma_{\bar{x}} = \sqrt{\frac{1}{n(n-1)}\sum_{i=1}^n \left( \bar{x} - x_i \right)^2}\, .
 \end{equation*} 
 Bei Rechnungen mit mehreren fehlerbehafteten Größen ist die Gauß'sche Fehlerfortpflanzung zu betrachten. Hierbei ist der Fehler der Funktion $f(x_i)$ 
-für unkorrelierte $x_i$ gegeben durch
+für unkorrelierte $x_i$  durch
 \begin{equation}
-    \sigma_f = \sqrt{\sum_{i=1}^n \left(\frac{\partial f}{\partial x_i} \sigma_{x_i}\right)^2}\, .
+    \sigma_f = \sqrt{\sum_{i=1}^n \left(\frac{\partial f}{\partial x_i} \sigma_{x_i}\right)^2}
     \label{eqn:gauss}
 \end{equation}
-Die Genauigkeit der abgelesenen Druckwerte ist druckabhängig, ....
+gegeben.
+Die Genauigkeit der abgelesenen Druckwerte ist druckabhängig, das Messgeräte hat im Druckbereich $ \SI{1e-8}{\milli\bar} \leq p \leq \SI{100}{\milli\bar}$ eine Messunsicherheit von 
+$\SI{30}{\percent}$ des Messwertes und im Bereich $\SI{100}{\milli\bar} \leq p \leq \SI{1000}{\milli\bar}$ eine Messunsicherheit von $\SI{50}{\percent}$ des Messwertes. 
 
 \noindent Wird die Gaußsche Fehlerfortpflanzung auf den Logarithmus Ausdruck $\ln\left(\frac{p(t) - p_\text{E}}{p_0 - p_\text{E}}\right)$ angewendet, 
 ergibt sich der Fehler 
@@ -24,11 +26,11 @@ ergibt sich der Fehler
                     + \sigma^2_{p_\text{E}} \left(\frac{1}{p_0 - p_\text{E}} - \frac{1}{p(t) - p_\text{E}}\right)^2 }\, , 
     \label{eqn:err_ln}
 \end{equation}
-wobei $\sigma_x$ die Messunsicherheit der Größe $x$ bezeichnet.
+wobei $\sigma_x$ die Messunsicherheit der Größe $x$ bezeichnet.\\
 Die in dem Versuch zu ermittelnden Saugvermögen werden jeweils unter anderen aus der Steigung $m_i$ des $i$-ten linearen Fits berechnet. 
-Der lineare Fit wird mithilfe von \cite{numpy} angewendet, die Fehler der Parameter werden automatisch analog zur linearen Regression berechnet. 
-Damit ergeben sich für die folgenden Ausdrücke die folgenden Ausdrücke der Messunsicherheiten:
+Der lineare Fit wird mithilfe von Scientific python \cite{numpy} angewendet, die Fehler der Parameter werden automatisch analog zur linearen Regression berechnet. 
+Damit ergeben sich für die folgenden Ausdrücke die folgenden Messunsicherheiten:
 \begin{align}
-    S &= - m \cdot V & \leadsto \sigma_S &= \sqrt{V^2\cdot \sigma_m^2 + m^2 \cdot \sigma_V^2} \label{eqn:err_saug_eva}\\
-    S &= \frac{m\cdot V}{p_\text{G}} & \leadsto \sigma_S &= \sqrt{\frac{V^2}{p_\text{G}^2} \sigma_m^2 + \frac{m^2}{p_\text{G}^2} \sigma_V^2 + \frac{m^2V^2}{p_\text{G}^4} \sigma_{p_{\text{G}}}^2 } \label{eqn:err_saug_leck}
+    S &= - m \cdot V & \rightarrow \sigma_S &= \sqrt{V^2\cdot \sigma_m^2 + m^2 \cdot \sigma_V^2} \label{eqn:err_saug_eva}\\
+    S &= \frac{m\cdot V}{p_\text{G}} & \rightarrow \sigma_S &= \sqrt{\frac{V^2}{p_\text{G}^2} \sigma_m^2 + \frac{m^2}{p_\text{G}^2} \sigma_V^2 + \frac{m^2V^2}{p_\text{G}^4} \sigma_{p_{\text{G}}}^2 } \label{eqn:err_saug_leck}
 \end{align}
