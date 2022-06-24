@@ -111,7 +111,7 @@ print('\n')
 plt.xlabel('T / K')
 plt.ylabel('I / pA')
 
-x = np.linspace(200, 320 ,1000)
+x = np.linspace(200, 315 ,1000)
 plt.plot(x, untergrund(x, popt[0], popt[1]),label = 'Untergrund-Fit')
 #print( untergrund(unter_T_2, popt[0], popt[1])) 
 plt.plot(unter_T_2, unter_I_2,'+r', label = 'verwendete Messpunkte')
