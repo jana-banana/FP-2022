@@ -11,8 +11,8 @@ $p_\text{E} = \SI{10.9 \pm 3.27}{\nano\bar}$ beträgt.
   
   \subsubsection{Leckratenmessung}
 
-    \noindent Es wurde, wie in der \autoref{sec:Durchführung} beschrieben mithilfe des Ventils V4 ?? ein Gleichgewichtsdruck von $p_\text{G} = \SI{50}{\nano\bar}, \, \SI{70}{\nano\bar}, \,  \SI{100}{\nano\bar},\, \SI{200}{\nano\bar}$ eingestellt 
-    und bei $t = \SI{0}{\second}$ die Pumpe abgeschiebert und in Schritten von $\increment t = \SI{10}{\second}$ der Druck an dem Messgerät diwirf?? abgelesen. Dies wurde 3 mal für jeden 
+    \noindent Es wurde, wie in der \autoref{sec:Durchführung} beschrieben ein Gleichgewichtsdruck von $p_\text{G} = \SI{50}{\nano\bar}, \, \SI{70}{\nano\bar}, \,  \SI{100}{\nano\bar},\, \SI{200}{\nano\bar}$ eingestellt 
+    und bei $t = \SI{0}{\second}$ die Pumpe abgeschiebert und in Schritten von $\increment t = \SI{10}{\second}$ der Druck an dem Messgerät M2 abgelesen. Dies wurde 3 mal für jeden 
     Gleichgewichtsdruck gemacht. Anschließend wurden die Drücke der Messung pro Zeit gemittelt. Die Messwerte der einzelnen Messungen und der gemittelte Druck sind für $p_\text{G} = \SI{100}{\nano\bar}$ in der \autoref{tab:turbo_leck_1}, für 
     $\SI{200}{\nano\bar}$ in der \autoref{tab:turbo_leck_2}, für $p_\text{G} = \SI{50}{\nano\bar}$ in der \autoref{tab:turbo_leck_5} und schließlich für $\SI{70}{\nano\bar}$ in der \autoref{tab:turbo_leck_7} zu finden. 
 
@@ -61,7 +61,7 @@ $p_\text{E} = \SI{10.9 \pm 3.27}{\nano\bar}$ beträgt.
       n &= \SI{-424.08 (14611)}{\nano\bar} & n &= \SI{-342.78 \pm 163.26}{\nano\bar} 
     \end{align*} 
 
-    \noindent Durch Vergleich mit der Gleichung GLEICHUNG folgt, dass das Saugvermögen $S$ sich hier durch
+    \noindent Durch Vergleich mit der Gleichung \eqref{eq:saug_leck_theorie} folgt, dass das Saugvermögen $S$ sich hier durch
     \begin{equation*}
       S = \frac{m \cdot V}{p_\text{G}}
     \end{equation*}
@@ -83,7 +83,7 @@ $p_\text{E} = \SI{10.9 \pm 3.27}{\nano\bar}$ beträgt.
     \begin{equation*}
       \ln(F) = \ln \left( \frac{p(t) = p_\text{E}}{p_0 - p_\text{E}}\right) = m \cdot t + n \, 
     \end{equation*} 
-    und der Zeit besteht, wie es in GLEICHUNG hergeleitet wird. Die Messdaten der einzelnen Messungen sind neben dem jeweiligen Logarithmusausdruck in der \autoref{tab:turbo_eva} aufgelistet. 
+    und der Zeit besteht, wie es durch Logarithmieren aus der Gleichung \eqref{eqn:Druck_Funktion} hergeleitet wird. Die Messdaten der einzelnen Messungen sind neben dem jeweiligen Logarithmusausdruck in der \autoref{tab:turbo_eva} aufgelistet. 
     Der Enddruck der Pumpe wurde zu $p_\text{E} = \SI{10.9 \pm 3.27}{\nano\bar}$ bestimmt. Der Fehler des Logarithmusausdruck berechnet sich nach \eqref{eqn:err_ln}.
   
 
@@ -101,7 +101,7 @@ $p_\text{E} = \SI{10.9 \pm 3.27}{\nano\bar}$ beträgt.
 
     \begin{figure}[h]
       \centering
-      \includegraphics[width=\textwidth]{build/evakuturbo_1.pdf}
+      \includegraphics[width=\textwidth]{build/evakuturbo_1_small.pdf}
       \caption{Die Messdaten der ersten Evakuierungsmessung der Turbopumpe aufgetragen in einem Logarithmusausdruck gegen die Zeit. Zusätzlich werden lineare Ausgleichsrechungen in linear wirkende Bereiche gelegt.}
       \label{fig:evaku_turbo_1}
     \end{figure}
@@ -173,7 +173,7 @@ $p_\text{E} = \SI{10.9 \pm 3.27}{\nano\bar}$ beträgt.
     \begin{equation*}
       S = - m \cdot V\, .
     \end{equation*}
-    Dies folgt aus der \autoref{sec:Theorie} oder soo. Die entsprechenden Saugvermögen sind auch in der \autoref{tab:fitpara_turbo_alt} aufgelistet. 
+    Dies folgt aus der Gleichung \eqref{eqn:saug_eva_theo}. Die entsprechenden Saugvermögen sind auch in der \autoref{tab:fitpara_turbo_alt} aufgelistet. 
     Die Fehler der Werte werden mit der Gleichung \eqref{eqn:err_saug_eva} berechnet.\\ 
     Abschließend werden noch die Mittelwerte berechnet, die wie folgt lauten:
     \begin{align*}
@@ -181,7 +181,7 @@ $p_\text{E} = \SI{10.9 \pm 3.27}{\nano\bar}$ beträgt.
       \SI{29.9}{\nano\bar} \leq &p \leq \SI{17.5}{\nano\bar}& S &= \SI{0.9052 \pm 0.0218}{L\per\second} \\
       \SI{17.4}{\nano\bar} \leq &p \leq \SI{13.5}{\nano\bar} & S &= \SI{0.4560 \pm 0.0029}{L\per\second}
     \end{align*}
-    Hier entspricht der Fehler dem Fehler des Mittelwertes.
+    Hier berechnet sich der Fehler nach Gaußscher Fehlerfortpflanzung nach Gleichung \eqref{eqn:err_anderer_fehler}.
 
 \subsection{Drehschieberpumpe}
 
@@ -190,7 +190,7 @@ $p_\text{E} = \SI{10.9 \pm 3.27}{\nano\bar}$ beträgt.
 
     \subsubsection{Leckratenmessung}
 
-    \noindent Analog zum Vorgehen bei der Turbomolekularpumpe wird bei laufender Pumpe durch geregeltes Öffnen des Ventils V4 ?? ein Gleichgewichtsdruck eingestellt. Hier werden die
+    \noindent Analog zum Vorgehen bei der Turbomolekularpumpe wird ein Gleichgewichtsdruck eingestellt. Hier werden die
     Gleichgewichtsdrücke $p_\text{G} = \SI{0.5}{\milli\bar}, \, \SI{10}{\milli\bar}, \, \SI{50}{\milli\bar}, \, \SI{100}{\milli\bar}$ benutzt. Für jeden Gleichgewichtsdruck werden 
     drei Messungen durchgeführt. Der Messzeitraum beträgt $\SI{200}{\second}$, es werden in Schritten von $\increment t = \SI{10}{\second}$ Daten aufgenommen. Über die drei aufgenommenen
     Messungen des Drucks wird das arithmetische Mittel genommen. 
@@ -199,7 +199,7 @@ $p_\text{E} = \SI{10.9 \pm 3.27}{\nano\bar}$ beträgt.
     in der \autoref{tab:dreh_leck_100}.
 
     \noindent Die gemittelten Drücke werden gegen die Zeit aufgetragen. Dies ist in den Abbildungen in der \autoref{fig:dreh_leck} zu sehen. Dazu sind in lineare Ausgleichsrechnungen 
-    mit \cite{scipy} durchgeführt worden. Die Fitparameter ergeben sich zu:
+    mit python \cite{scipy} durchgeführt worden. Die Fitparameter ergeben sich zu:
     \begin{align*}
       \text{Für} \quad  p_\text{G} &= \SI{0.5}{\milli\bar} & \text{Für} \quad  p_\text{G} &= \SI{10}{\milli\bar}\\
       m &= \SI{1.8965(5)e-3}{\milli\bar\per\second} & m &= \SI{0.2313 \pm 0.0018}{\milli\bar\per\second} \\
@@ -210,7 +210,7 @@ $p_\text{E} = \SI{10.9 \pm 3.27}{\nano\bar}$ beträgt.
       n &= \SI{-64.3325 \pm 29.3767}{\milli\bar} & n &= \SI{247.5253 \pm 68.6133}{\milli\bar} 
     \end{align*}
     Es werden keine Datenpunkte exkludiert. \\
-    Aus dem Steigungen der linearen Ausgleichsrechnung werden die Saugvermögen berechnet, wobei sich die Messunsicherheit nach Gleichung \eqref{eqn:err_saug_leck} berechnet:
+    Aus dem Steigungen der linearen Ausgleichsrechnung werden die Saugvermögen berechnet durch Vergleich mit Gleichung \eqref{eq:saug_leck_theorie}, wobei sich die Messunsicherheit nach Gleichung \eqref{eqn:err_saug_leck} berechnet:
     \begin{align*}
       \text{für} \quad p_\text{G} &= \SI{0.5}{\milli\bar} & \text{für} \quad p_\text{G} &= \SI{10}{\milli\bar} \\
       S &= \SI{0.1290 \pm 0.0408}{L\per\second}  & S &= \SI{0.7865 \pm 0.2488}{L\per\second}  \\
@@ -258,7 +258,7 @@ $p_\text{E} = \SI{10.9 \pm 3.27}{\nano\bar}$ beträgt.
     Schritten von $\increment t = \SI{10}{\second}$ aufgenommen bist $t = \SI{600}{\second}$ erreicht. Die aufgenommenen Messdaten sind in den Tabelle \ref{tab:dreh_eva} und \ref{tab:dreh_eva2} zu finden. 
     Dort sind außerdem die Ergbnisse der Rechnung 
     \begin{equation*}
-      \ln(F) = \ln \left( \frac{p(t) = p_\text{E}}{p_0 - p_\text{E}}\right)
+      \ln(F) = \ln \left( \frac{p(t) - p_\text{E}}{p_0 - p_\text{E}}\right)
     \end{equation*}
     eingetragen, da diese für jeden Messung einzeln in ein $t - \ln(F)$ Diagramm eingetragen werden. Die Fehler dieses Ausdruckes werden mit der Gleichung \eqref{eqn:err_ln} berechnet.  
 
@@ -297,7 +297,7 @@ $p_\text{E} = \SI{10.9 \pm 3.27}{\nano\bar}$ beträgt.
 
     \begin{figure}[h]
       \centering
-      \includegraphics[width=\textwidth]{build/evakudreh_3.pdf}
+      \includegraphics[width=\textwidth]{build/evakudreh_3_small.pdf}
       \caption{Die Messdaten der dritten Evakuierungsmessung der Drehschieberpumpe aufgetragen in einem Logarithmusausdruck gegen die Zeit. Zusätzlich werden lineare Ausgleichsrechungen in linear wirkende Bereiche gelegt.}
       \label{fig:evaku_dreh_3}
     \end{figure}
@@ -309,8 +309,9 @@ $p_\text{E} = \SI{10.9 \pm 3.27}{\nano\bar}$ beträgt.
     Die Parameterdaten der linearen Ausgleichsrechnungen sind in der Tabelle \autoref{tab:fitpara_dreh_alt} aufgelistet für die verschiedenen Druckbereichen. Das Saugvermögen berechnet sich 
     aus der Steigung $m$ durch 
     \begin{equation*}
-      S = m \cdot V\, .
+      S = m \cdot V\, ,
     \end{equation*}
+    welches sich durch Vergleich mit Gleichung \eqref{eqn:saug_eva_theo} ergibt.
     Die Werte für das Saugvermögen sind auch in der \autoref{tab:fitpara_dreh_alt} aufgelistet, der Fehler berechnet sich nach der Formel \eqref{eqn:err_saug_leck}. 
 
     \begin{table}[h]
@@ -349,4 +350,4 @@ $p_\text{E} = \SI{10.9 \pm 3.27}{\nano\bar}$ beträgt.
       \SI{1.5}{\nano\bar} \leq &p \leq \SI{10}{\nano\bar}& S &= \SI{0.3802 \pm 0.0240}{L\per\second} \\
       \SI{0.4}{\nano\bar} \leq &p \leq \SI{1.5}{\nano\bar} & S &= \SI{0.1476 \pm 0.0086}{L\per\second}
     \end{align*}
-    Hier wird der Fahler aus der Fehlerfortpflanzung nach Gauß berechnet. 
+    Hier wird der Fehler aus der Fehlerfortpflanzung nach Gauß nach Gleichung \eqref{eqn:err_anderer_fehler} berechnet. 

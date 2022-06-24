@@ -34,3 +34,8 @@ Damit ergeben sich für die folgenden Ausdrücke die folgenden Messunsicherheite
     S &= - m \cdot V & \rightarrow \sigma_S &= \sqrt{V^2\cdot \sigma_m^2 + m^2 \cdot \sigma_V^2} \label{eqn:err_saug_eva}\\
     S &= \frac{m\cdot V}{p_\text{G}} & \rightarrow \sigma_S &= \sqrt{\frac{V^2}{p_\text{G}^2} \sigma_m^2 + \frac{m^2}{p_\text{G}^2} \sigma_V^2 + \frac{m^2V^2}{p_\text{G}^4} \sigma_{p_{\text{G}}}^2 } \label{eqn:err_saug_leck}
 \end{align}
+Bei der Mittelung von $n$ fehlerbehafteten Größen $x_i$ folgt aus der Fehlerfortpflanzung
+\begin{equation}
+    \sigma_{\bar{x}} = \frac{1}{n} \sqrt{ \sum_i^n\sigma_{x_i}^2 }\, .
+    \label{eqn:err_anderer_fehler}
+\end{equation}
