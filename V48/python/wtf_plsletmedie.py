@@ -95,8 +95,8 @@ unter_b_1 = popt[1]
 
 # Untergrund Fit für Messung 2
 
-unter_I_2 = np.concatenate((I_2[13:22],I_2[40:62]), axis=None)
-unter_T_2 = np.concatenate((T_2[13:22],T_2[40:62]), axis=None)
+unter_I_2 = np.concatenate((I_2[13:22],I_2[40:59]), axis=None)
+unter_T_2 = np.concatenate((T_2[13:22],T_2[40:59]), axis=None)
 
 popt, pcov = curve_fit(untergrund, unter_T_2, unter_I_2)
 errors = np.sqrt(np.diag(pcov))
@@ -262,7 +262,7 @@ W_11_ev = - k_ev*b
 print(f'W_11 = {W_11} Joule = {W_11_ev} eV')
 
 #Relaxationszeit
-T_max_1 = 38.3 + 273.15 #für I_max_1 = 2.35 * 10^-11 A
+T_max_1 = 257.15 #für I_max_1 = 9.48893508 * 10^-12 A genau 16 grad celsius
 tau_max11 = (k*(T_max_1**2))/(b1*W_11)
 tau_11 = tau_max11 * unp.exp(- W_11/(k*T_max_1))
 print(f'Realaxationszeit tau_11 = {tau_11} min')
@@ -328,7 +328,7 @@ W_12_ev = - k_ev*b
 print(f'W_12 = {W_12} Joule = {W_12_ev} eV \n')
 
 #Relaxationszeit
-T_max_2 = 42.5 + 273.15 #für I_max_2 = 3.5 * 10^-11 A
+T_max_2 = 257.15 #für I_max_2 = 9.91590861 * 10^-12 ######Korriegiert bei 16 grad celsius
 tau_max12 = (k*(T_max_2**2))/(b2*W_12)
 tau_12 = tau_max12 * unp.exp(- W_12/(k*T_max_2))
 print(f'Realaxationszeit tau_12 = {tau_12} min')

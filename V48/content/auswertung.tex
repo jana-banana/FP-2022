@@ -15,7 +15,7 @@
     &\text{Messung 1}\\
     &a =  \SI{4.695(2347)e9}{\pico\ampere} &&  m = \SI{5899.27(15055)}{\kelvin} \, ,\\
     &\text{Messung 2}\\
-    &a = \SI{903.023(484904)e6}{\pico\ampere} &&  m = \SI{5359.79(16524)}{\kelvin} \, .\\
+    &a = \SI{6250(4024)e6}{\pico\ampere} &&  m = \SI{5938.53(194.72)}{\kelvin} \, .\\ %Korrigiert
   \end{align*}
   In \autoref{fig:T_I_plot_Untergrund} sind die entsprechenden Untergrund-Fits zu sehen.
 
@@ -99,7 +99,7 @@
   \end{align*}
   und für Messung 2:
   \begin{align*}
-    c = \SI{22.90(184)}{\ln(\pico\ampere)} && m = (-5348,16\pm 444,14)\,\si{\kelvin}  \, . \\
+    c = \SI{22.87(177)}{\ln(\pico\ampere)} && m = (-5315,95\pm 426,57)\,\si{\kelvin}  \, . \\ %Korrigiert
   \end{align*}
   Die Ausgleichsgeraden sind ebenfalls in \autoref{fig:log_I_1_durch_T_Messung_1} und \autoref{fig:log_I_1_durch_T_Messung 2} zu finden.
 
@@ -124,7 +124,7 @@
   \begin{align*}
     W   &= -k_\text{B} \cdot m \\
     \implies W_{1,1} &= \SI{1.052(021)e-19}{\joule} &= \SI{0.657(013)}{\electronvolt} \, , \\
-    \implies W_{1,2} &= \SI{7.4(6)e-20}{\joule} &= \SI{0.460(40)}{\electronvolt}  \, .\\
+    \implies W_{1,2} &= \SI{7.3(6)e-20}{\joule} &= \SI{0.460(40)}{\electronvolt}  \, .\\
   \end{align*}
 
 \subsection{Aktivierungsenergie - Zweite Methode}
@@ -156,16 +156,16 @@
   Die ermittelten Werte betragen:
   \begin{align*}
     &\text{Messung 1} \\
-    &m = (9541.25 \pm 135.01)\,\si{\kelvin} && b= -34.97 \pm  \, 0.54 , \\ 
+    &m = (9541,25 \pm 135,01)\,\si{\kelvin} && b= -34,97 \pm  \, 0,54 , \\ 
     &\text{Messung 2} \\
-    &m = (10269.27 \pm 133.28)\,\si{\kelvin} && b = -37.83 \pm 0.53\, . \\
+    &m = (10096,44 \pm 132,90)\,\si{\kelvin} && b = -37,13 \pm 0,53\, . \\ %Korrigiert
   \end{align*}
   \noindent
   Mithilfe von \eqref{eqn:Aktivierungsenergie} wird die Aktivierungsenergie $W$ bestimmt.
   Es folgt:
   \begin{align*}
     W_{2,1} &= \SI{1.317(019)e-19}{\joule} &= \SI{0.822(012)}{\electronvolt} \, ,\\
-    W_{2,2} &= \SI{1.418(018)e-19}{\joule} &= \SI{0.885(011)}{\electronvolt} \, .\\
+    W_{2,2} &= \SI{1.394(018)e-19}{\joule} &= \SI{0.870(011)}{\electronvolt} \, .\\ %Korrigiert
   \end{align*}
 
   \begin{figure}[H]
@@ -189,14 +189,14 @@
   Die Heizrate für Messung 1 beträgt $b_1 = \SI{14.6(04)e-1}{\kelvin\per\minute}$ und für Messung 2 $b_2 = \SI{18.7(05)e-1}{\kelvin\per\minute}$.
   Somit folgt für die jeweilige Relaxationszeit $\tau$ mit den Aktivierungsenergien $W$ aus der ersten Methode:
   \begin{align*}
-    \tau_{1,1} = (4\pm 6)\cdot 10^{-7}\,\si{\minute} &&  \tau_{1,2} = (2,1\pm 1)\cdot 10^{-10}\,\si{\minute} \, . \\
+    \tau_{1,1} = (8\pm 5)\cdot 10^{-13}\,\si{\minute} &&  \tau_{1,2} = (0,7\pm 1,2)\cdot 10^{-8}\,\si{\minute} \, . \\ %korrigiert
   \end{align*}
-  Dabei wurde für $T_\text{max,1} = \SI{38.3}{\celsius} = \SI{311.45}{\kelvin} $ und $T_\text{max,2} = \SI{42.5}{\celsius} = \SI{315.65}{\kelvin}$ ermittelt.
+  Dabei wurde für $T_\text{max,1} = \SI{16}{\celsius} = \SI{257.15}{\kelvin} $ und $T_\text{max,2} = \SI{16}{\celsius} = \SI{257.15}{\kelvin}$ ermittelt. %Temperatur korrigiert
   Bei dieser Temperatur wurde der maximale Depolarisationsstrom beobachtet.
 
   \noindent
   Mithilfe der zweiten Methode wird die Relaxationszeit auch mit \eqref{eqn:auswertungrelax} bestimmt.
   Es folgt für die jeweilige Messung:
   \begin{align*}
-    \tau_{2,1} =  (3,5\pm 1,5)\cdot 10^{-13}\,\si{\minute} &&  \tau_{2,2} = (3,8\pm 1,7)\cdot 10^{-14}\,\si{\minute}\, . \\
+    \tau_{2,1} =  (3,7\pm 2,0)\cdot 10^{-16}\,\si{\minute} &&  \tau_{2,2} = (3,1\pm 1,6)\cdot 10^{-17}\,\si{\minute}\, . \\ %Korrigiert
   \end{align*}

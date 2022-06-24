@@ -95,8 +95,8 @@ unter_b_1 = popt[1]
 
 # Untergrund Fit für Messung 2
 
-unter_I_2 = np.concatenate((I_2[13:22],I_2[40:62]), axis=None)
-unter_T_2 = np.concatenate((T_2[13:22],T_2[40:62]), axis=None)
+unter_I_2 = np.concatenate((I_2[13:22],I_2[40:60]), axis=None)
+unter_T_2 = np.concatenate((T_2[13:22],T_2[40:60]), axis=None)
 
 popt, pcov = curve_fit(untergrund, unter_T_2, unter_I_2)
 errors = np.sqrt(np.diag(pcov))
