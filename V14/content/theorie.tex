@@ -14,7 +14,7 @@ Dabei ergibt sich für die gemessene Zählrate $R$ folgender Zusammenhang:
     R = R_0 \cdot \exp{(- \sum_{i} \mu_i d_i)} \, .
 \end{equation*}
 $R_0$ beschreibt die Eingangszählrate, $\mu_i$ den Absorptionskoeffizienten und $d_i$ die zurückgelegte Strecke nach Strahlrichtung $i$.
-Dabei wird von stückweisen konstanten Absorptionskoeffizienten ausgegagngen. 
+Dabei wird von stückweisen konstanten Absorptionskoeffizienten ausgegangen. 
 Sind Eingangs- und Ausgangszählrate bekannt, kann durch Logarithmieren ein Ausdruck für den Absorptionskoeffizienten aufgestellt werden:
 \begin{equation}
     \sum_{i} \mu_i d_i = \ln\left(\frac{R_0}{R}\right) \, .
@@ -29,7 +29,7 @@ entsteht ein lineares Gleichungssystem, sodass \eqref{eqn:SUMME} in Matrixschrei
 wobei $\vec{I}$ ein Vektor mit den zwölf Einträgen $\vec{I}_i = \ln\left(\frac{R_0}{R_i}\right)$ mit der gemessenen Zählrate $R_i$ in der Projektion $i$ ist.
 Die Matrix A die verschiedenen Strecken, die bei einer Projektion durch ein Material von der Strahlung durchlaufen werden.
 % Das entstandene LGS soll überbestimmt sein.
-Die Matrix $A$ sollte nicht singulär sein, damit die Werte für die Absorptionskoeffizienten mit dem Verfahren für die kleinsten Quadrate gefittet werden können.
+Die Matrix $A$ sollte nicht singulär sein, damit die Werte für die Absorptionskoeffizienten durch eine Ausgleichsrechung mit dem Verfahren für die kleinsten Quadrate ermittelt werden können.
 Es ergibt sich folgender Ausdruck für den Absorptionskoeffizienten $\mu$:
 \begin{equation*}
     \vec{\mu} = \left( A^\top \cdot A \right)^{-1} \cdot A^\top \vec{I}
@@ -42,7 +42,7 @@ Insgesamt gibt es 12 Projektionsrichtungen.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{bilder/projektionen.png}
-    \caption{Schematischer Aufbau der verwendeten Projektionen.Die Benennung der kleineren Würfel erfolgt auch nach dieser Abbildung, wobei die Zahl auf dem Würfel aufrecht zu lesen ist}
+    \caption{Schematische Darstellung der verwendeten Projektionen.Die Benennung der kleineren Würfel erfolgt auch nach dieser Abbildung, wobei die Zahl auf dem Würfel aufrecht zu lesen ist}
     \label{fig:Projektionen}
 \end{figure}
 

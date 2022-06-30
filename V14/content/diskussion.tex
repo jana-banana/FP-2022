@@ -6,17 +6,18 @@
 
 \begin{table}
     \centering
-    \caption{Die Literaturwerte des Massenschwächungskoeffizienten $\sigma$ , der Stoffdichte $\rho$ und dem Absorptionskoeffizienten $\mu$ der mögliche Materialien.}
+    \caption{Die Literaturwerte des Massenschwächungskoeffizienten $\sigma$ \cite{massenbumms}, der Stoffdichte $\rho$ \cite{dichten} und dem Absorptionskoeffizienten $\mu$ der mögliche Materialien.
+    Für Holz werden die Werte aus \cite{Saritha_2015} entnommen.}
     \label{tab:lit}
-    \begin{tabular}{c S[table-format=2.3] S[table-format=2.2] S[table-format=1.3]}
+    \begin{tabular}{c c c c} %S[table-format=2.3] S[table-format=2.2] S[table-format=1.3]}
         \toprule
-        {Stoff} & {$ \sigma \mathbin{/}  \left(\SI{e-2}{\centi\metre\squared\per\gram}\right)$\cite{massenbumms}} & {$\rho \mathbin{/}  \left(\si{\gram\per\centi\metre\cubic}\right)$\cite{dichten}} & {$\mu \mathbin{/} \left( \si{\per\centi\metre\cubic}\right)$} \\
+        {Stoff} & {$ \sigma \mathbin{/}  \left(\SI{e-2}{\centi\metre\squared\per\gram}\right)$} & {$\rho \mathbin{/}  \left(\si{\gram\per\centi\metre\tothe{3}}\right)$} & {$\mu \mathbin{/} \left( \si{\per\centi\metre\cubic}\right)$} \\
         \midrule
-        Aluminium & 7.802   & 2.7   & 0.211 \\
-        Blei      & 12.48   & 11.34 & 1.415 \\
-        Eisen     & 7.704   & 7.87  & 0.606 \\
-        Messing   & 7.651   & 8.4   & 0.642 \\
-        Delrin    & 8.6     & 1.42  & 0.121 \\
+        Aluminium & 7,802   & 2,7   & 0,211 \\
+        Blei      & 12,48   & 11,34 & 1,415 \\
+        Eisen     & 7,704   & 7,87  & 0,606 \\
+        Messing   & 7,651   & 8,4   & 0,642 \\
+        Holz      & 8,0     & 0,3-1,2  & 0,024 - 0,096 \\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -24,17 +25,17 @@
 \noindent Die beiden homogenen Würfel 2 und 3 werden jeweils nur mit weniger Projektionen gemessen. Zur Identifizierung der Materialien werden die 
 experimentell ermittelten Absorptionskoeffizienten mit den Werten aus der \autoref{tab:lit} verglichen. Der Absorptionskoeffizient des Würfel 2 wird zu
 \begin{equation*}
-    \mu_{\text{Würfel 2}} = \SI{0.105033(6547)}{\per\centi\metre}
+    \mu_{\text{Würfel 2}} = \SI{0.105(6)}{\per\centi\metre}
 \end{equation*}
-bestimmt, sodass vermutet wird, dass es sich um einen Würfel aus Delrin handelt, welches einen Absorptionskoeffizienten von $\mu_{\text{Delrin}} = 
-\SI{0.121}{1\per\centi\metre}$ hat. Damit ergibt sich eine Abweichung von 
+bestimmt, sodass vermutet wird, dass es sich um einen Würfel aus Holz handelt, welches einen Absorptionskoeffizienten im Bereich von $\mu_{\text{Holz}} \in
+[\SI{0.024}{1\per\centi\metre}\, , \SI{0.096}{1\per\centi\metre}]$ hat. Damit ergibt sich eine Abweichung zur oberen Grenze von 
 \begin{equation*}
-    \increment \mu_{\text{Würfel 2}} = \SI{13(5)}{\percent}\, ,
+    \increment \mu_{\text{Würfel 2}} = \SI{9(7)}{\percent}\, ,
 \end{equation*}
 welche über die Formel $\increment x = 1 - \frac{x_{\text{exp}}}{x_{\text{lit}}}$ berechnet wird. \\
 Für den Absorptionskoeffizienten von Würfel 3 wird 
 \begin{equation*}
-    \mu_{\text{Würfel 3}} = \SI{1.358052(71111)}{\per\centi\metre}
+    \mu_{\text{Würfel 3}} = \SI{1.358(71)}{\per\centi\metre}
 \end{equation*}
 ermittelt. Es wird vermutet, dass es sich um einen Würfel aus Blei handelt, $\mu_{\text{Blei}} = \SI{1.415}{1\per\centi\metre}$. Der gemessene Wert 
 weicht um 
@@ -43,25 +44,29 @@ weicht um
 \end{equation*}
 von dem Literaturwert ab.\\
 Der Würfel 4 besteht aus 27 verschiedenen kleineren Würfeln, da nur eine Ebene untersucht wird, werden 9 dieser Würfel bestimmt. Der experimentell ermittelten 
-Wert ist neben dem vermuteten Stoff und der relativen Abweichung in der \autoref{tab:compare} aufgelistet. 
+Wert ist neben dem vermuteten Stoff und der relativen Abweichung in der \autoref{tab:compare} aufgelistet. Da bei Holz die Dichte $\rho$ ja nach verwendeter Holzart
+und Feuchte des Holzes stark unterschiedliche Werte annimmt, ist es schwierig einen festen Literaturwert anzugeben. In der \autoref{tab:lit} wird dies über die 
+Angabe eines Bereiches umgangen. Hier werden nun keine Theoriewerte und keine Abweichungen bestimmt, wenn der ermittelte Wert in dem angebenen Bereich liegt. 
+Der Wert des Absoprtionskoeffizienten, der für den Würfel 7 ermittelt wurde, liegt leicht oberhalb des Bereiches, sodass eine Abweichung von der oberen Grenze 
+berechnet wird. 
 
 \begin{table}[H]
     \centering
     \caption{Die ermittelten Werte für die Absorptionskoeffizienten der verschiedenen kleineren Würfel neben dem vermuteten Stoff und der jeweiligen Abweichung.}
     \label{tab:compare}
-    \begin{tabular}{c S[table-format=1.6] @{${}\pm{}$} S[table-format=1.6] S[table-format=1.6] c S[table-format=2.1] @{${}\pm{}$} S[table-format=2.1]}
+    \begin{tabular}{c S[table-format=1.3] @{${}\pm{}$} S[table-format=1.3] S[table-format=1.3] c S[table-format=2.1] @{${}\pm{}$} S[table-format=2.1]}
       \toprule
       {Würfel} & \multicolumn{2}{c}{$\mu \mathbin{/} \si{\per\centi\metre}$}  & {$\mu_{\text{lit}} \mathbin{/} \si{\per\centi\metre}$} & {Stoff} & \multicolumn{2}{c}{$\increment\mu \mathbin{/} \si{\percent}$} \\
       \midrule
-      1 & 0.238148 & 0.024145  & 0.211 & Aluminium  & 13    &11\\
-      2 & 1.148348 & 0.023789  & 1.415 & Blei       & 18.8  & 1.7\\
-      3 & 0.276631 & 0.024831  & 0.211 & Aluminium  & 31    &12\\
-      4 & 0.080247 & 0.020428  & 0.121 & Delrin     & 34    &17\\
-      5 & 1.154867 & 0.025784  & 1.415 & Blei       & 18.4  &1.8\\
-      6 & 0.089066 & 0.020524  & 0.121 & Delrin     & 26    &17\\
-      7 & 0.100641 & 0.023762  & 0.121 & Delrin     & 17    &20\\
-      8 & 1.063031 & 0.023457  & 1.415 & Blei       & 24.9  &1.7\\
-      9 & 0.045804 & 0.023045  & 0.121 & Delrin     & 62    &19\\
+      1 & 0.238 & 0.024  & 0.211 & Aluminium  & 13    &11\\
+      2 & 1.148 & 0.023  & 1.415 & Blei       & 18.8  & 1.7\\
+      3 & 0.276 & 0.024  & 0.211 & Aluminium  & 31    &12\\
+      4 & 0.080 & 0.020  &       & Holz       &       & \\
+      5 & 1.154 & 0.025  & 1.415 & Blei       & 18.4  &1.8\\
+      6 & 0.089 & 0.020  &       & Holz       &      &  \\
+      7 & 0.100 & 0.023  & 0.096 & Holz       & 5    & 25\\
+      8 & 1.063 & 0.023  & 1.415 & Blei       & 24.9  &1.7\\
+      9 & 0.045 & 0.023  &       & Holz       &       &  \\
       \bottomrule
     \end{tabular}
   \end{table}

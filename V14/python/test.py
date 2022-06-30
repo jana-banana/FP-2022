@@ -152,7 +152,7 @@ mu_w2_mean = np.mean(unp.nominal_values(mu_w2))
 sig_w2_mean = np.std(unp.nominal_values(mu_w2))/len(names)
 mu_w2_m = unp.uarray(mu_w2_mean, sig_w2_mean)
 
-abw = 1 - mu_w2_m/0.121
+abw = 1 - mu_w2_m/0.096
 
 print(f'\n Würfel 2 \n mu mean = {mu_w2_mean:.6f} \\pm {sig_w2_mean:.6f} \n')
 print(f'Abweichung zu Delrin: {abw}')
@@ -298,7 +298,7 @@ for n in range(9):
 
 ## Abweichung von Literaturwert
 mu_4_a = unp.uarray(mu_w4, sig_mu_w4)
-lit = np.array([0.211, 1.415, 0.211, 0.121, 1.415, 0.121, 0.121, 1.415, 0.121])
+lit = np.array([0.211, 1.415, 0.211, 0.060, 1.415, 0.060, 0.096, 1.415, 0.060])
 abw = 1 - mu_4_a/lit
 
 for n in range(9):
