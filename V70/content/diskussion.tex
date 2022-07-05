@@ -3,7 +3,9 @@
 
 \noindent Die Aufnahme der Messwerte lief ohne größere Probleme. Die ermittelten Werte für das Saugvermögen der verschiedenen Pumpen sind in der \autoref{fig:compare} 
 graphisch dargestellt und in den Tabellen \ref{tab:compare_dreh} für die Drehschieberpumpe und \ref{tab:compare_turbo} für die Turbomolekularpumpe
-aufgelistet mit den jeweiligen Abweichungen zu den Theoriewerten.
+aufgelistet mit den jeweiligen Abweichungen zu den Theoriewerten.\\
+Der erste Bereich der Evakuierungsmessung wird auf der $x$-Achse nicht komplett angezeigt, damit die Ergebnisse des Saugvermögens bei kleineren 
+Drücke besser zu erkennen sind.
 
 \begin{figure}[h]
     \begin{subfigure}{0.48\textwidth}
@@ -24,7 +26,7 @@ aufgelistet mit den jeweiligen Abweichungen zu den Theoriewerten.
 \end{figure}
 
 \noindent Die ermittelten Werte für das Saugvermögen der Drehschieberpumpe sind in der \autoref{tab:compare_dreh} aufgelistet. Der Hersteller gibt für das Saugvermögen einen Bereich 
-von $ S_\text{theo} \in [\SI{1.28}{L\per\second},\, \SI{1.53}{L\per\second}]$ an. In der \autoref{tab:compare_dreh} sind die relativen Abweichungen des experimentellen Wertes von 
+von $ S_\text{theo} \in [\SI{1.28}{\litre\per\second},\, \SI{1.53}{\litre\per\second}]$ an. In der \autoref{tab:compare_dreh} sind die relativen Abweichungen des experimentellen Wertes von 
 dem theoretischen Wert nach der Formel 
 \begin{equation}
     \increment S = \frac{S_\text{theo} - S_\text{exp}}{S_\text{theo}}\, .
@@ -44,7 +46,7 @@ Die gesamten Messungen zur Drehschieberpumpe sollten demnach am besten wiederhol
     \sisetup{table-format=1.2}
     \begin{tabular}{c  S @{${}\pm{}$} S  S[table-format=2.1] S[table-format=3.1]}
         \toprule
-        {Messung} & \multicolumn{2}{c}{$ S \mathbin{/} \left(\si{L\per\second}\right)$} & {$\increment S_\text{low} \mathbin{/} \si{\percent}$} & {$\increment S_\text{high} \mathbin{/} \si{\percent}$} \\ 
+        {Messung} & \multicolumn{2}{c}{$ S \mathbin{/} \left(\si{\litre\per\second}\right)$} & {$\increment S_\text{low} \mathbin{/} \si{\percent}$} & {$\increment S_\text{high} \mathbin{/} \si{\percent}$} \\ 
         \midrule
         Evakuierung 1                       & 1.25 & 0.14 &  2.1 &  18.1\\
         Evakuierung 2                       & 0.36 & 0.04 & 71.9 &  76.5\\
@@ -67,16 +69,16 @@ dass der Rezipient immer wieder mit Luft geflutet wurde und dann evakuiert, was 
 nicht erreicht werden. Bei optimalen Bedingungen wird der Tank mit Stickstoff belüftet. 
 
 \noindent Bei der Turbomolekularpumpe ist in der \autoref{fig:saug_turbo} deutlich zu erkennen, dass die ermittelten Werte stark vom Theoriewert abweichen, dieser beträgt $S_\text{theo} =
-\SI{77}{L\per\second}$ \cite{anleitung}. Dies bestätigt sich auch bei Betrachtung der Werte und ihren relativen Abweichungen zum angegebenen Wert in der \autoref{tab:compare_turbo}. 
+\SI{77}{\litre\per\second}$ \cite{anleitung}. Dies bestätigt sich auch bei Betrachtung der Werte und ihren relativen Abweichungen zum angegebenen Wert in der \autoref{tab:compare_turbo}. 
 
 \begin{table}
     \centering
-    \caption{Die ermittelten Werte des Saugvermögens der Turbomolekularpumpe mit der Abweichung von Theoriewert $S_\text{theo} = \SI{77}{L\per\second}$ \cite{anleitung}.}
+    \caption{Die ermittelten Werte des Saugvermögens der Turbomolekularpumpe mit der Abweichung von Theoriewert $S_\text{theo} = \SI{77}{\litre\per\second}$ \cite{anleitung}.}
     \label{tab:compare_turbo}
     \sisetup{table-format=2.1}
     \begin{tabular}{c  S @{${}\pm{}$} S  S}
         \toprule
-        {Messung} & \multicolumn{2}{c}{$ S \mathbin{/} \left(\si{L\per\second}\right)$} & {$\increment S  \mathbin{/} \si{\percent}$} \\ 
+        {Messung} & \multicolumn{2}{c}{$ S \mathbin{/} \left(\si{\litre\per\second}\right)$} & {$\increment S  \mathbin{/} \si{\percent}$} \\ 
         \midrule
         Evakuierung 1                           & 8.5 & 1.7 & 89.1\\
         Evakuierung 2                           & 0.9 & 0.2 & 98.6\\

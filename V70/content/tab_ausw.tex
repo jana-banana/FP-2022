@@ -1,3 +1,4 @@
+\newpage
 \subsection{Tabellen der Messwerte}
 
   % Tab Leckrate 100 nbar Turbopumpe
@@ -34,8 +35,8 @@
     \caption{Die Messwerte der einzelnen Messungen und der daraus gemittelte Druckwert für die Leckratenmessung der Turbopumpe mit den Gleichgewichtsdruck
               $p_\text{G} = \SI{2.0(6)e-4}{\milli\bar}$.}
     \label{tab:turbo_leck_2}
-    \sisetup{table-format=5.0}
-    \begin{tabular}{S[table-format=3.0] S @{${}\pm{}$} S S @{${}\pm{}$} S S @{${}\pm{}$} S S[table-format=5.1] @{${}\pm{}$} S[table-format=4.1]}
+    \sisetup{table-format=3.1}
+    \begin{tabular}{S[table-format=3.0] S @{${}\pm{}$} S[table-format=2.1] S @{${}\pm{}$} S[table-format=2.1] S @{${}\pm{}$} S[table-format=2.1] S @{${}\pm{}$} S[table-format=2.1]}
     \toprule
     {$t \mathbin{/} \si{\second} $} & \multicolumn{2}{c}{$p_\text{M1} \mathbin{/} \SI{e-4}{\milli\bar}$} & \multicolumn{2}{c}{$p_\text{M2} \mathbin{/} \SI{e-4}{\milli\bar}$} & \multicolumn{2}{c}{$p_\text{M3} \mathbin{/} \SI{e-4}{\milli\bar}$} & \multicolumn{2}{c}{$p_\text{Mittel} \mathbin{/} \SI{e-4}{\milli\bar}$} \\
     \midrule
@@ -133,11 +134,12 @@
     Der Ausdruck $\ln(F)$ ist aufgelistet, wobei $F$ der Quotient $F = \frac{p(t) - p_\text{E}}{p_0 - p_\text{E}}$ ist. }
     \label{tab:turbo_eva}
     \sisetup{table-format=4.1}
-    \begin{center}
-      \addtolength{\leftskip} {-2.5cm} % increase (absolute) value if needed
-      \addtolength{\rightskip}{-2.5cm}
-    \begin{tabular*}{1.2\textwidth}{@{\extracolsep{\fill}} S[table-format=3.0] S @{${}\pm{}$} S S @{${}\pm{}$} S  S @{${}\pm{}$} S S @{${}\pm{}$} S
-                                                           S[table-format=2.2] @{${}\pm{}$} S[table-format=1.2]}
+    % \begin{center}
+    %   \addtolength{\leftskip} {-2.5cm} % increase (absolute) value if needed
+    %   \addtolength{\rightskip}{-2.5cm}
+    % \begin{tabular*}{1.2\textwidth}{@{\extracolsep{\fill}} S[table-format=3.0] S @{${}\pm{}$} S S @{${}\pm{}$} S  S @{${}\pm{}$} S S @{${}\pm{}$} S
+                                                          %  S[table-format=2.2] @{${}\pm{}$} S[table-format=1.2]}
+    \begin{tabular}{ S[table-format=3.0] S @{${}\pm{}$} S S @{${}\pm{}$} S  S @{${}\pm{}$} S S @{${}\pm{}$} S S[table-format=2.2] @{${}\pm{}$} S[table-format=1.2]}
       \toprule
       {$t \mathbin{/} \si{\second}$} & \multicolumn{2}{c}{$p_{\text{M1}} \mathbin{/} \SI{e-6}{\milli\bar}$} & \multicolumn{2}{c}{$p_{\text{M2}} \mathbin{/} \SI{e-6}{\milli\bar}$} & \multicolumn{2}{c}{$p_\text{M3} \mathbin{/} \SI{e-6}{\milli\bar}$} & \multicolumn{2}{c}{$p_\text{mittel} \mathbin{/} \SI{e-6}{\milli\bar}$} & \multicolumn{2}{c}{$\ln(F)$} \\
       \midrule
@@ -155,8 +157,9 @@
       110 &   14.2 &    4.3 &   13.7 &    4.2 &   14.0 &    4.2 &   14.0 &    4.2 &  -7.39 & 1.76 \\
       120 &   13.8 &    4.2 &   13.5 &    4.1 &   13.7 &    4.2 &   13.7 &    4.1 &  -7.50 & 1.92 \\
       \bottomrule
-    \end{tabular*}
-  \end{center}
+    \end{tabular}
+    % \end{tabular*}
+  % \end{center}
   \end{table}
 
   %Tab Leckraten 0.5 mbar Drehschieberpumpe
@@ -311,10 +314,11 @@
     Auch der Ausdruck $\ln(F)$ ist aufgelistet, wobei $F$ der Quotient $F = \frac{p(t) - p_\text{E}}{p_0 - p_\text{E}}$ ist. }
     \label{tab:dreh_eva}
     \sisetup{table-format=4.1}
-    \begin{center}
-      \addtolength{\leftskip} {-2.5cm} % increase (absolute) value if needed
-      \addtolength{\rightskip}{-2.5cm}
-    \begin{tabular*}{1.2\textwidth}{@{\extracolsep{\fill}} S[table-format=3.0] S @{${}\pm{}$} S[table-format=3.1] S @{${}\pm{}$} S[table-format=3.1] S @{${}\pm{}$} S[table-format=3.1] S @{${}\pm{}$} S[table-format=3.1] S[table-format=2.1] @{${}\pm{}$} S[table-format=1.1]}
+    % \begin{center}
+      % \addtolength{\leftskip} {-2.5cm} % increase (absolute) value if needed
+      % \addtolength{\rightskip}{-2.5cm}
+    % \begin{tabular*}{1.2\textwidth}{@{\extracolsep{\fill}} S[table-format=3.0] S @{${}\pm{}$} S[table-format=3.1] S @{${}\pm{}$} S[table-format=3.1] S @{${}\pm{}$} S[table-format=3.1] S @{${}\pm{}$} S[table-format=3.1] S[table-format=2.1] @{${}\pm{}$} S[table-format=1.1]}
+    \begin{tabular}{S[table-format=3.0] S @{${}\pm{}$} S[table-format=3.1] S @{${}\pm{}$} S[table-format=3.1] S @{${}\pm{}$} S[table-format=3.1] S @{${}\pm{}$} S[table-format=3.1] S[table-format=2.1] @{${}\pm{}$} S[table-format=1.1]}
       \toprule
       {$t \mathbin{/} \si{\second}$} & \multicolumn{2}{c}{$p_\text{M1} \mathbin{/} \si{\milli\bar}$} & \multicolumn{2}{c}{$p_\text{M2} \mathbin{/} \si{\milli\bar}$} & \multicolumn{2}{c}{$p_\text{M3} \mathbin{/} \si{\milli\bar}$} &  \multicolumn{2}{c}{$p_\text{mittel} \mathbin{/} \si{\milli\bar}$} & \multicolumn{2}{c}{$\ln(F)$} \\
       \midrule
@@ -350,8 +354,9 @@
       290 &    1.7 &   0.5 &    1.7 &   0.6 &   1.6 &   0.5 &   1.7 &   0.5 & -6.4 & 0.6 \\
       300 &    1.6 &   0.5 &    1.6 &   0.5 &   1.5 &   0.5 &   1.6 &   0.5 & -6.5 & 0.6 \\
       \bottomrule
-    \end{tabular*}
-  \end{center}
+    \end{tabular}
+    % \end{tabular*}
+  % \end{center}
   \end{table}
 
   \begin{table}[h]
@@ -359,12 +364,14 @@
     \caption{Die einzelnen Messdaten der Evakuierungsmessung mit der Drehschieberpumpe im Zeitbereich $t \in [\SI{300}{\second}, \, \SI{600}{\second}]$. Zusätzlich ist neben dem gemittelten Druck noch der Ausdruck $\ln(F)$ aufgelistet, wobei $F$ der Quotient $F = \frac{p(t) - p_\text{E}}{p_0 - p_\text{E}}$ ist. }
     \label{tab:dreh_eva2}
     \sisetup{table-format=1.2}
-    \begin{center}
-      \addtolength{\leftskip} {-2.5cm} % increase (absolute) value if needed
-      \addtolength{\rightskip}{-2.5cm}
-    \begin{tabular*}{1.2\textwidth}{@{\extracolsep{\fill}} S[table-format=3.0] S @{${}\pm{}$} S S @{${}\pm{}$} S S @{${}\pm{}$} S S @{${}\pm{}$} S S[table-format=2.2] @{${}\pm{}$} S}
+    % \begin{center}
+      % \addtolength{\leftskip} {-2.5cm} % increase (absolute) value if needed
+      % \addtolength{\rightskip}{-2.5cm}
+    % \begin{tabular*}{1.2\textwidth}{@{\extracolsep{\fill}} S[table-format=3.0] S @{${}\pm{}$} S S @{${}\pm{}$} S S @{${}\pm{}$} S S @{${}\pm{}$} S S[table-format=2.2] @{${}\pm{}$} S}
+    \begin{tabular}{S[table-format=3.0] S @{${}\pm{}$} S S @{${}\pm{}$} S S @{${}\pm{}$} S S @{${}\pm{}$} S S[table-format=2.2] @{${}\pm{}$} S}
       \toprule
       {$t \mathbin{/} \si{\second}$} & \multicolumn{2}{c}{$p_\text{M1} \mathbin{/} \si{\milli\bar}$} & \multicolumn{2}{c}{$p_\text{M2} \mathbin{/} \si{\milli\bar}$} & \multicolumn{2}{c}{$p_\text{M3} \mathbin{/} \si{\milli\bar}$} & \multicolumn{2}{c}{$p_\text{mittel} \mathbin{/} \si{\milli\bar}$} & \multicolumn{2}{c}{$\ln(F)$} \\
+      \midrule
       300 & 1.57 & 0.47 & 1.59 & 0.48 & 1.54 & 0.46 & 1.57 & 0.47 & -6.46 & 0.58 \\
       310 & 1.47 & 0.44 & 1.49 & 0.45 & 1.45 & 0.43 & 1.47 & 0.44 & -6.53 & 0.58 \\ 
       320 & 1.39 & 0.42 & 1.41 & 0.42 & 1.36 & 0.41 & 1.39 & 0.42 & -6.58 & 0.58 \\
@@ -397,6 +404,7 @@
       590 & 0.43 & 0.13 & 0.44 & 0.13 & 0.00 & 0.00 & 0.44 & 0.13 & -7.75 & 0.58 \\
       600 & 0.42 & 0.13 & 0.42 & 0.13 & 0.00 & 0.00 & 0.42 & 0.13 & -7.78 & 0.58 \\
       \bottomrule
-    \end{tabular*}
-  \end{center}
+    \end{tabular}
+    % \end{tabular*}
+  % \end{center}
   \end{table}
