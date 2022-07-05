@@ -6,9 +6,10 @@
     \bar{x} = \frac{1}{n} \sum_{i=1}^n x_i
 \end{equation*}
 berechnet sich der Fehler des arithmetischen Mittelwertes nach
-\begin{equation*}
+\begin{equation}
     \sigma_{\bar{x}} = \sqrt{\frac{1}{n(n-1)}\sum_{i=1}^n \left( \bar{x} - x_i \right)^2}\, .
-\end{equation*} 
+    \label{eqn:err_arth_middel}
+\end{equation} 
 Bei Rechnungen mit mehreren fehlerbehafteten Größen ist die Gauß'sche Fehlerfortpflanzung zu betrachten. Hierbei ist der Fehler der Funktion $f(x_i)$ 
 für unkorrelierte $x_i$  durch
 \begin{equation}
@@ -16,7 +17,10 @@ für unkorrelierte $x_i$  durch
     \label{eqn:gauss}
 \end{equation}
 gegeben.
-Die Genauigkeit der abgelesenen Druckwerte ist druckabhängig, das Messgeräte hat im Druckbereich $ \SI{1e-8}{\milli\bar} \leq p \leq \SI{100}{\milli\bar}$ eine Messunsicherheit von 
+Bei der Mittelung werden statistische Fehler ausgerechnet, welche mit steigender Anzahl $n$ an Messungen kleiner werden, welches mathematisch durch den Bruch $\frac{1}{n(n-1)}$ begründet wird. 
+Wird eine Messgröße nur mit einem Messgerät gemessen, welches seine natürliche Messunsicherheit hat, dann handelt es sich um einen systematischen Fehler. 
+Der relative Fehler verändert sich nicht bei der Mittelung, die Unsicherheit lässt sich nicht über eine größere Anzahl an Messungen verkleinern.\\
+Die Genauigkeit der abgelesenen Druckwerte ist druckabhängig, das Messgerät M2, ein kombinierte Pirani/Kaltkathoden-Sensor der Firma Pfeiffer Vacuum, hat im Druckbereich $ \SI{1e-8}{\milli\bar} \leq p \leq \SI{100}{\milli\bar}$ eine Messunsicherheit von 
 $\SI{30}{\percent}$ des Messwertes und im Bereich $\SI{100}{\milli\bar} \leq p \leq \SI{1000}{\milli\bar}$ eine Messunsicherheit von $\SI{50}{\percent}$ des Messwertes. 
 
 \noindent Wird die Gaußsche Fehlerfortpflanzung auf den Logarithmus Ausdruck $\ln\left(\frac{p(t) - p_\text{E}}{p_0 - p_\text{E}}\right)$ angewendet, 
@@ -34,8 +38,8 @@ Damit ergeben sich für die folgenden Ausdrücke die folgenden Messunsicherheite
     S &= - m \cdot V & \rightarrow \sigma_S &= \sqrt{V^2\cdot \sigma_m^2 + m^2 \cdot \sigma_V^2} \label{eqn:err_saug_eva}\\
     S &= \frac{m\cdot V}{p_\text{G}} & \rightarrow \sigma_S &= \sqrt{\frac{V^2}{p_\text{G}^2} \sigma_m^2 + \frac{m^2}{p_\text{G}^2} \sigma_V^2 + \frac{m^2V^2}{p_\text{G}^4} \sigma_{p_{\text{G}}}^2 } \label{eqn:err_saug_leck}
 \end{align}
-Bei der Mittelung von $n$ fehlerbehafteten Größen $x_i$ folgt aus der Fehlerfortpflanzung
-\begin{equation}
-    \sigma_{\bar{x}} = \frac{1}{n} \sqrt{ \sum_i^n\sigma_{x_i}^2 }\, .
-    \label{eqn:err_anderer_fehler}
-\end{equation}
+% Bei der Mittelung von $n$ fehlerbehafteten Größen $x_i$ folgt aus der Fehlerfortpflanzung
+% \begin{equation}
+%     \sigma_{\bar{x}} = \frac{1}{n} \sqrt{ \sum_i^n\sigma_{x_i}^2 }\, .
+%     \label{eqn:err_anderer_fehler}
+% \end{equation}

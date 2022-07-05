@@ -1,8 +1,8 @@
 all: build/main.pdf
 
 # hier Python-Skripte:
-build/plot.pdf: python/plot.py matplotlibrc header-matplotlib.tex | build
-	TEXINPUTS=$$(pwd): python python/plot.py
+build/plot.pdf: python/korrektur.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd): python python/korrektur.py
 
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
 build/main.pdf: build/plot.pdf
