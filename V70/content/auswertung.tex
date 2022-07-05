@@ -140,19 +140,19 @@ $p_\text{E} = \SI{1.1(4)e-5}{\milli\bar}$ beträgt.
     \subsubsection{Leckratenmessung}
 
     \noindent Analog zum Vorgehen bei der Turbomolekularpumpe wird ein Gleichgewichtsdruck eingestellt. Hier werden die
-    Gleichgewichtsdrücke $p_\text{G} = \SI{0.5(15)}{\milli\bar}$, $\SI{10(3)}{\milli\bar}$, $\SI{50(15)}{\milli\bar}$, $\SI{100(50)}{\milli\bar}$ benutzt. Für jeden Gleichgewichtsdruck werden 
+    Gleichgewichtsdrücke $p_\text{G} = \SI{5.0(15)e-1}{\milli\bar}$, $\SI{10(3)}{\milli\bar}$, $\SI{50(15)}{\milli\bar}$, $\SI{100(50)}{\milli\bar}$ benutzt. Für jeden Gleichgewichtsdruck werden 
     drei Messungen durchgeführt. Der Messzeitraum beträgt $\SI{200}{\second}$, es werden in Schritten von $\increment t = \SI{10}{\second}$ Daten aufgenommen. Über die drei aufgenommenen
     Messungen des Drucks wird das arithmetische Mittel genommen. Der in den Tabellen angegebene Fehler des gemittelten Drucks ergibt sich aus der Systematik, die statistischen Fehler aus der 
     Mittelung berechnen sich nach der Gleichung \eqref{eqn:err_arth_middel}, da diese Fehler deutlich kleiner als die systematischen Fehler sind, werden sie nicht weiter betrachtet.
     Die großen Fehler der Messwerte lassen sich dadurch erklären, dass bei der Durchführung mit dem falschen Messgerät gemessen wurde, welches eigentlich nicht für diesen Druckbereich ausgelegt ist. 
-    Die Daten befinden sich für den Gleichgewichtsdruck $p_\text{G} = \SI{0.5(15)}{\milli\bar}$ in der \autoref{tab:dreh_leck_05}, und für $p_\text{G} = \SI{10(3)}{\milli\bar}$ in der 
+    Die Daten befinden sich für den Gleichgewichtsdruck $p_\text{G} = \SI{5.0(15)e-1}{\milli\bar}$ in der \autoref{tab:dreh_leck_05}, und für $p_\text{G} = \SI{10(3)}{\milli\bar}$ in der 
     \autoref{tab:dreh_leck_10}. Für den Gleichgewichtsdruck $p_\text{G} = \SI{50(15)}{\milli\bar}$ sind die Messdaten in der \autoref{tab:dreh_leck_50} und für $p_\text{G} = \SI{100(50)}{\milli\bar}$
     in der \autoref{tab:dreh_leck_100}.
 
     \noindent Die gemittelten Drücke werden gegen die Zeit aufgetragen. Dies ist in den Abbildungen in der \autoref{fig:dreh_leck} zu sehen. Dazu sind in lineare Ausgleichsrechnungen 
     mit python \cite{scipy} durchgeführt worden. Die Fitparameter ergeben sich zu:
     \begin{align*}
-      \text{Für} \quad  p_\text{G} &= \SI{0.5(15)}{\milli\bar}  & \text{Für} \quad  p_\text{G} &= \SI{10(3)}{\milli\bar}\\
+      \text{Für} \quad  p_\text{G} &= \SI{5.0(15)e-1}{\milli\bar}  & \text{Für} \quad  p_\text{G} &= \SI{10(3)}{\milli\bar}\\
       m &= \SI{1.90(6)e-3}{\milli\bar\per\second}           & m &= \SI{0.23 \pm 0.01}{\milli\bar\per\second} \\
       n &= \SI{0.49 \pm 0.0007}{\milli\bar}                 & n &= \SI{10.12 \pm 0.21}{\milli\bar} \\
       \\
@@ -164,7 +164,7 @@ $p_\text{E} = \SI{1.1(4)e-5}{\milli\bar}$ beträgt.
     dann überschritten wird und keine Linearität mehr vorliegt, wie es auch in den Abbildungen zu sehen ist. \\
     Aus den Steigungen der linearen Ausgleichsrechnung werden die Saugvermögen berechnet durch Vergleich mit Gleichung \eqref{eq:saug_leck_theorie}, wobei sich die Messunsicherheit nach Gleichung \eqref{eqn:err_saug_leck} berechnet:
     \begin{align*}
-      \text{für} \quad p_\text{G} &= \SI{0.5(15)}{\milli\bar} & \text{für} \quad p_\text{G} &= \SI{10(3)}{\milli\bar} \\
+      \text{für} \quad p_\text{G} &= \SI{5.0(15)e-1}{\milli\bar} & \text{für} \quad p_\text{G} &= \SI{10(3)}{\milli\bar} \\
       S &= \SI{0.12 \pm 0.05}{\litre\per\second}               & S &= \SI{0.79 \pm 0.25}{\litre\per\second}  \\
       \\
       \text{für} \quad p_\text{G} &= \SI{50(15)}{\milli\bar}  & \text{für} \quad p_\text{G} &= \SI{100(50)}{\milli\bar} \\
@@ -175,7 +175,7 @@ $p_\text{E} = \SI{1.1(4)e-5}{\milli\bar}$ beträgt.
       \begin{subfigure}{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{build/leck_dreh_05mbar.pdf}
-        \caption{$p_\text{G} = \SI{0.5(15)}{\milli\bar}$.}
+        \caption{$p_\text{G} = \SI{5.0(15)e-1}{\milli\bar}$.}
         \label{fig:dreh_leck_05}
       \end{subfigure}
       \hfill
