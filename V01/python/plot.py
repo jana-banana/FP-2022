@@ -83,7 +83,7 @@ print('t_1/2 : ', (t_h_p_rechts+t_h_p_links))
 
 #plt.xlabel(r'$\Delta t/\si{\nano\second}$')
 plt.xlabel('t / ns')
-plt.ylabel('Ereignisse pro 20 Sekunden')
+plt.ylabel('Ereignisse')
 plt.grid()
 plt.xlim(nst_links, 12.5)
 
