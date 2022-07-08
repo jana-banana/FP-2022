@@ -17,13 +17,13 @@
     Mithilfe von python werden somit folgende Fitparameter bestimmt:
     \begin{align*}
       &\text{Anstieg} &m_\text{An}=\SI{43.00 \pm 1.72}{\per\nano\second}   &&b_\text{An}= \num{330.65 \pm 6.68} \, ,\\
-      &\text{Abfall}  &m_\text{Ab}= \SI{-34.87 \pm 1.44}{\per\nano\second}  &&b_\text{Ab}= \num{399.48 \pm 11.33} \, .\\
+      &\text{Abfall}  &m_\text{Ab}= \SI{-34.87 \pm 1.44}{\per\nano\second}  &&b_\text{Ab}= \num{399.48 \pm 11.33} \, .
     \end{align*}
     Die jeweiligen Ausgleichsgeraden sind ebenfalls in \autoref{fig:Justage} zu finden.
     Die Halbwertsbreite des Plateaus wird über die Schnittstellen der beiden Ausgleichsgeraden mit der halben Plateauhöhe bestimmt.
     Daraus ergibt sich für die beiden Schnittstellen
     \begin{align*}
-      t_\text{links} = \SI{0.49(16)}{\nano\second} && t_\text{rechts}= \SI{1.37(33)}{\nano\second} \, . \\
+      t_\text{links} = \SI{0.49(16)}{\nano\second} && t_\text{rechts}= \SI{1.37(33)}{\nano\second} \, .
     \end{align*}
     Dadurch folgt für die Halbwertsbreite und somit auch für die doppelte Breite der Rechteckimpulse
     \begin{equation*}
@@ -33,7 +33,7 @@
     Dadurch beträgt die Ereignisrate $\SI{18.8}{\second\tothe{-1}}$.
     \begin{figure}[h]
       \centering
-      \includegraphics[width=\textwidth]{build/Verzoegerungsleitung.pdf}
+      \includegraphics[width=0.8\textwidth]{build/Verzoegerungsleitung.pdf}
       \caption{Eine graphische Darstellung der Messdaten der Verzögerungszeitmessung. Es werden ein Anstieg, ein Plateau und ein Abfall identifiziert und 
       entsprechend Ausgleichsrechnungen gemacht.}
       \label{fig:Justage}
@@ -99,18 +99,18 @@
   Da anscheinend dieser Zeitabstand zwischen den beiden Impulsen schon mit der Suchzeit $T_\text{S} = \SI{10}{\micro\second}$ gleichgesetzt wird und somit keine Impulse in diesem Kanal zu sehen sind.
   Dabei werden folgende Werte ermittelt:
   \begin{align*}
-    m = \SI{0.0217 \pm 8.9686}{\per\micro\second} && \text{ch}_0 = \num{0.1507 \pm 0.0023}\, . \\ 
+    m = \SI{0.0217 \pm 8.9686}{\per\micro\second} && \text{ch}_0 = \num{0.1507 \pm 0.0023}\, .
   \end{align*}
   Eine grafische Darstellung der Messwerte sowie die dazugehörige Ausgleichsrechnung ist in \autoref{fig:Kalibration_MCA} zu finden.
   \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{build/Kalibration_MCA.pdf}
+    \includegraphics[width=0.8\textwidth]{build/Kalibration_MCA.pdf}
     \caption{Die Messwerte der Messung zur Kalibration des MCA mit einer Ausgleichsrechnung.}
     \label{fig:Kalibration_MCA}
   \end{figure}
   \begin{table}[h]
     \centering
-    \caption{Kalibration MCA.}
+    \caption{Die Messwerte zur Kalibration des MCAs. Jeder Messpunkt wurde für $\SI{15}{\second}$ gemessen.}
     \label{tab:Kalibration_MCA}
     \begin{tabular}{S[table-format=1.1] S[table-format=3.2] c}
       \toprule
@@ -157,8 +157,8 @@
   \subsubsection{Theoretische Untergrundrate}
     Neben Myonenzerfälle, die Stoppsignale auslösen, können weitere Myoneneinfälle dieses Stoppsignal auslösen.
     Dieser Untergrund trifft auf alle Kanäle gleichmäßig auf und läuft über die ganze Messung ab.
-    Dafür wird \eqref{eqn:poisson} verwendet.
-    Der Erwartungswert $\mu$ sowie die durschnitltlich gemessene Rate $I_\text{Mess}$ wird mit \eqref{eqn:mu} bestimmt.
+    Dafür wird Gleichung \eqref{eqn:poisson} verwendet.
+    Der Erwartungswert $\mu$ sowie die durschnittlich gemessene Rate $I_\text{Mess}$ wird mit \eqref{eqn:mu} bestimmt.
     Die Suchzeit $T_\text{S}$ wurde auf $\SI{10}{\micro\second}$ eingestellt.
     Dabei beträgt die Messzeit
     \begin{equation*}
@@ -184,11 +184,11 @@
       U_\text{norm} = 1,7325 \pm 0,0016 \, .
     \end{equation*}
   
-  \subsubsection{Bestimmung der Lebensdauer kosmischer Myonen - numerisch}
+  \subsubsection{Bestimmung der Lebensdauer - numerisch}
     Die aufgenommenen Messwerte sind in \autoref{fig:eFkt_numerisch} zu sehen.
     Durch diese Messwerte wird ein Fit der Form
     \begin{equation*}
-      N(t) = N_0 \cdot \symup{e}^{-\lambda t} +U_\text{n} \, .
+      N(t) = N_0 \cdot \symup{e}^{-\lambda t} +U_\text{num} \, .
     \end{equation*}
     Dabei werden die ersten vier Kanäle sowie die Kanäle > 445 nicht berücksichtigt, da diese Null Counts haben.
     Bei den Kanäle > 445 liegt es an der Suchzeit $T_\text{S}$, die überschritten wird und somit Signale, die nach der Suchzeit eintreffen nicht als Stoppsignale registriert werden.
@@ -196,7 +196,7 @@
     \begin{align*}
       N_0 &= 153,38 \pm 1,56 \, ,\\
       \lambda &= \SI{0,51(01)}{\per\micro\second} \, ,\\
-      U_\text{n} &= 2,64 \pm 0,56 \, . \\
+      U_\text{num} &= 2,64 \pm 0,56 \, .
     \end{align*}
     Bei dem hier betrachteten Untergrund $U_\text{n}$ handelt es sich um ein numerisch bestimmten Untergrund.
     Die Fit-Funktion ist in \autoref{fig:eFkt_numerisch} zu finden.
@@ -207,16 +207,17 @@
     \end{equation*}
     \begin{figure}
       \centering
-      \includegraphics[width=\textwidth]{build/Messung_Zeit_Counts_num.pdf}
-      \caption{Messwerte und eFunktion-Fit.}
+      \includegraphics[width=0.8\textwidth]{build/Messung_Zeit_Counts_num.pdf}
+      \caption{Die aufgenommenen Messwerte zur Besimmung der Lebensdauer, sowie der dazugehörige Fit mit einer e-Funktion.
+                Die schwarz makierten Messpunkte wurden bei der Ausgleichsrechnung nicht berücksichtigt, da diese teilweise aufgrund der überschrittenen Suchzeit keine Ereignisse haben.}
       \label{fig:eFkt_numerisch}
     \end{figure}
 
-  \subsubsection{Bestimmung der Lebensdauer kosmischer Myonen - theoretisch}
+  \subsubsection{Bestimmung der Lebensdauer - theoretisch}
     Zunächst wird von den signifikanten Messwerten die theoretisch bestimmte Untergrundrate abgezogen.
     Diese beträgt
     \begin{equation*}
-      U_\text{norm} = 1,7325 \pm 0,0016 \, .
+      U_\text{theo} = 1,7325 \pm 0,0016 \, .
     \end{equation*}
     Durch die angepassten Messwerte wird eine Ausgleichsrechnung der Form
     \begin{equation*}
@@ -226,7 +227,7 @@
     Für die Fitparameter ergebn sich somit folgende Werte:
     \begin{align*}
       N_0 &= 153,06 \pm 1,53 \, \text{und}\\
-      \lambda &= \SI{0.496(006)}{\per\micro\second} \, . \\
+      \lambda &= \SI{0.496(006)}{\per\micro\second} \, .
     \end{align*}
     Aus der Zerfallskonstante ergibt sich die Lebensdauer wie folgt:
     \begin{equation*}
@@ -235,7 +236,8 @@
     Die bereinigten Messwerte sowie die Fit-Funktion sind in \autoref{fig:eFkt_theo} zu finden.
     \begin{figure}
       \centering
-      \includegraphics[width=\textwidth]{build/Messung_Zeit_Counts_theo.pdf}
-      \caption{Messwerte und eFunktion-Fit.}
+      \includegraphics[width=0.8\textwidth]{build/Messung_Zeit_Counts_theo.pdf}
+      \caption{Die aufgenommenen Messwerte zur Bestimmung der Lebensdauer, sowie der dazugehörige Fit mit einer e-Funktion.
+                Die schwarz makierten Messpunkte wurden bei der Ausgleichsrechnung nicht berücksichtigt, da diese teilweise aufgrund der überschrittenen Suchzeit keine Ereignisse haben.}
       \label{fig:eFkt_theo}
     \end{figure}

@@ -42,15 +42,20 @@ t_h_p_links = (mittel_plateau - y_links)/b_links
 print('t_1/2_links : ', t_h_p_links)
 print('\n')
 
+nst_links = -popt[1]/popt[0]
+
+x_links = np.linspace(nst_links,0,100)
 
 #plt.plot(del_t, Counts,'k+',label='Messpunkte')
-plt.plot(del_t_links, Counts_links,'r+',label='Gerade links')
-plt.plot(del_t_links, line(del_t_links,popt[0],popt[1]),'r',label ='Fit Links' ) #linspace
+#plt.plot(del_t_links, Counts_links,'r+',label='Gerade links')
+plt.errorbar(del_t_links, Counts_links, yerr=np.sqrt(Counts_links),fmt='r.',ecolor='r', label='Messwerte links')
+plt.plot(x_links, line(x_links,popt[0],popt[1]),'r',label ='Fit Links' ) #linspace
 #plt.xlabel(r'$\alpha \:/\: \si{\ohm}$')
 #plt.ylabel(r'$y \:/\: \si{\micro\joule}$')
 
 
-plt.plot(del_t_rechts, Counts_rechts,'m+',label='Gerade rechts')
+#plt.plot(del_t_rechts, Counts_rechts,'m+',label='Gerade rechts')
+plt.errorbar(del_t_rechts, Counts_rechts, yerr=np.sqrt(Counts_rechts),fmt='m.',ecolor='m', label='Messwerte rechts')
 popt, pcov = curve_fit(line, del_t_rechts, Counts_rechts)
 errors = np.sqrt(np.diag(pcov))
 print('Verzögerung rechts mit der Form: b*t + y')
@@ -63,19 +68,25 @@ y_rechts = ufloat(popt[1],errors[1])
 t_h_p_rechts = (mittel_plateau - y_rechts)/b_rechts
 print('t_1/2_rechts : ', t_h_p_rechts)
 print('\n')
-plt.plot(del_t_rechts, line(del_t_rechts,popt[0],popt[1]),'m',label ='Fit rechts' ) #linspace
+
+x_rechts = np.linspace(2.5,12.5,100)
+plt.plot(x_rechts, line(x_rechts,popt[0],popt[1]),'m',label ='Fit rechts' ) #linspace
 
 
-plt.plot(del_t_plateau, Counts_plateau,'g+',label='Plateau')
+#plt.plot(del_t_plateau, Counts_plateau,'g+',label='Plateau')
+plt.errorbar(del_t_plateau, Counts_plateau, yerr=np.sqrt(Counts_plateau),fmt='g.',ecolor='g', label='Messwerte Plateau')
 print('mittel_plateau', mittel_plateau ,'+/-', np.sqrt(mittel_plateau))
 plt.axhline(y=mittel_plateau, color='g', linestyle='-', label='Plateaumittelwert')
 print('\n')
 plt.axhline(y=mittel_plateau/2, color='g', linestyle='--', label='halber Plateaumittelwert')
 print('t_1/2 : ', (t_h_p_rechts+t_h_p_links))
 
+#plt.xlabel(r'$\Delta t/\si{\nano\second}$')
 plt.xlabel('t / ns')
-plt.ylabel('Counts pro 20 Sekunden')
+plt.ylabel('Ereignisse pro 20 Sekunden')
 plt.grid()
+plt.xlim(nst_links, 12.5)
+
 # in matplotlibrc leider (noch) nicht möglich
 plt.legend(loc='best')
 plt.tight_layout()
@@ -101,10 +112,13 @@ print("y =", popt[1])
 print("y fehler =",errors[1])
 y_MCA = popt[1]
 print('\n')
-plt.plot(Channel, line(Channel,popt[0],popt[1]),'r',label ='Fit' ) #linspace
 
+x_kali=np.linspace(0,450,100)
+plt.plot(x_kali, line(x_kali,popt[0],popt[1]),'r',label ='Fit' ) #linspace
+
+plt.xlim(0,450)
 plt.ylabel('t / ns')
-plt.xlabel('Channel')
+plt.xlabel('Kanal')
 plt.grid()
 plt.legend(loc='best')
 plt.tight_layout()
@@ -147,17 +161,21 @@ for i in range(length):
 #print(x_zeit)
 
 #plt.plot(x_channel, Counts_Mess,'g.',label='Messwerte')
-plt.errorbar(x_channel, Counts_Mess, yerr=sieg_N,fmt='.',ecolor=None, label='Messwerte')
+plt.errorbar(x_channel, Counts_Mess, yerr=sieg_N,fmt='.',ecolor=None,markersize = 1.3, elinewidth = 0.42, label='Messwerte')
 
-plt.ylabel('Counts')
-plt.xlabel('Channel')
+plt.ylabel('Anzahl an Ereignissen')
+plt.xlabel('Kanal')
 plt.grid()
 plt.legend(loc='best')
 plt.tight_layout()
 plt.savefig('build/Messung_Channel_Counts.pdf')
 plt.clf()
 
-plt.errorbar(x_zeit, Counts_Mess, yerr=sieg_N,fmt='.',ecolor=None, label='Messwerte')
+plt.errorbar(x_zeit, Counts_Mess, yerr=sieg_N,fmt='.',ecolor=None,markersize = 1.3, elinewidth = 0.42, label='Messwerte')
+
+x_zeit_raus = np.concatenate((x_zeit[:4],x_zeit[446:]), axis=None )
+Counts_Mess_raus = np.concatenate((Counts_Mess[:4],Counts_Mess[446:]), axis=None )
+plt.errorbar(x_zeit_raus,Counts_Mess_raus, yerr = np.sqrt(Counts_Mess_raus),fmt='k.',markersize = 1.3, elinewidth = 0.42,label='abgeschnittene Messwerte')
 
 def e_Funktion(t,N,lamda,U_n):
     return N * np.exp( -lamda* np.array(t) ) + U_n
@@ -181,10 +199,15 @@ print('\n')
 print('Lebensdauer numerisch: ', 1/lambda_n)
 tau_num = 1/lambda_n
 print('\n')
-plt.plot(x_zeit, e_Funktion(x_zeit,popt[0],popt[1],popt[2]),'r',label ='Fit' ) #linspace
 
-plt.ylabel('Counts')
-plt.xlabel('Zerfallszeit/ mu s')
+x_zeit_lin = np.linspace(0,12,1000)
+plt.plot(x_zeit_lin, e_Funktion(x_zeit_lin,popt[0],popt[1],popt[2]),'r',label ='Fit' ) #linspace
+
+plt.ylabel('Anzahl an Ereignissen')
+#plt.xlabel('t / $10^{-6}s$')
+plt.xlabel('t / $\mu$s')
+
+plt.xlim(0,12)
 plt.grid()
 plt.legend(loc='best')
 plt.tight_layout()
@@ -196,7 +219,8 @@ Counts_Mess_fit = Counts_Mess_fit - unp.nominal_values(U_norm)
 def eFkt_theo(t,N,lamda):
         return N * np.exp( -lamda* np.array(t) )
 
-plt.errorbar(x_zeit, Counts_Mess, yerr=sieg_N,fmt='.',ecolor=None, label='bereinigte Messwerte')
+plt.errorbar(x_zeit, Counts_Mess, yerr=sieg_N,fmt='.',ecolor=None,markersize = 1.3, elinewidth = 0.42, label='bereinigte Messwerte')
+plt.errorbar(x_zeit_raus,Counts_Mess_raus, yerr = np.sqrt(Counts_Mess_raus),fmt='k.',markersize = 1.3, elinewidth = 0.42,label='abgeschnittene Messwerte')
 
 popt, pcov = curve_fit(eFkt_theo, x_zeit_fit, Counts_Mess_fit)
 errors = np.sqrt(np.diag(pcov))
@@ -210,10 +234,12 @@ print('\n')
 print('Lebensdauer theoretisch: ', 1/lambda_t)
 tau_theo = 1/lambda_t
 print('\n')
-plt.plot(x_zeit, eFkt_theo(x_zeit,popt[0],popt[1]),'r',label ='Fit' ) #linspace
 
-plt.ylabel('Counts')
-plt.xlabel('Zerfallszeit/ mu s')
+plt.plot(x_zeit_lin, eFkt_theo(x_zeit_lin,popt[0],popt[1]),'r',label ='Fit' ) #linspace
+
+plt.xlim(0,12)
+plt.ylabel('Anzahl an Ereignissen')
+plt.xlabel('t / $\mu$s')
 plt.grid()
 plt.legend(loc='best')
 plt.tight_layout()
