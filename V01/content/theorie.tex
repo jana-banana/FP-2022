@@ -1,4 +1,77 @@
-\section{Theorie}
+\section{Ziel des Versuches}
+\label{sec:ziel}
+
+    \noindent In diesem Versuch wird mithilfe eines Szintillationsdetekors die Lebensdauer kosmischer Myonen bestimmt. 
+    Dabei sollen die Funktionsweisen der einzelnen Bauteile der Schaltung näher betrachtet werden. 
+
+\section{Theoretische Grundlagen}
 \label{sec:Theorie}
 
-\cite{sample}
+    \noindent Damit die Durchführung des Versuches sinnvoll erscheint, werden in den nächsten Abschnitten einige theoretischen Grundlagen erläutert. 
+    Dabei geht es zuerst um das Myon und 
+
+    \subsection{Das Myon}
+
+        \noindent Das Myon gehört zu den Elementarteilchen aus dem Standardmodell. Es ist ein geladenes Lepton der 2. Generation und wird umgangsprachlich 
+        auch als "schwerer Bruder" des Elektrons bezeichnet. Es hat also eine elektrische Ladung von $- \, \symup{e}$ und einen Spin von $\frac{1}{2}$, da es keine 
+        Farbladung trägt, welchselwirkt es über die elektromagnetische und die schwache Wechselwirkung. Die Masse des Myon beträgt etwa $m = \SI{105.6583745(24)}{\mega\electronvolt}$ 
+        \cite{pdg}, was ungefähr $207 \cdot m_{e^-}$, also $207$ mal der Masse des Elektrons entspricht.   
+
+        \noindent Kosmische Myonen entstehen in einer Höhe von $\num{10}$\, -\, $\SI{15}{\kilo\metre}$ in der Atmosphäre. Bei dem Zusammentreffen der Atomkerne der Atmosphärenteilchen und der primären 
+        kosmischen Strahlung entstehen unter anderem leichte Mesonen, wie Pionen ($\pi$) und Kaonen ($K$). Diese zerfallen aufgrund ihrer leichten Masse nur in Leptonen. Da der gesamte 
+        Zerfall von Pionen in Leptonen durch Helizität unterdrückt ist, die Unterdrückung aber antiproportional zur Masse des entstehenden Leptons ist, wird der Zerfall von Pion ins 
+        Elektron mit entsprechendem Neutrino deutlich stärker unterdrückt, als es beim Myon mit entsprechendem Neutrino der Fall ist. So entstehen die meisten kosmischen Myonen aus den 
+        Zerfällen: 
+        \begin{align*}
+            \pi^+ &\rightarrow \mu^+ + \nu_{\mu} & \pi^- &\rightarrow \mu^- + \bar{\nu}_{\mu}
+        \end{align*}
+
+        \noindent Da Myonen schwerer sind als Elektronen, können und werden sie in diese zerfallen. Dies geschieht mehrheitlich über den Zerfall:
+        \begin{align*}
+            \mu^+ &\rightarrow \symup{e}^+ + \nu_{\text{e}} + \bar{\nu}_{\mu}   & \mu^- &\rightarrow \symup{e}^- + \bar{\nu}_\text{e} + \nu_{\mu} 
+        \end{align*}
+
+        \noindent Myonen haben eine mittlere Lebensdauer von ungefähr $\SI{2.2}{\micro\second}$ \cite{pdg}, sie sind mit nahezu Lichtgeschwindigkeit $c$ unterwegs. Nach klassischer Rechnung sollten 
+        sie nicht in dieser Menge auf der Erdoberfläche aufzufinden sein, da sie davor zerfallen. Da die Geschwindigkeit so hoch ist, müssen die Effekte der Zeitdilatation und Längenkontraktion
+        beachtet werden. Das Auffinden von Myonen auf der Erdoberfläche wird oft als eines der erste Beispiele genannt bei der Motivation von relativistischen Rechnungen. 
+
+    \subsection{Lebensdauer instabiler Teilchen}
+
+        \noindent Die Lebensdauer eines Teilchens ist über seine Zerfallsbereitschaft definiert. Die Wahrscheinlichkeit, dass ein Teilchen in der Zeit $\text{d}t$ zerfällt ist gegeben 
+        durch 
+        \begin{equation*}
+            \text{d}W = \lambda \cdot \text{d}t \, ,
+        \end{equation*}
+        wobei $\lambda$ die teilchenspezifische Zerfallskonstante darstellt. Werden nun $N$ Teilchen betrachtet, so ist die Änderung der Teilchenzahl $\text{d}N$ in einem  
+        Zeitintervall $\text{d} t$:
+        \begin{equation*}
+            \text{d} N = -N \cdot \text{d} W = - \lambda  N \cdot \text{d}t \, .
+        \end{equation*}
+        Diese Gleichung kann integriert werden und daraus ergibt sich das bekannt Zerfallsgesetz 
+        \begin{equation*}
+            N(t) = N_0 \cdot \symup{e}^{- \lambda \cdot t}\, .
+        \end{equation*}
+        Als Nenngröße wird im allgemeinen die mittlere Lebensdauer $\tau = \frac{1}{\lambda}$ angegeben. Dies bezeichnet die Zeit, in welcher der Anteil der Teilchen auf $\frac{1}{\symup{e}}$
+        abgesunken ist. 
+
+    \subsection{Das Messverfahren}
+
+        \noindent In diesem Versuch wird die mittlere Lebensdauer kosmischer Myonen aus einer Messung aus Individuallebensdauern ermittelt. In einem Szintillationsdetektor werden Myonen detektiert, 
+        falls diese zerfallen, werden auch die Elektronen in dem Detektor registriert. Da sich das Detektorsignal von Elektron und Myon nicht unterscheidet, und Myonen unabhängig voneinander 
+        in der gesamten Messzeit in den Tank des Szintillationsdetektor eintreten, kann es passieren, dass statt eines Zerfalls die Zeit zwischen zwei eintretenden Myonen gemessen wird. 
+        Daher gibt es gleichmäßig über alle Kanäle verteilt einen Untergrund. \\
+        Die Poissonverteilung beschreibt die Wahrscheinlichkeit, dass $n$ Myonen bei einem Erwartungswert von $\mu(t_\text{s})$ mit der Messzeit $t_\text{s}$ eintreffen, gemäß:
+        \begin{equation*}
+            p_{\mu}(n) = \frac{\mu}{n!} \cdot \symup{e}^{- \mu}\, .
+        \end{equation*}
+        Der Erwartungswert, wie viele Myonen während einer Messzeit $t_\text{s}$ in den Detektor eintreten, ist proportional zu der durchschnittlichen Rate $I_\text{mess}$ mit 
+        der Myonen über die gesamte Messzeit in den Tank eingetreten sind. Diese errechnet sich daher aus der gesamten Messzeit $t_\text{mess}$ und der gemessenen Anzahl der 
+        eingetretenden Myonen $N_\text{Start}$: 
+        \begin{align*}
+            \mu(t_\text{s}) &= I_\text{mess} \cdot t_\text{s} & \text{mit:} \quad I_\text{mess} &= \frac{N_\text{Start}}{t_\text{mess}} \, .
+        \end{align*}
+        Der Untergrund ist schließlich gegeben durch
+        \begin{equation*}
+            U = N_\text{Start} \cdot p_\text{\mu}(1) \, ,
+        \end{equation*}
+        da genau ein eintretendes Myon in der Messzeit als Elektron aus dem Zerfall gemessen wird und diese Messung verfälscht. Alle weiteren eintretenden Myonen starten eine neue Messung. 
