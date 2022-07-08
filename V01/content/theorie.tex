@@ -8,7 +8,8 @@
 \label{sec:Theorie}
 
     \noindent Damit die Durchführung des Versuches sinnvoll erscheint, werden in den nächsten Abschnitten einige theoretischen Grundlagen erläutert. 
-    Dabei geht es zuerst um das Myon und 
+    Dabei geht es zuerst um das Myon, dann um die Lebensdauer von instabilen Teilchen, wo auch das Zerfallsgesetz hergeleitet wird. Abschließend 
+    wird die Berechnung der Untergrundrate erläutert. 
 
     \subsection{Das Myon}
 
@@ -60,16 +61,16 @@
         falls diese zerfallen, werden auch die Elektronen in dem Detektor registriert. Da sich das Detektorsignal von Elektron und Myon nicht unterscheidet, und Myonen unabhängig voneinander 
         in der gesamten Messzeit in den Tank des Szintillationsdetektor eintreten, kann es passieren, dass statt eines Zerfalls die Zeit zwischen zwei eintretenden Myonen gemessen wird. 
         Daher gibt es gleichmäßig über alle Kanäle verteilt einen Untergrund. \\
-        Die Poissonverteilung beschreibt die Wahrscheinlichkeit, dass $n$ Myonen bei einem Erwartungswert von $\mu(t_\text{s})$ mit der Messzeit $t_\text{s}$ eintreffen, gemäß:
+        Die Poissonverteilung beschreibt die Wahrscheinlichkeit, dass $n$ Myonen bei einem Erwartungswert von $\mu(T_\text{s})$ mit der Messzeit $T_\text{s}$ eintreffen, gemäß:
         \begin{equation}
             p_{\mu}(n) = \frac{\mu}{n!} \cdot \symup{e}^{- \mu}\, .
             \label{eqn:poisson}
         \end{equation}
-        Der Erwartungswert, wie viele Myonen während einer Messzeit $t_\text{s}$ in den Detektor eintreten, ist proportional zu der durchschnittlichen Rate $I_\text{mess}$ mit 
+        Der Erwartungswert, wie viele Myonen während einer Messzeit $T_\text{s}$ in den Detektor eintreten, ist proportional zu der durchschnittlichen Rate $I_\text{mess}$ mit 
         der Myonen über die gesamte Messzeit in den Tank eingetreten sind. Diese errechnet sich daher aus der gesamten Messzeit $t_\text{mess}$ und der gemessenen Anzahl der 
         eingetretenden Myonen $N_\text{Start}$: 
         \begin{align*}
-            \mu(t_\text{s}) &= I_\text{mess} \cdot t_\text{s} & \text{mit:} \quad I_\text{mess} &= \frac{N_\text{Start}}{t_\text{mess}} \, .
+            \mu(T_\text{s}) &= I_\text{mess} \cdot T_\text{s} & \text{mit:} \quad I_\text{mess} &= \frac{N_\text{Start}}{t_\text{mess}} \, .
             \label{eqn:mu}
         \end{align*}
         Der Untergrund ist schließlich gegeben durch

@@ -28,7 +28,7 @@ Die Koinzidenzschaltung gibt nur ein Signal weiter, falls aus beiden angeschloss
 stark unterdrückt.\\
 
 \noindent Der nachfolgende Teil der Schaltung stellt eine Stoppuhr dar, er ist in der \autoref{fig:stoppschaltung} nochmal dargestellt. Ein wichtiges Bauteil ist hier der Monoflop. Dieser hat einen invertierten und einen normalen Ausgang. Kommt ein 
-Signal an den Monoflop, dann gibt er ein HIGH aus. Nach einer gewissen Zeit $t_\text{s}$ wird vom Monoflop wieder ein LOW ausgegeben. Die Zeit $t_\text{s}$ stellt in diesem Versuch die 
+Signal an den Monoflop, dann gibt er ein HIGH aus. Nach einer gewissen Zeit $T_\text{s}$ wird vom Monoflop wieder ein LOW ausgegeben. Die Zeit $T_\text{s}$ stellt in diesem Versuch die 
 Suchzeit dar, eine obere Grenze für den Bereich, in dem die Lebensdauer vermutet wird. \\
 \begin{wrapfigure}{r}{7cm}
     \includegraphics[width=7cm]{bilder/unten_schaltung.png}
@@ -38,7 +38,7 @@ Suchzeit dar, eine obere Grenze für den Bereich, in dem die Lebensdauer vermute
 Im Normalzustand liegt von dem Monoflop ein HIGH an dem ersten AND-Gatter und ein LOW am zweiten AND-Gatter (links). Wird von der Koinzidenzschaltung ein Signal gegeben, so liegen am 
 ersten AND-Gatter zwei HIGH Signale an, sodass ein Signal weitergegeben wird. Es wird ein Impuls gezählt und der Time-Amplitude-Converter (TAC) wird ausgelöst und startet die Zeitnahme. 
 Da am zweiten AND zu dem Zeitpunkt vom Monoflop ein LOW anliegt, passiert dort nichts. Durch die Verzögerungsleitung wird der Monoflop erst $\SI{30}{\nano\second}$ später getriggert. 
-Innerhalb der Suchzeit $t_\text{s}$ liegt durch den Monoflop ein LOW am ersten AND-Gatter und ein HIGH am zweiten AND-Gatter.
+Innerhalb der Suchzeit $T_\text{s}$ liegt durch den Monoflop ein LOW am ersten AND-Gatter und ein HIGH am zweiten AND-Gatter.
 Läuft nun die Suchzeit ab, ohne das ein weiteres Teilchen registriert wird, geht der Monoflop in seinen Ausgangszustand zurück, der TAC verwirft die angefangene Zeitnahme. Es wird kein 
 Signal weitergegeben. \\
 Wird während der Suchzeit ein weiteres Signal von der Koinzidenzschaltung in die restliche Schaltung gegeben, so liegen zwei HIGH Signale am zweiten AND-Gatter, hier wird der Impuls 

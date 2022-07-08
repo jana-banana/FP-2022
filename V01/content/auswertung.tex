@@ -3,23 +3,21 @@
 
 \subsection{Justage}
   \subsubsection{Justieren der Verzögerungsleitungen}
-    Wie in der Durchführung beschrieben werden die Verzögerungsleitungen vor den Diskriminatoren justiert.
-    Als Verzögerungszeitdifferenz wird $\increment t = t_1 - t_2 = \SI{2}{\nano\second}$ genommen, dieser Wert bleibt über den ganzen Versuch bestehen.
-    Dadurch beträgt die Ereignisrate $\SI{18.8}{\per\second}$.
+    Wie in der Durchführung beschrieben werden die Verzögerungsleitungen vor den Diskriminatoren justiert. 
     Die aufgenommenen Messwerte dieser Kalibration sind in \autoref{tab:verzogerung} zu finden.
     Für die Höhe des Plateaus ergibt sich mithilfe einer Mittelwertsrechnung
     \begin{equation*}
-      I_\text{Plateau} = 351,57 \pm 18,75 \, .
+      I_\text{Plateau} = \num{351.57 \pm 18.75} \, .
     \end{equation*}
     Mit den Messwerten des Anstiegs und des Abfalls wird jeweils eine Ausgleichsrechnung mit der Form
     \begin{equation*}
-      I = m \cdot t + I_0
+      I = m \cdot t + b
     \end{equation*}
     durchgeführt.
     Mithilfe von python werden somit folgende Fitparameter bestimmt:
     \begin{align*}
-      &\text{Anstieg} &m_\text{Ab}=43,00 \pm 1,72   &&b_\text{Ab}= 330,65 \pm 6,68 \, ,\\
-      &\text{Abfall}  &m_\text{An}=-34,87 \pm 1,44  &&b_\text{An}= 399,48 \pm 11,33 \, .\\
+      &\text{Anstieg} &m_\text{An}=\SI{43.00 \pm 1.72}{\per\nano\second}   &&b_\text{An}= \num{330.65 \pm 6.68} \, ,\\
+      &\text{Abfall}  &m_\text{Ab}= \SI{-34.87 \pm 1.44}{\per\nano\second}  &&b_\text{Ab}= \num{399.48 \pm 11.33} \, .\\
     \end{align*}
     Die jeweiligen Ausgleichsgeraden sind ebenfalls in \autoref{fig:Justage} zu finden.
     Die Halbwertsbreite des Plateaus wird über die Schnittstellen der beiden Ausgleichsgeraden mit der halben Plateauhöhe bestimmt.
@@ -31,19 +29,22 @@
     \begin{equation*}
       t_\frac{1}{2} = \SI{1.9(4)}{\nano\second} \, .
     \end{equation*}
+    Als Verzögerungszeitdifferenz wird $\increment t = \SI{2}{\nano\second}$ genommen, dieser Wert bleibt über den ganzen Versuch bestehen.
+    Dadurch beträgt die Ereignisrate $\SI{18.8}{\second\tothe{-1}}$.
     \begin{figure}[h]
       \centering
       \includegraphics[width=\textwidth]{build/Verzoegerungsleitung.pdf}
-      \caption{Ausgleichsrechnung und Plateau.}
+      \caption{Eine graphische Darstellung der Messdaten der Verzögerungszeitmessung. Es werden ein Anstieg, ein Plateau und ein Abfall identifiziert und 
+      entsprechend Ausgleichsrechnungen gemacht.}
       \label{fig:Justage}
     \end{figure}
     \begin{table}[h]
       \centering
-      \caption{Verzögerungsmessung.}
+      \caption{Die Messdaten der Verzögerungsmessung. Es wurde für jede Verzögerungszeit $\SI{20}{\second}$ lang gemessen.}
       \label{tab:verzogerung}
-      \begin{tabular}{c c}
+      \begin{tabular}{S[table-format=2.1] c}
         \toprule
-         & $\increment t \, [\si{\nano\second}]$ & Counts pro 20 Sekunden\\
+         {$\increment t \,\mathbin{/} \si{\nano\second}$} & {Impulse $I$} \\
         \midrule
         -10.0 &      1  \\
         -9.0  &      4  \\
@@ -86,66 +87,68 @@
   
   \subsubsection{Kalibration}
   Um mit dem Mutlichannelanalyzer arbeiten zu können, muss festgestellt werden welcher Kanal für welche Zerfallszeit steht.
-  Durch die Kalibrationsmessung kann jedem Kanal eine Zerfallszeit zugeordnet werden.
+  Durch die Kalibrationsmessung kann jedem Kanal eine Zerfallszeit zugeordnet werden. Es werden für die verschiedenen Zeitabstände $\increment t$
+  innerhalb von $\SI{15}{\second}$ gemessen, wie viele Ereignisse in einen Kanal fallen, und diese beiden Werte notiert. Falls es Ereignisse in mehreren 
+  Kanälen gibt, dann wird ein gewichteter Mittelwert ausgerechnet. 
   Die aufgenommen Messwerte sind in \autoref{tab:Kalibration_MCA} zu finden.
   Durch die Messwerte wird eine Ausgleichsrechnung durchgeführt mit der Form
   \begin{align*}
-    ch = m \cdot t + ch_0 \, .
+    \text{ch} = m \cdot t + \text{ch}_0 \, .
   \end{align*}
   Der letzte Messwert zu $\increment t = \SI{9.9}{\micro\second}$ wird in der Ausgleichsrechnung nicht berücksichtigt, da dieser die Ausgleichsgerade fälschlicherweise verschiebt.
-  Da anscheindend dieser Zeitabstand zwischen den beiden Impulsen schon mit der Suchzeit $T_S = \SI{10}{\micro\second}$ gleichgesetzt wird und somit keine Impulse in diesem Channel zu sehen sind.
+  Da anscheinend dieser Zeitabstand zwischen den beiden Impulsen schon mit der Suchzeit $T_\text{S} = \SI{10}{\micro\second}$ gleichgesetzt wird und somit keine Impulse in diesem Kanal zu sehen sind.
   Dabei werden folgende Werte ermittelt:
   \begin{align*}
-    m = 0,0217 \pm 8,9686 && ch_0 = 0,1507 \pm 0,0023\, . \\ 
+    m = \SI{0.0217 \pm 8.9686}{\per\micro\second} && \text{ch}_0 = \num{0.1507 \pm 0.0023}\, . \\ 
   \end{align*}
   Eine grafische Darstellung der Messwerte sowie die dazugehörige Ausgleichsrechnung ist in \autoref{fig:Kalibration_MCA} zu finden.
   \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{build/Kalibration_MCA.pdf}
-    \caption{Kalibration MCA}
+    \caption{Die Messwerte der Messung zur Kalibration des MCA mit einer Ausgleichsrechnung.}
     \label{fig:Kalibration_MCA}
   \end{figure}
   \begin{table}[h]
     \centering
     \caption{Kalibration MCA.}
     \label{tab:Kalibration_MCA}
-    \begin{tabular}{c c c}
+    \begin{tabular}{S[table-format=1.1] S[table-format=3.2] c}
       \toprule
-       & $\increment t \, [\si{\nano\second}]$& Channel & Counts pro 15 Sekunden\\
+      {$\increment t \, \mathbin{/} \si{\nano\second}$}& Kanal & {Impulse $I$}\\
       \midrule
-      0.3  && 7 	   && 16213 \\
-      0.6  && 21 	   && 15462 \\
-      0.9  && 35 	   && 15547 \\
-      1.2  && 48 	   && 13928 \\
-      1.5  && 62 	   && 15391 \\
-      1.8	 && 76 	   && 15293 \\ 
-      2.1	 && 90 	   && 15470 \\
-      2.4  && 103.98 && 15172 \\
-      2.7  && 117 	 && 15234 \\
-      3.0  && 131 	 && 16310 \\
-      3.3  && 145 	 && 15505 \\
-      3.6  &&	159 	 && 15470 \\
-      3.9  && 173 	 && 15405 \\
-      4.2  && 186 	 && 15301 \\
-      4.5  &&	200 	 && 15206 \\
-      4.8  && 214 	 && 15221 \\
-      5.1  && 228 	 && 15780 \\
-      5.4  && 242 	 && 15224 \\
-      5.7  && 256 	 && 15158 \\
-      6.0  && 269 	 && 15125 \\
-      6.3  && 283 	 && 15334 \\
-      6.6  && 297 	 && 16094 \\
-      6.9  && 311 	 && 15216 \\
-      7.2  && 325 	 && 15094 \\
-      7.5  && 338.62 && 15517 \\
-      7.8  && 352 	 && 15390 \\
-      8.1  && 366 	 && 15162 \\
-      8.4  && 380 	 && 15348 \\
-      8.7  && 394 	 && 16517 \\
-      9.0  && 408 	 && 15362 \\
-      9.3  && 421.99 && 15254 \\
-      9.6  && 435 	 && 15454 \\
-      9.9  && 0 	   &&  0    \\
+      0.3  & 7 	   & 16213 \\
+      0.6  & 21 	 & 15462 \\
+      0.9  & 35 	 & 15547 \\
+      1.2  & 48 	 & 13928 \\
+      1.5  & 62 	 & 15391 \\
+      1.8	 & 76 	 & 15293 \\ 
+      2.1	 & 90 	 & 15470 \\
+      2.4  & 103.98 & 15172 \\
+      2.7  & 117 	 & 15234 \\
+      3.0  & 131 	 & 16310 \\
+      3.3  & 145 	 & 15505 \\
+      3.6  &	159  & 15470 \\
+      3.9  & 173 	 & 15405 \\
+      4.2  & 186 	 & 15301 \\
+      4.5  &	200  & 15206 \\
+      4.8  & 214 	 & 15221 \\
+      5.1  & 228 	 & 15780 \\
+      5.4  & 242 	 & 15224 \\
+      5.7  & 256 	 & 15158 \\
+      6.0  & 269 	 & 15125 \\
+      6.3  & 283 	 & 15334 \\
+      6.6  & 297 	 & 16094 \\
+      6.9  & 311 	 & 15216 \\
+      7.2  & 325 	 & 15094 \\
+      7.5  & 338.62 & 15517 \\
+      7.8  & 352 	 & 15390 \\
+      8.1  & 366 	 & 15162 \\
+      8.4  & 380 	 & 15348 \\
+      8.7  & 394 	 & 16517 \\
+      9.0  & 408 	 & 15362 \\
+      9.3  & 421.99 & 15254 \\
+      9.6  & 435 	 & 15454 \\
+      9.9  & 0 	   &  0    \\
       \bottomrule
     \end{tabular}
   \end{table}
@@ -153,7 +156,7 @@
 \subsection{Messung der Lebensdauer}
   \subsubsection{Theoretische Untergrundrate}
     Neben Myonenzerfälle, die Stoppsignale auslösen, können weitere Myoneneinfälle dieses Stoppsignal auslösen.
-    Dieser Untergrund trifft auf alle Channels gleichmäßig auf und läuft über die ganze Messung ab.
+    Dieser Untergrund trifft auf alle Kanäle gleichmäßig auf und läuft über die ganze Messung ab.
     Dafür wird \eqref{eqn:poisson} verwendet.
     Der Erwartungswert $\mu$ sowie die durschnitltlich gemessene Rate $I_\text{Mess}$ wird mit \eqref{eqn:mu} bestimmt.
     Die Suchzeit $T_\text{S}$ wurde auf $\SI{10}{\micro\second}$ eingestellt.
@@ -174,8 +177,8 @@
     \begin{equation*}
       U_\text{ges} = 764,1 \pm 0,7 \,.
     \end{equation*}
-    Der gesamte Untergrund wird auf die relevanten Channels normiert.
-    Aus der Kalibrationsmessung ergeben sich als relevante Channels innerhalb der Suchzeit $T_\text{S}$ das Intervall $[4;445]$.
+    Der gesamte Untergrund wird auf die relevanten Kanäle normiert.
+    Aus der Kalibrationsmessung ergeben sich als relevante Kanäle innerhalb der Suchzeit $T_\text{S}$ das Intervall $[4;445]$.
     Somit beträgt der normierte Untergrund
     \begin{equation*}
       U_\text{norm} = 1,7325 \pm 0,0016 \, .
@@ -185,10 +188,10 @@
     Die aufgenommenen Messwerte sind in \autoref{fig:eFkt_numerisch} zu sehen.
     Durch diese Messwerte wird ein Fit der Form
     \begin{equation*}
-      N(t) = N_0 \cdot \exp(-\lambda t) +U_\text{n} \, .
+      N(t) = N_0 \cdot \symup{e}^{-\lambda t} +U_\text{n} \, .
     \end{equation*}
-    Dabei werden die ersten vier Channels sowie die Channels > 445 nicht berücksichtigt, da diese Null Counts haben.
-    Bei den Channels > 445 liegt es an der Suchzeit $T_\text{S}$, die überschritten wird und somit Signale, die nach der Suchzeit eintreffen nicht als Stoppsignale registriert werden.
+    Dabei werden die ersten vier Kanäle sowie die Kanäle > 445 nicht berücksichtigt, da diese Null Counts haben.
+    Bei den Kanäle > 445 liegt es an der Suchzeit $T_\text{S}$, die überschritten wird und somit Signale, die nach der Suchzeit eintreffen nicht als Stoppsignale registriert werden.
     Für die Fitparameter ergeben sich somit folgende Werte:
     \begin{align*}
       N_0 &= 153,38 \pm 1,56 \, ,\\
