@@ -1,12 +1,238 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-\begin{figure}
-  \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
-\end{figure}
+\subsection{Justage}
+  \subsubsection{Justieren der Verzögerungsleitungen}
+    Wie in der Durchführung beschrieben werden die Verzögerungsleitungen vor den Diskriminatoren justiert.
+    Als Verzögerungszeitdifferenz wird $\increment t = t_1 - t_2 = \SI{2}{\nano\second}$ genommen, dieser Wert bleibt über den ganzen Versuch bestehen.
+    Dadurch beträgt die Ereignisrate $\SI{18.8}{\per\second}$.
+    Die aufgenommenen Messwerte dieser Kalibration sind in \autoref{tab:verzogerung} zu finden.
+    Für die Höhe des Plateaus ergibt sich mithilfe einer Mittelwertsrechnung
+    \begin{equation*}
+      I_\text{Plateau} = 351,57 \pm 18,75 \, .
+    \end{equation*}
+    Mit den Messwerten des Anstiegs und des Abfalls wird jeweils eine Ausgleichsrechnung mit der Form
+    \begin{equation*}
+      I = m \cdot t + I_0
+    \end{equation*}
+    durchgeführt.
+    Mithilfe von python werden somit folgende Fitparameter bestimmt:
+    \begin{align*}
+      &\text{Anstieg} &m_\text{Ab}=43,00 \pm 1,72   &&b_\text{Ab}= 330,65 \pm 6,68 \, ,\\
+      &\text{Abfall}  &m_\text{An}=-34,87 \pm 1,44  &&b_\text{An}= 399,48 \pm 11,33 \, .\\
+    \end{align*}
+    Die jeweiligen Ausgleichsgeraden sind ebenfalls in \autoref{fig:Justage} zu finden.
+    Die Halbwertsbreite des Plateaus wird über die Schnittstellen der beiden Ausgleichsgeraden mit der halben Plateauhöhe bestimmt.
+    Daraus ergibt sich für die beiden Schnittstellen
+    \begin{align*}
+      t_\text{links} = \SI{0.49(16)}{\nano\second} && t_\text{rechts}= \SI{1.37(33)}{\nano\second} \, . \\
+    \end{align*}
+    Dadurch folgt für die Halbwertsbreite und somit auch für die doppelte Breite der Rechteckimpulse
+    \begin{equation*}
+      t_\sfrac{1}{2} = \SI{1.9(4)}{\nano\second} \, .
+    \end{equation*}
+    \begin{figure}[h]
+      \centering
+      \includegraphics[width=\textwidth]{build/Verzoegerungsleitung.pdf}
+      \caption{Ausgleichsrechnung und Plateau.}
+      \label{fig:Justage}
+    \end{figure}
+    \begin{table}[h]
+      \centering
+      \caption{Verzögerungsmessung.}
+      \label{tab:verzogerung}
+      \begin{tabular}{c c}
+        \toprule
+         & $\increment t \, [\si{\nano\second}]$ & Counts pro 20 Sekunden\\
+        \midrule
+        -10.0 &      1  \\
+        -9.0  &      4  \\
+        -8.0  &      11 \\
+        -7.0  &      21 \\
+        -6.0  &      75 \\
+        -5.5  &      103\\
+        -5.0  &      109\\
+        -4.5  &      121\\
+        -4.0  &      163\\
+        -3.5  &      205\\
+        -3.0  &      196\\
+        -2.5  &      230\\
+        -2.0  &      228\\
+        -1.5  &      289\\
+        -1.0  &      288\\
+        -0.5  &      304\\
+        0     &      319\\
+        0.5   &      340\\
+        1.0   &      372\\
+        1.5   &      356\\
+        2.0   &      345\\
+        2.5   &      344\\
+        3.0   &      352\\
+        3.5   &      273\\
+        4.0   &      352\\
+        4.5   &      230\\
+        5.0   &      242\\
+        5.5   &      219\\
+        6.0   &      199\\
+        7.0   &      155\\
+        8.0   &      109\\
+        9.0   &      72 \\
+        10.0  &      40 \\
+        11.0  &      13 \\
+        12.0  &      0  \\
+        \bottomrule
+      \end{tabular}
+    \end{table}
+  
+  \subsubsection{Kalibration}
+  Um mit dem Mutlichannelanalyzer arbeiten zu können, muss festgestellt werden welcher Kanal für welche Zerfallszeit steht.
+  Durch die Kalibrationsmessung kann jedem Kanal eine Zerfallszeit zugeordnet werden.
+  Die aufgenommen Messwerte sind in \autoref{tab:Kalibration_MCA} zu finden.
+  Durch die Messwerte wird eine Ausgleichsrechnung durchgeführt mit der Form
+  \begin{align*}
+    ch = m \cdot t + ch_0 \, .
+  \end{align*}
+  Der letzte Messwert zu $\increment t = \SI{9.9}{\micro\second}$ wird in der Ausgleichsrechnung nicht berücksichtigt, da dieser die Ausgleichsgerade fälschlicherweise verschiebt.
+  Da anscheindend dieser Zeitabstand zwischen den beiden Impulsen schon mit der Suchzeit $T_S = \SI{10}{\micro\second}$ gleichgesetzt wird und somit keine Impulse in diesem Channel zu sehen sind.
+  Dabei werden folgende Werte ermittelt:
+  \begin{align*}
+    m = 0,0217 \pm 8,9686 && ch_0 = 0,1507 \pm 0,0023\, . \\ 
+  \end{align*}
+  Eine grafische Darstellung der Messwerte sowie die dazugehörige Ausgleichsrechnung ist in \autoref{fig:Kalibration_MCA} zu finden.
+  \begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{build/Kalibration_MCA.pdf}
+    \caption{Kalibration MCA}
+    \label{fig:Kalibration_MCA}
+  \end{figure}
+  \begin{table}[h]
+    \centering
+    \caption{Kalibration MCA.}
+    \label{tab:Kalibration_MCA}
+    \begin{tabular}{c c c}
+      \toprule
+       & $\increment t \, [\si{\nano\second}]$& Channel & Counts pro 15 Sekunden\\
+      \midrule
+      0.3  && 7 	   && 16213 \\
+      0.6  && 21 	   && 15462 \\
+      0.9  && 35 	   && 15547 \\
+      1.2  && 48 	   && 13928 \\
+      1.5  && 62 	   && 15391 \\
+      1.8	 && 76 	   && 15293 \\ 
+      2.1	 && 90 	   && 15470 \\
+      2.4  && 103.98 && 15172 \\
+      2.7  && 117 	 && 15234 \\
+      3.0  && 131 	 && 16310 \\
+      3.3  && 145 	 && 15505 \\
+      3.6  &&	159 	 && 15470 \\
+      3.9  && 173 	 && 15405 \\
+      4.2  && 186 	 && 15301 \\
+      4.5  &&	200 	 && 15206 \\
+      4.8  && 214 	 && 15221 \\
+      5.1  && 228 	 && 15780 \\
+      5.4  && 242 	 && 15224 \\
+      5.7  && 256 	 && 15158 \\
+      6.0  && 269 	 && 15125 \\
+      6.3  && 283 	 && 15334 \\
+      6.6  && 297 	 && 16094 \\
+      6.9  && 311 	 && 15216 \\
+      7.2  && 325 	 && 15094 \\
+      7.5  && 338.62 && 15517 \\
+      7.8  && 352 	 && 15390 \\
+      8.1  && 366 	 && 15162 \\
+      8.4  && 380 	 && 15348 \\
+      8.7  && 394 	 && 16517 \\
+      9.0  && 408 	 && 15362 \\
+      9.3  && 421.99 && 15254 \\
+      9.6  && 435 	 && 15454 \\
+      9.9  && 0 	   &&  0    \\
+      \bottomrule
+    \end{tabular}
+  \end{table}
 
+\subsection{Messung der Lebensdauer}
+  \subsubsection{Theoretische Untergrundrate}
+    Neben Myonenzerfälle, die Stoppsignale auslösen, können weitere Myoneneinfälle dieses Stoppsignal auslösen.
+    Dieser Untergrund trifft auf alle Channels gleichmäßig auf und läuft über die ganze Messung ab.
+    Dafür wird \eqref{eqn:poisson} verwendet.
+    Der Erwartungswert $\mu$ sowie die durschnitltlich gemessene Rate $I_\text{Mess}$ wird mit \eqref{eqn:mu} bestimmt.
+    Die Suchzeit $T_\text{S}$ wurde auf $\SI{10}{\micro\second}$ eingestellt.
+    Dabei beträgt die Messzeit
+    \begin{equation*}
+      t_\text{Mess} = \SI{272201}{\second}
+    \end{equation*}
+    und die gesamte Anzahl der Startsignale
+    \begin{equation*}
+      N_\text{Start} = 4560816 \pm 2135,61 \, .
+    \end{equation*}
+    Somit ergibt sich für die durchschnittlich gemessene Rate
+    \begin{equation*}
+      I_\text{Mess} = 16,755 \pm 0,008 \, .
+    \end{equation*}
+    Dadurch kann mithilfe von \eqref{eqn:Untergrund} der gesamte Untergrund während der Messzeit bestimmt werden.
+    Dieser beträgt somit
+    \begin{equation*}
+      U_\text{ges} = 764,1 \pm 0,7 \,.
+    \end{equation*}
+    Der gesamte Untergrund wird auf die relevanten Channels normiert.
+    Aus der Kalibrationsmessung ergeben sich als relevante Channels innerhalb der Suchzeit $T_\text{S}$ das Intervall $[4;445]$.
+    Somit beträgt der normierte Untergrund
+    \begin{equation*}
+      U_\text{norm} = 1,7325 \pm 0,0016 \, .
+    \end{equation*}
+  
+  \subsubsection{Bestimmung der Lebensdauer kosmischer Myonen - numerisch}
+    Die aufgenommenen Messwerte sind in \autoref{fig:eFkt_numerisch} zu sehen.
+    Durch diese Messwerte wird ein Fit der Form
+    \begin{equation*}
+      N(t) = N_0 \cdot \exp(-\lambda t) +U_\text{n} \, .
+    \end{equation*}
+    Dabei werden die ersten vier Channels sowie die Channels > 445 nicht berücksichtigt, da diese Null Counts haben.
+    Bei den Channels > 445 liegt es an der Suchzeit $T_\text{S}$, die überschritten wird und somit Signale, die nach der Suchzeit eintreffen nicht als Stoppsignale registriert werden.
+    Für die Fitparameter ergeben sich somit folgende Werte:
+    \begin{align*}
+      N_0 &= 153,38 \pm 1,56 \, ,\\
+      \lambda &= \SI{0,51(01)}{\per\micro\second} \, ,\\
+      U_\text{n} &= 2,64 \pm 0,56 \, . \\
+    \end{align*}
+    Bei dem hier betrachteten Untergrund $U_\text{n}$ handelt es sich um ein numerisch bestimmten Untergrund.
+    Die Fit-Funktion ist in \autoref{fig:eFkt_numerisch} zu finden.
+    Durch die bestimmte Zerfallskonstante $\lambda$ kann nun die Lebensdauer berechnet werden.
+    Es gilt
+    \begin{equation*}
+      \tau_\text{num} = \frac{1}{\lambda} = \SI{1.97(04)}{\micro\second} \, .
+    \end{equation*}
+    \begin{figure}
+      \centering
+      \includegraphics[width=\textwidth]{build/Messung_Zeit_Counts_num.pdf}
+      \caption{Messwerte und eFunktion-Fit.}
+      \label{fig:eFkt_numerisch}
+    \end{figure}
 
-Siehe \autoref{fig:plot}!
+  \subsubsection{Bestimmung der Lebensdauer kosmischer Myonen - theoretisch}
+    Zunächst wird von den signifikanten Messwerten die theoretisch bestimmte Untergrundrate abgezogen.
+    Diese beträgt
+    \begin{equation*}
+      U_\text{norm} = 1,7325 \pm 0,0016 \, .
+    \end{equation*}
+    Durch die angepassten Messwerte wird eine Ausgleichsrechnung der Form
+    \begin{equation*}
+      N(t) = N_0 \cdot \exp(-\lambda t)
+    \end{equation*}
+    durchgeführt.
+    Für die Fitparameter ergebn sich somit folgende Werte:
+    \begin{align*}
+      N_0 &= 153,06 \pm 1,53 \, \text{und}\\
+      \lambda &= \SI{0.496(006)}{\per\micro\second} \, . \\
+    \end{align*}
+    Aus der Zerfallskonstante ergibt sich die Lebensdauer wie folgt:
+    \begin{equation*}
+      \tau_\text{theo} = \frac{1}{\lambda} = \SI{2.017(026)}{\micro\second} \, .
+    \end{equation*}
+    Die bereinigten Messwerte sowie die Fit-Funktion sind in \autoref{fig:eFkt_theo} zu finden.
+    \begin{figure}
+      \centering
+      \includegraphics[width=\textwidth]{build/Messung_Zeit_Counts_theo.pdf}
+      \caption{Messwerte und eFunktion-Fit.}
+      \label{fig:eFkt_theo}
+    \end{figure}
