@@ -44,11 +44,11 @@ def middeldeux(a,b):
     return arr
 
 def evaku(t, la,g0, g1, g2, name):
-    ln_line_1 = unp.nominal_values(la)[g0:g1]
+    ln_line_1 = unp.nominal_values(la)[:g1]
     ln_line_2 = unp.nominal_values(la)[g1:g2]
     ln_line_3 = unp.nominal_values(la)[g2:]
 
-    t_line_1 = t[g0:g1]
+    t_line_1 = t[:g1]
     t_line_2 = t[g1:g2]
     t_line_3 = t[g2:]
 
@@ -76,14 +76,14 @@ def evaku(t, la,g0, g1, g2, name):
     t_plot1 = np.linspace(-10 + g0, g1*10 + 50, 1000)
     t_plot2 = np.linspace(g1*10 - 50, g2*10 +50, 1000)
     t_plot3 = np.linspace(g2*10-50, 610, 1000)
-    if len(t)<20:
-        t_plot1 = np.linspace(-10 + g0, g1*10 + 10, 1000)
-        t_plot2 = np.linspace(g1*10 - 10, g2*10 +10, 1000)
+    if len(t)<27:
+        t_plot1 = np.linspace(-10 + g0, g1*5 + 10, 1000)
+        t_plot2 = np.linspace(g1*5 - 10, g2*10 +10, 1000)
         t_plot3 = np.linspace(g2-10, 130, 1000)
 
     plt.figure()
     # plt.errorbar(t, unp.nominal_values(la), yerr=unp.std_devs(la), fmt='.k', label='Nicht benutzte Messdaten')
-    plt.errorbar(t_line_1, ln_line_1, yerr=unp.std_devs(la)[g0:g1], fmt='.', color='red', label='Daten des 1. linearen Bereiches')
+    plt.errorbar(t_line_1, ln_line_1, yerr=unp.std_devs(la)[:g1], fmt='.', color='red', label='Daten des 1. linearen Bereiches')
     plt.plot(t_plot1, line(t_plot1, m[0], n[0]), '-b', label='1. Ausgleichsrechnung')
     plt.errorbar(t_line_2, ln_line_2, yerr=unp.std_devs(la)[g1:g2], fmt='.', color='orange', label='Daten des 2. linearen Bereiches')
     plt.plot(t_plot2, line(t_plot2, m[1], n[1]), '-g', label='2. Ausgleichsrechnung')
@@ -266,7 +266,7 @@ sig_p3_eva_ft = np.zeros(len(t_eva))
 for i in range(0, len(p3_eva)):
     p3_eva_ft[i] = p3_eva[i]
     sig_p3_eva_ft[i] = sig_p3_eva[i]
-# np.savetxt('data/tab_dreh_eva.txt', np.column_stack([t_eva, p1_eva, sig_p1_eva, p2_eva, sig_p2_eva, p3_eva_ft, sig_p3_eva_ft, unp.nominal_values(p_mean), sig_p_sys, unp.nominal_values(ln), unp.std_devs(ln)]), fmt=['%.1f', '%.2f', '%.2f', '%.2f', '%.2f', '%.2f','%.2f', '%.2f', '%.2f', '%.2f','%.2f'], header='t, m1, m2, m3, mean, ln')
+np.savetxt('data/tab_dreh_eva.txt', np.column_stack([t_eva, p1_eva, sig_p1_eva, p2_eva, sig_p2_eva, p3_eva_ft, sig_p3_eva_ft, unp.nominal_values(p_mean), sig_p_sys, unp.nominal_values(ln), unp.std_devs(ln)]), fmt=['%.1f', '%.2f', '%.2f', '%.2f', '%.2f', '%.2f','%.2f', '%.2f', '%.2f', '%.2f','%.2f'], header='t, m1, m2, m3, mean, ln')
 
 #-------------------------------------------------------------Turbopumpe---------------------------------------------------------------------
 print('_____________________________________Turbopumpe________________________________________________________________________________ \n')
@@ -304,10 +304,10 @@ for n in range(0, len(p_mean_t)):
 ln_t = logausdruck(unp.nominal_values(p_mean_t), sig_p_sys_t, p_E, p_0)
 
 #Saugvermögen bestimmen
-S_eva_t = evaku(t_eva_t, ln_t, 0, 3, 6, 'turbo')
+S_eva_t = evaku(t_eva_t, ln_t, 0, 5, 9, 'turbo')
 
 
-# np.savetxt('data/tab_turbo_eva.txt', np.column_stack([t_eva_t, p1_eva_t, sig_p1_eva_t, p2_eva_t, sig_p2_eva_t, p3_eva_t, sig_p3_eva_t, unp.nominal_values(p_mean_t), sig_p_sys_t, unp.nominal_values(ln_t), unp.std_devs(ln_t)]), fmt=['%.1f', '%.2f', '%.2f', '%.2f', '%.2f', '%.2f','%.2f', '%.2f', '%.2f', '%.2f','%.2f'], header='t, m1, m2, m3, mean, ln')
+np.savetxt('data/tab_turbo_eva.txt', np.column_stack([t_eva_t, p1_eva_t, sig_p1_eva_t, p2_eva_t, sig_p2_eva_t, p3_eva_t, sig_p3_eva_t, unp.nominal_values(p_mean_t), sig_p_sys_t, unp.nominal_values(ln_t), unp.std_devs(ln_t)]), fmt=['%.1f', '%.2f', '%.2f', '%.2f', '%.2f', '%.2f','%.2f', '%.2f', '%.2f', '%.2f','%.2f'], header='t, m1, m2, m3, mean, ln')
 
 #-------------------------------------------------------------Leckratenmessung---------------------------------------------------------------
 print('_____________________________________Leckratenmessung__________________________________________________________________________ \n')
@@ -374,7 +374,7 @@ for i, x, pg, go in zip(numbs, names, p_g, gogos):
     S[i] = unp.nominal_values(S_i)
     sig_S[i] = unp.std_devs(S_i)
 
-    # np.savetxt('data/tab_dreh_leck_'+x+'mbar.txt', np.column_stack([t_i, p1_i, sig_p1_i, p2_i, sig_p2_i, p3_i, sig_p3_i, unp.nominal_values(p_i),sig_p_i]),fmt=['%.1f', '%.3f', '%.3f', '%.3f', '%.3f', '%.3f','%.3f', '%.3f', '%.3f'], header='t, m1, m2, m3, middel')
+    np.savetxt('data/tab_dreh_leck_'+x+'mbar.txt', np.column_stack([t_i, p1_i, sig_p1_i, p2_i, sig_p2_i, p3_i, sig_p3_i, unp.nominal_values(p_i),sig_p_i]),fmt=['%.1f', '%.3f', '%.3f', '%.3f', '%.3f', '%.3f','%.3f', '%.3f', '%.3f'], header='t, m1, m2, m3, middel')
 
 
 #-------------------------------------------------------------Turbopumpe---------------------------------------------------------------------
@@ -424,7 +424,7 @@ for i, x, pg, go in zip(numbs, names, p_g, gogos):
     S_t[i] = unp.nominal_values(S_i)
     sig_S_t[i] = unp.std_devs(S_i)
 
-    # np.savetxt('data/tab_turbo_leck_'+x+'mbar.txt', np.column_stack([t_i, p1_i, sig_p1_i, p2_i, sig_p2_i, p3_i, sig_p3_i, unp.nominal_values(p_i),sig_p_i]),fmt=['%.1f', '%.3f', '%.3f', '%.3f', '%.3f', '%.3f','%.3f', '%.3f', '%.3f'], header='t, m1, m2, m3, middel')
+    np.savetxt('data/tab_turbo_leck_'+x+'mbar.txt', np.column_stack([t_i, p1_i, sig_p1_i, p2_i, sig_p2_i, p3_i, sig_p3_i, unp.nominal_values(p_i),sig_p_i]),fmt=['%.1f', '%.3f', '%.3f', '%.3f', '%.3f', '%.3f','%.3f', '%.3f', '%.3f'], header='t, m1, m2, m3, middel')
 
 
 #-------------------------------------------------------------Abbildung für die Diskussion---------------------------------------------------
@@ -450,7 +450,7 @@ plt.legend()
 plt.tight_layout()
 plt.savefig('build/compare_dreh.pdf')
 
-# np.savetxt('data/tab_dreh_saug.txt', np.column_stack([unp.nominal_values(S_eva)[0], unp.std_devs(S_eva)[0], unp.nominal_values(S_eva)[1], unp.std_devs(S_eva)[1], unp.nominal_values(S_eva)[2], unp.std_devs(S_eva)[2], S[3], sig_S[3], S[2], sig_S[2], S[1], sig_S[1], S[0], sig_S[0]]), fmt=['%.4f', '%.4f', '%.4f', '%.4f', '%.4f','%.4f', '%.4f', '%.4f', '%.4f', '%.4f', '%.4f', '%.4f', '%.4f', '%.4f'])   
+np.savetxt('data/tab_dreh_saug.txt', np.column_stack([unp.nominal_values(S_eva)[0], unp.std_devs(S_eva)[0], unp.nominal_values(S_eva)[1], unp.std_devs(S_eva)[1], unp.nominal_values(S_eva)[2], unp.std_devs(S_eva)[2], S[3], sig_S[3], S[2], sig_S[2], S[1], sig_S[1], S[0], sig_S[0]]), fmt=['%.4f', '%.4f', '%.4f', '%.4f', '%.4f','%.4f', '%.4f', '%.4f', '%.4f', '%.4f', '%.4f', '%.4f', '%.4f', '%.4f'])   
 
 
 plt.figure()
@@ -473,4 +473,4 @@ plt.legend()
 plt.tight_layout()
 plt.savefig('build/compare_turbo.pdf')
 
-# np.savetxt('data/tab_turbo_saug.txt', np.column_stack([unp.nominal_values(S_eva_t)[0], unp.std_devs(S_eva_t)[0], unp.nominal_values(S_eva_t)[1], unp.std_devs(S_eva_t)[1], unp.nominal_values(S_eva_t)[2], unp.std_devs(S_eva_t)[2], S_t[0], sig_S_t[0], S_t[1], sig_S_t[1], S_t[2], sig_S_t[2], S_t[3], sig_S_t[3]]), fmt=['%.4f', '%.4f', '%.4f', '%.4f', '%.4f','%.4f', '%.4f', '%.4f', '%.4f', '%.4f', '%.4f', '%.4f', '%.4f', '%.4f'])   
+np.savetxt('data/tab_turbo_saug.txt', np.column_stack([unp.nominal_values(S_eva_t)[0], unp.std_devs(S_eva_t)[0], unp.nominal_values(S_eva_t)[1], unp.std_devs(S_eva_t)[1], unp.nominal_values(S_eva_t)[2], unp.std_devs(S_eva_t)[2], S_t[0], sig_S_t[0], S_t[1], sig_S_t[1], S_t[2], sig_S_t[2], S_t[3], sig_S_t[3]]), fmt=['%.4f', '%.4f', '%.4f', '%.4f', '%.4f','%.4f', '%.4f', '%.4f', '%.4f', '%.4f', '%.4f', '%.4f', '%.4f', '%.4f'])   
