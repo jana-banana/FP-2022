@@ -38,7 +38,7 @@ b_links = ufloat(popt[0],errors[0])
 print("y =", popt[1])
 print("y fehler =",errors[1])
 y_links = ufloat(popt[1],errors[1])
-t_h_p_links = (mittel_plateau - y_links)/b_links
+t_h_p_links = ((mittel_plateau/2) - y_links)/b_links
 print('t_1/2_links : ', t_h_p_links)
 print('\n')
 
@@ -65,7 +65,7 @@ b_rechts = ufloat(popt[0],errors[0])
 print("y =", popt[1])
 print("y fehler =",errors[1])
 y_rechts = ufloat(popt[1],errors[1])
-t_h_p_rechts = (mittel_plateau - y_rechts)/b_rechts
+t_h_p_rechts = ((mittel_plateau/2) - y_rechts)/b_rechts
 print('t_1/2_rechts : ', t_h_p_rechts)
 print('\n')
 
@@ -83,7 +83,7 @@ print('t_1/2 : ', (t_h_p_rechts+t_h_p_links))
 
 #plt.xlabel(r'$\Delta t/\si{\nano\second}$')
 plt.xlabel('t / ns')
-plt.ylabel('Ereignisse pro 20 Sekunden')
+plt.ylabel('Ereignisse')
 plt.grid()
 plt.xlim(nst_links, 12.5)
 

@@ -26,19 +26,20 @@ Drücke besser zu erkennen sind.
 \end{figure}
 
 \noindent Die ermittelten Werte für das Saugvermögen der Drehschieberpumpe sind in der \autoref{tab:compare_dreh} aufgelistet. Der Hersteller gibt für das Saugvermögen einen Bereich 
-von $ S_\text{theo} \in [\SI{1.28}{\litre\per\second},\, \SI{1.53}{\litre\per\second}]$ an. In der \autoref{tab:compare_dreh} sind die relativen Abweichungen des experimentellen Wertes von 
-dem theoretischen Wert nach der Formel 
+von $ S_\text{theo} \in [\SI{1.28}{\litre\per\second},\, \SI{1.53}{\litre\per\second}]$ \cite{anleitung} an. In der \autoref{tab:compare_dreh} sind die relativen Abweichungen des experimentellen Wertes von 
+dem theoretischen Wert berechnet nach der Formel 
 \begin{equation}
     \increment S = \frac{S_\text{theo} - S_\text{exp}}{S_\text{theo}}\, .
     \label{eqn:rel_abw}
 \end{equation}
 Die Abweichung wird in diesem Fall von dem kleinsten und dem höchsten Wert ausgerechnet. \\
-Bei der Betrachtung der ermittelten Werte ist auffällig, dass bei der Evakuierungskurve im ersten Druckbereich ($\SI{10}{\milli\bar} \leq p \leq \SI{1000}{\milli\bar}$) der ermittelte 
-Wert nahe des theoretisch möglichem Bereich liegt. Auch der ermittelte Wert bei der Leckratenmessung mit dem Gleichgewichtsdruck $p_\text{G} = \SI{50(15)}{\milli\bar}$ liegt sehr nah am Theoriebereich. 
-Hier kann es sich aber auch um einen Zufall handeln, da bei der Durchführung auch der kombinierte Pirani/Kaltkathoden-Sensor benutzt wurde. Die hohen Drücke liegen außerhalb des Messbereiches des Pirani Messgeräts, 
+Bei der Durchführung wurde hier der kombinierte Pirani/Kaltkathoden-Sensor (M2) benutzt. Die hohen Drücke liegen außerhalb des Messbereiches des Pirani Messgeräts, 
 sodass einmal die Unsicherheiten sehr groß sind, aber auch die Linearität nicht mehr besteht, wie in der \autoref{fig:dreh_leck_50} und auch in der \autoref{fig:dreh_leck_100} zu sehen ist. 
 Die gesamten Messungen zur Drehschieberpumpe sollten demnach am besten wiederholt werden, um das Saugvermögen genauer zu bestimmen. 
-
+Dennoch ist zu sehen, dass die ermittelten Werte für das Saugvermögen im Rahmen des angenommenen Messfehlers bei dem ersten Bereich der Evakuierungsmessung 
+($\SI{10}{\milli\bar} \leq p \leq \SI{1000}{\milli\bar}$) und bei der Leckratenmessung mit den Gleichgewichtsdrücken $p_\text{G} = \SI{50(15)}{\milli\bar}$, $\SI{100(50)}{\milli\bar}$ im Theoriebereich liegen. 
+Dies bedeutet, dass der Fehler für die Messwerte sehr gut angenommen worden sind. \\
+Auch ist 
 \begin{table}
     \centering
     \caption{Die ermittelten Werte des Saugvermögens der Drehschieberpumpe mit der Abweichung von der oberen und unteren Grenze des vorgegebenen Bereiches.}
@@ -66,7 +67,8 @@ Da dies für diesen Druckbereich unabhängig von der Messmethode passiert, verde
 Die Herstellerangabe für den kleinsten erreichbaren Druck der Drehschieberpumpe lautet $p_\text{E} = \SI{2.0e-3}{\milli\bar}$ \cite{anleitung}, im Experiment wurde der Wert 
 $p_\text{E} = \SI{3.9(12)e-3}{\milli\bar}$ aufgenommen, das entspricht einer relativen Abweichung von $\SI{92.5}{\percent}$. Diese hohe Abweichung vom Theoriewert ist damit zu begründen, 
 dass der Rezipient immer wieder mit Luft geflutet wurde und dann evakuiert, was virtuelle Lecks recht wahrscheinlich macht. So kann selbst beim längeren Laufen der Pumpe der beste Druck 
-nicht erreicht werden. Bei optimalen Bedingungen wird der Tank mit Stickstoff belüftet. 
+nicht erreicht werden. Bei optimalen Bedingungen wird der Tank mit Stickstoff belüftet. Im allgemeinen sollte nicht zu viel in die Ergebnisse der 
+Drehschieberpumpe interpretiert werden, da mit einem falschen Messgerät gemessen worden ist. 
 
 \noindent Bei der Turbomolekularpumpe ist in der \autoref{fig:saug_turbo} deutlich zu erkennen, dass die ermittelten Werte stark vom Theoriewert abweichen, dieser beträgt $S_\text{theo} =
 \SI{77}{\litre\per\second}$ \cite{anleitung}. Dies bestätigt sich auch bei Betrachtung der Werte und ihren relativen Abweichungen zum angegebenen Wert in der \autoref{tab:compare_turbo}. 
@@ -80,9 +82,9 @@ nicht erreicht werden. Bei optimalen Bedingungen wird der Tank mit Stickstoff be
         \toprule
         {Messung} & \multicolumn{2}{c}{$ S \mathbin{/} \left(\si{\litre\per\second}\right)$} & {$\increment S  \mathbin{/} \si{\percent}$} \\ 
         \midrule
-        Evakuierung 1                           & 8.5 & 1.7 & 89.1\\
-        Evakuierung 2                           & 0.9 & 0.2 & 98.6\\
-        Evakuierung 3                           & 0.5 & 0.1 & 99.5\\
+        Evakuierung 1                           & 8.4 & 1.2 & 89.0\\
+        Evakuierung 2                           & 1.3 & 0.3 & 98.3\\
+        Evakuierung 3                           & 0.5 & 0.1 & 99.4\\
         Leckrate $\SI{5.0(15)e-5}{\milli\bar}$  & 7.4 & 2.4 & 90.4\\
         Leckrate $\SI{7.0(21)e-5}{\milli\bar}$  & 9.1 & 3.0 & 88.2\\
         Leckrate $\SI{1.0(3)e-4}{\milli\bar}$   &17.8 & 9.2 & 76.9\\
@@ -105,9 +107,6 @@ ein Vorteil dieses Verfahrens ist.
 Die Evakuierungsmessung ist im Gegensatz dazu sehr empfindlich gegenüber virtuellen Lecks. Da der Rezipient immer wieder mit Luft belüftet wird, ist es möglich, dass sich gerade die Wassermoleküle 
 an den Wänden des Rezipient anordnen und im geringere Druckbereich der Rezipient nicht weiter evakuiert wird sondern gegen virtuelle Lecks gearbeitet wird. 
 Diese Fehler können verkleinert werden, wenn Stickstoff statt Luft zum Befüllen des Rezipienten genutzt wird. 
-Das benutzte Messgerät hat einen Messbereich bis maximal $\SI{1000}{\milli\bar}$, sodass bei manchen Messungen nur diese Zahl angezeigt wurde, obwohl davon auszugehen ist, dass der Druck 
-im Rezipienten größer war. Jedoch müsste der Messbereich nur minimal größer sein, da der Druck nicht so viel höher wird, da der Druck bei Normatmosphäre $p = \SI{1013}{\milli\bar}$ beträgt. 
-Ein Messbereich, der $\SI{20}{\milli\bar}$ bis $\SI{30}{\milli\bar}$ größer ist, würde die Messungen bei der Drehschieberpumpe noch etwas verbessern. 
 Ein systematischer Fehler ist dadurch gegeben, dass die Druckwerte gerade zu Beginn der Evakuierungsmessung exponentiell abfallen, sich somit sehr schnell ändern und das Ablesen der Werte 
 sehr schwierig ist. Um das Aufnehmen der Messwerte weniger willkürlich zu gestalten, wurde in der Versuchdurchführung das entsprechende Messgerät im Messzeitraum abgefilmt. Anschließend 
 wurden diese Videos langsam durchgegangen und die der Zeit entsprechenden Messwerte notiert. \\
@@ -115,5 +114,6 @@ Das Ergebnis des Versuches kann eventuell dadurch verbessert werden, dass der Dr
 mehreren aufgenommenen Daten durchgeführt wird. In der Durchführung wurden pro Messung drei Messreihen aufgenommen, welches die statistischen Fehler verringert. Die Betrachtung von 
 verschiedenen Messgeräten, die an verschiedenen Stellen am Rezipienten angebracht sind, würde zusätzlich eine räumliche Betrachtung hinzufügen und systematische Fehler verringern. 
 
-\noindent Es ist zu sagen, dass bei dem Versuch schon viele Fehler verringert werden durch geschickte Durchführung und sich das auch in Auswertung der Drehschieberpumpe zeigt. Bei der 
+\noindent Es ist zu sagen, dass bei dem Versuch schon viele Fehler verringert werden durch geschickte Durchführung und sich das auch in Auswertung der Drehschieberpumpe zeigt, wo hier 
+trotz der Benutzung eines falschen Messgerätes, die Ergebnisse annehmbar sind. Bei der 
 Turbomolekularpumpe sind die Ergebnisse akzeptabel, da sich viele der nicht verminderten Fehler stärker bei niedrigerem Druck bemerkbar machen. 

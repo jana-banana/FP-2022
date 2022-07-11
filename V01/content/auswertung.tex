@@ -23,11 +23,11 @@
     Die Halbwertsbreite des Plateaus wird über die Schnittstellen der beiden Ausgleichsgeraden mit der halben Plateauhöhe bestimmt.
     Daraus ergibt sich für die beiden Schnittstellen
     \begin{align*}
-      t_\text{links} = \SI{0.49(16)}{\nano\second} && t_\text{rechts}= \SI{1.37(33)}{\nano\second} \, .
+      t_\text{links} = \SI{-3.60(21)}{\nano\second} && t_\text{rechts}= \SI{6.4(4)}{\nano\second} \, .
     \end{align*}
     Dadurch folgt für die Halbwertsbreite und somit auch für die doppelte Breite der Rechteckimpulse
     \begin{equation*}
-      t_\frac{1}{2} = \SI{1.9(4)}{\nano\second} \, .
+      t_\frac{1}{2} = \SI{2.8(5)}{\nano\second} \, .
     \end{equation*}
     Als Verzögerungszeitdifferenz wird $\increment t = \SI{2}{\nano\second}$ genommen, dieser Wert bleibt über den ganzen Versuch bestehen.
     Dadurch beträgt die Ereignisrate $\SI{18.8}{\second\tothe{-1}}$.
@@ -166,22 +166,22 @@
     \end{equation*}
     und die gesamte Anzahl der Startsignale
     \begin{equation*}
-      N_\text{Start} = 4560816 \pm 2135,61 \, .
+      N_\text{Start} = \num{4560816 \pm 2135.61} \, .
     \end{equation*}
     Somit ergibt sich für die durchschnittlich gemessene Rate
     \begin{equation*}
-      I_\text{Mess} = 16,755 \pm 0,008 \, .
+      I_\text{Mess} = \SI{16.755 \pm 0.008}{\per\second} \, .
     \end{equation*}
     Dadurch kann mithilfe von \eqref{eqn:Untergrund} der gesamte Untergrund während der Messzeit bestimmt werden.
     Dieser beträgt somit
     \begin{equation*}
-      U_\text{ges} = 764,1 \pm 0,7 \,.
+      U_\text{ges} = \num{764.1 \pm 0.7} \,.
     \end{equation*}
     Der gesamte Untergrund wird auf die relevanten Kanäle normiert.
     Aus der Kalibrationsmessung ergeben sich als relevante Kanäle innerhalb der Suchzeit $T_\text{S}$ das Intervall $[4;445]$.
     Somit beträgt der normierte Untergrund
     \begin{equation*}
-      U_\text{norm} = 1,7325 \pm 0,0016 \, .
+      U_\text{norm} = \num{1.7325 \pm 0.0016} \, .
     \end{equation*}
   
   \subsubsection{Bestimmung der Lebensdauer - numerisch}
@@ -194,9 +194,9 @@
     Bei den Kanäle > 445 liegt es an der Suchzeit $T_\text{S}$, die überschritten wird und somit Signale, die nach der Suchzeit eintreffen nicht als Stoppsignale registriert werden.
     Für die Fitparameter ergeben sich somit folgende Werte:
     \begin{align*}
-      N_0 &= 153,38 \pm 1,56 \, ,\\
-      \lambda &= \SI{0,51(01)}{\per\micro\second} \, ,\\
-      U_\text{num} &= 2,64 \pm 0,56 \, .
+      N_0 &= \num{153.38 \pm 1.56} \, ,\\
+      \lambda &= \SI{0.51(01)}{\per\micro\second} \, ,\\
+      U_\text{num} &= \num{2.64 \pm 0.56} \, .
     \end{align*}
     Bei dem hier betrachteten Untergrund $U_\text{n}$ handelt es sich um ein numerisch bestimmten Untergrund.
     Die Fit-Funktion ist in \autoref{fig:eFkt_numerisch} zu finden.
@@ -205,7 +205,7 @@
     \begin{equation*}
       \tau_\text{num} = \frac{1}{\lambda} = \SI{1.97(04)}{\micro\second} \, .
     \end{equation*}
-    \begin{figure}
+    \begin{figure}[h]
       \centering
       \includegraphics[width=0.8\textwidth]{build/Messung_Zeit_Counts_num.pdf}
       \caption{Die aufgenommenen Messwerte zur Besimmung der Lebensdauer, sowie der dazugehörige Fit mit einer e-Funktion.
@@ -217,7 +217,7 @@
     Zunächst wird von den signifikanten Messwerten die theoretisch bestimmte Untergrundrate abgezogen.
     Diese beträgt
     \begin{equation*}
-      U_\text{theo} = 1,7325 \pm 0,0016 \, .
+      U_\text{theo} = \num{1.7325 \pm 0.0016} \, .
     \end{equation*}
     Durch die angepassten Messwerte wird eine Ausgleichsrechnung der Form
     \begin{equation*}
@@ -226,7 +226,7 @@
     durchgeführt.
     Für die Fitparameter ergebn sich somit folgende Werte:
     \begin{align*}
-      N_0 &= 153,06 \pm 1,53 \, \text{und}\\
+      N_0 &= \num{153.06 \pm 1.53} \, \text{und}\\
       \lambda &= \SI{0.496(006)}{\per\micro\second} \, .
     \end{align*}
     Aus der Zerfallskonstante ergibt sich die Lebensdauer wie folgt:
@@ -234,7 +234,7 @@
       \tau_\text{theo} = \frac{1}{\lambda} = \SI{2.017(026)}{\micro\second} \, .
     \end{equation*}
     Die bereinigten Messwerte sowie die Fit-Funktion sind in \autoref{fig:eFkt_theo} zu finden.
-    \begin{figure}
+    \begin{figure}[h]
       \centering
       \includegraphics[width=0.8\textwidth]{build/Messung_Zeit_Counts_theo.pdf}
       \caption{Die aufgenommenen Messwerte zur Bestimmung der Lebensdauer, sowie der dazugehörige Fit mit einer e-Funktion.
