@@ -79,7 +79,7 @@ print('mittel_plateau', mittel_plateau ,'+/-', np.sqrt(mittel_plateau))
 plt.axhline(y=mittel_plateau, color='g', linestyle='-', label='Plateaumittelwert')
 print('\n')
 plt.axhline(y=mittel_plateau/2, color='g', linestyle='--', label='halber Plateaumittelwert')
-print('t_1/2 : ', (t_h_p_rechts+t_h_p_links))
+print('t_1/2 : ', (t_h_p_rechts-t_h_p_links))
 
 #plt.xlabel(r'$\Delta t/\si{\nano\second}$')
 plt.xlabel('t / ns')
